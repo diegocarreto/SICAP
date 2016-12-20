@@ -1,7 +1,0 @@
-INSERT INTO [dbo].[employee]([id],[idCompany],[name],[salary],[phone],[deleted],[createDate],[updateDate],[deletedDate]) Values( '2',Null,'Diego Alberto Ortega Carreto','1000.00','5559661108','0','Mar 26 2016 10:33PM','Jul 30 2016 12:32PM',Null)
-INSERT INTO [dbo].[employee]([id],[idCompany],[name],[salary],[phone],[deleted],[createDate],[updateDate],[deletedDate]) Values( '3',Null,'Mario Alberto Davila Rodrigue','1200.00','5563190148','0','Jun 15 2016  6:51PM','Sep 24 2016  2:35PM',Null)
-INSERT INTO [dbo].[employee]([id],[idCompany],[name],[salary],[phone],[deleted],[createDate],[updateDate],[deletedDate]) Values( '4',Null,'Angel Mendez','1100.00','5510501737','0','Jun 15 2016  6:55PM',Null,Null)
-INSERT INTO [dbo].[employee]([id],[idCompany],[name],[salary],[phone],[deleted],[createDate],[updateDate],[deletedDate]) Values( '1003',Null,'Valdemar Montesinos','1100.00','5545787765','0','Jul 16 2016  4:22PM',Null,Null)
-INSERT INTO [dbo].[employee]([id],[idCompany],[name],[salary],[phone],[deleted],[createDate],[updateDate],[deletedDate]) Values( '1004',Null,'Pablo Daniel','850.00','0445551453093','0','Aug 12 2016  6:55PM',Null,Null)
-INSERT INTO [dbo].[employee]([id],[idCompany],[name],[salary],[phone],[deleted],[createDate],[updateDate],[deletedDate]) Values( '1005',Null,'Rafael','850.00','58562658','0','Aug 26 2016  6:38PM',Null,Null)
-INSERT INTO [dbo].[employee]([id],[idCompany],[name],[salary],[phone],[deleted],[createDate],[updateDate],[deletedDate]) Values( '1006',Null,'Rodrigo','800.00','58562658','0','Aug 26 2016  6:39PM',Null,Null)
