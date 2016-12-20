@@ -1,0 +1,1 @@
+INSERT INTO [dbo].[provider]([id],[name],[address],[phone1],[phone2],[email],[active],[deleted],[createDate],[updateDate],[deletedDate]) Values( '1','Samurai','carretera federal mexico texcoco los reyes la paz','1234567890','0987654321','samurai@gmail.com','1','0','Jun  9 2016 10:48PM',Null,Null)

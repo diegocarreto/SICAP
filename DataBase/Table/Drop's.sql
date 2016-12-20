@@ -1,0 +1,6 @@
+DROP TABLE [binnacle]
+DROP TABLE [habitant]
+DROP TABLE [payment]
+DROP TABLE [WaterIntake]
+DROP TABLE [user3]
+DROP TABLE [catalog]

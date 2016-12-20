@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6F5C5F3-8910-4E9D-A91F-65D2D48EA5C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video">
+      <HintPath>..\Referencias\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\Referencias\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\packages\BarcodeLib.1.0.0.20\lib\net20\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="tessnet2_64">
+      <HintPath>..\..\..\..\Desktop\New folder (2)\C#\OCRTest\bin\Debug\tessnet2_64.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config.Designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpenseList.Designer.cs">
+      <DependentUpon>ExpenseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Habitant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Habitant.Designer.cs">
+      <DependentUpon>Habitant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentList.Designer.cs">
+      <DependentUpon>PaymentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HabitantList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HabitantList.Designer.cs">
+      <DependentUpon>HabitantList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sicap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sicap.Designer.cs">
+      <DependentUpon>Sicap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="WaterIntake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaterIntake.Designer.cs">
+      <DependentUpon>WaterIntake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaterIntakeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaterIntakeList.Designer.cs">
+      <DependentUpon>WaterIntakeList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Base\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpenseList.resx">
+      <DependentUpon>ExpenseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Habitant.resx">
+      <DependentUpon>Habitant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentList.resx">
+      <DependentUpon>PaymentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HabitantList.resx">
+      <DependentUpon>HabitantList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sicap.resx">
+      <DependentUpon>Sicap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaterIntake.resx">
+      <DependentUpon>WaterIntake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaterIntakeList.resx">
+      <DependentUpon>WaterIntakeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\PosBusiness\PosBusiness.csproj">
+      <Project>{7169f933-db77-4ea9-b0af-bb64d19f0936}</Project>
+      <Name>PosBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PosUtilities\PosUtilities.csproj">
+      <Project>{c79bbba5-a7dd-4b70-ae6c-63ba1c93560b}</Project>
+      <Name>PosUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilitiesForm\UtilitiesForm.csproj">
+      <Project>{904327fd-014d-4f13-aa69-2b3caf6b2643}</Project>
+      <Name>UtilitiesForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{175fb569-1c14-4ecd-b19f-b47eb588bd0c}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
