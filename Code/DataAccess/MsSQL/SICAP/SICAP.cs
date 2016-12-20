@@ -44,6 +44,16 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Expensedelete Expensedelete = new DataAccess.MsSqlCommands.Sicap.Expensedelete();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Expenselist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Expenselist Expenselist = new DataAccess.MsSqlCommands.Sicap.Expenselist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Expenseupdate.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Expenseupdate Expenseupdate = new DataAccess.MsSqlCommands.Sicap.Expenseupdate();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Habitantadd.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Habitantadd Habitantadd = new DataAccess.MsSqlCommands.Sicap.Habitantadd();
@@ -147,6 +157,12 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Expensedelete != null)
 				this.Expensedelete.Dispose();
+
+			if (this.Expenselist != null)
+				this.Expenselist.Dispose();
+
+			if (this.Expenseupdate != null)
+				this.Expenseupdate.Dispose();
 
 			if (this.Habitantadd != null)
 				this.Habitantadd.Dispose();
