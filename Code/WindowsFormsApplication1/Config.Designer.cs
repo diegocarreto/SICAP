@@ -68,7 +68,7 @@
             this.txtMensualidad.Location = new System.Drawing.Point(75, 38);
             this.txtMensualidad.MaxLength = 50;
             this.txtMensualidad.Name = "txtMensualidad";
-            this.txtMensualidad.Size = new System.Drawing.Size(195, 20);
+            this.txtMensualidad.Size = new System.Drawing.Size(260, 20);
             this.txtMensualidad.TabIndex = 13;
             this.txtMensualidad.Tag = "txtMoney";
             // 
@@ -77,7 +77,7 @@
             this.txtAlta.Location = new System.Drawing.Point(75, 12);
             this.txtAlta.MaxLength = 100;
             this.txtAlta.Name = "txtAlta";
-            this.txtAlta.Size = new System.Drawing.Size(195, 20);
+            this.txtAlta.Size = new System.Drawing.Size(260, 20);
             this.txtAlta.TabIndex = 12;
             this.txtAlta.Tag = "txtMoney";
             // 
@@ -95,7 +95,7 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(114, 91);
+            this.btnAccept.Location = new System.Drawing.Point(179, 91);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 19;
@@ -108,7 +108,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(195, 91);
+            this.btnExit.Location = new System.Drawing.Point(260, 91);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 20;
@@ -121,7 +121,7 @@
             this.pbval_txtAlta.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtAlta.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtAlta.Image")));
             this.pbval_txtAlta.InitialImage = null;
-            this.pbval_txtAlta.Location = new System.Drawing.Point(276, 15);
+            this.pbval_txtAlta.Location = new System.Drawing.Point(341, 15);
             this.pbval_txtAlta.Name = "pbval_txtAlta";
             this.pbval_txtAlta.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtAlta.TabIndex = 25;
@@ -134,7 +134,7 @@
             this.pbval_txtMensualidad.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtMensualidad.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtMensualidad.Image")));
             this.pbval_txtMensualidad.InitialImage = null;
-            this.pbval_txtMensualidad.Location = new System.Drawing.Point(276, 41);
+            this.pbval_txtMensualidad.Location = new System.Drawing.Point(341, 41);
             this.pbval_txtMensualidad.Name = "pbval_txtMensualidad";
             this.pbval_txtMensualidad.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtMensualidad.TabIndex = 26;
@@ -148,7 +148,7 @@
             this.cmbPrinter.FormattingEnabled = true;
             this.cmbPrinter.Location = new System.Drawing.Point(75, 64);
             this.cmbPrinter.Name = "cmbPrinter";
-            this.cmbPrinter.Size = new System.Drawing.Size(195, 21);
+            this.cmbPrinter.Size = new System.Drawing.Size(260, 21);
             this.cmbPrinter.TabIndex = 14;
             // 
             // pbval_cmbPrinter
@@ -156,7 +156,7 @@
             this.pbval_cmbPrinter.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_cmbPrinter.Image = ((System.Drawing.Image)(resources.GetObject("pbval_cmbPrinter.Image")));
             this.pbval_cmbPrinter.InitialImage = null;
-            this.pbval_cmbPrinter.Location = new System.Drawing.Point(276, 68);
+            this.pbval_cmbPrinter.Location = new System.Drawing.Point(341, 68);
             this.pbval_cmbPrinter.Name = "pbval_cmbPrinter";
             this.pbval_cmbPrinter.Size = new System.Drawing.Size(18, 17);
             this.pbval_cmbPrinter.TabIndex = 30;
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 118);
+            this.ClientSize = new System.Drawing.Size(365, 118);
             this.Controls.Add(this.pbval_cmbPrinter);
             this.Controls.Add(this.cmbPrinter);
             this.Controls.Add(this.pbval_txtMensualidad);

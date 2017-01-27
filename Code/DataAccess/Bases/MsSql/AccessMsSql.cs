@@ -215,9 +215,17 @@ namespace DataAccess.MSSQL
                 {
                     List<T> list = new List<T>();
 
-                    while (reader.Read())
+                    try
                     {
-                        list.Add(ToObject<T>(reader));
+
+                        while (reader.Read())
+                        {
+                            list.Add(ToObject<T>(reader));
+                        }
+                    }
+                    catch (Exception ex)
+                    { 
+                    
                     }
 
                     return list;

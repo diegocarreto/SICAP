@@ -68,12 +68,37 @@
     <Compile Include="Config.Designer.cs">
       <DependentUpon>Config.cs</DependentUpon>
     </Compile>
+    <Compile Include="Faena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faena.Designer.cs">
+      <DependentUpon>Faena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaenasList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaenasList.Designer.cs">
+      <DependentUpon>FaenasList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutputs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputOutputs.Designer.cs">
+      <DependentUpon>InputOutputs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutputsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputOutputsList.Designer.cs">
+      <DependentUpon>InputOutputsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Habitant.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Habitant.Designer.cs">
       <DependentUpon>Habitant.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalPrintServer.cs" />
     <Compile Include="PaymentList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +122,11 @@
     </Compile>
     <Compile Include="Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sicap.cs">
       <SubType>Form</SubType>
@@ -123,6 +153,18 @@
     <EmbeddedResource Include="Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Faena.resx">
+      <DependentUpon>Faena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaenasList.resx">
+      <DependentUpon>FaenasList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputOutputs.resx">
+      <DependentUpon>InputOutputs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputOutputsList.resx">
+      <DependentUpon>InputOutputsList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Habitant.resx">
       <DependentUpon>Habitant.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +179,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Sicap.resx">
       <DependentUpon>Sicap.cs</DependentUpon>

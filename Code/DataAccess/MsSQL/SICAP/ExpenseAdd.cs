@@ -18,11 +18,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene una lista del tipo de objectos indicado con el merge entre las propiedades del objeto y el resulset obtenido de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public List<T> ExeList<T>(String name = null, String description = null, Decimal? amount = null) where T : new()
+        public List<T> ExeList<T>(int? idUser = null, String name = null, String description = null, Decimal? amount = null, int? type = null) where T : new()
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@name", SqlDbType.VarChar, name, 100).Add("@description", SqlDbType.VarChar, description, 2000).Add("@amount", SqlDbType.Money, amount, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@name", SqlDbType.VarChar, name, 100).Add("@description", SqlDbType.VarChar, description, 2000).Add("@amount", SqlDbType.Money, amount, null).Add("@type", SqlDbType.TinyInt, type, null);
 
         	return this.GetListBase<T>("SICAP", "ExpenseAdd",parameters.ToArray());
         }
@@ -31,11 +31,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene el scalar resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public T ExeScalar<T>(String name = null, String description = null, Decimal? amount = null)
+        public T ExeScalar<T>(int? idUser = null, String name = null, String description = null, Decimal? amount = null, int? type = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@name", SqlDbType.VarChar, name, 100).Add("@description", SqlDbType.VarChar, description, 2000).Add("@amount", SqlDbType.Money, amount, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@name", SqlDbType.VarChar, name, 100).Add("@description", SqlDbType.VarChar, description, 2000).Add("@amount", SqlDbType.Money, amount, null).Add("@type", SqlDbType.TinyInt, type, null);
 
         	return this.ExecuteScalar<T>("SICAP", "ExpenseAdd",parameters.ToArray());
         }
@@ -44,11 +44,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Ejecuta el procedimiento almacenado.
         /// </summary>
         /// <returns></returns>
-        public int ExeNonQuery(String name = null, String description = null, Decimal? amount = null)
+        public int ExeNonQuery(int? idUser = null, String name = null, String description = null, Decimal? amount = null, int? type = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@name", SqlDbType.VarChar, name, 100).Add("@description", SqlDbType.VarChar, description, 2000).Add("@amount", SqlDbType.Money, amount, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@name", SqlDbType.VarChar, name, 100).Add("@description", SqlDbType.VarChar, description, 2000).Add("@amount", SqlDbType.Money, amount, null).Add("@type", SqlDbType.TinyInt, type, null);
 
         	return this.ExecuteNonQuery("SICAP", "ExpenseAdd",parameters.ToArray());
         }
@@ -57,11 +57,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene un objeto IDataReader resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public IDataReader ExeReader(String name = null, String description = null, Decimal? amount = null)
+        public IDataReader ExeReader(int? idUser = null, String name = null, String description = null, Decimal? amount = null, int? type = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@name", SqlDbType.VarChar, name, 100).Add("@description", SqlDbType.VarChar, description, 2000).Add("@amount", SqlDbType.Money, amount, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@name", SqlDbType.VarChar, name, 100).Add("@description", SqlDbType.VarChar, description, 2000).Add("@amount", SqlDbType.Money, amount, null).Add("@type", SqlDbType.TinyInt, type, null);
 
         	return this.GetReader("SICAP", "ExpenseAdd",parameters.ToArray());
         }

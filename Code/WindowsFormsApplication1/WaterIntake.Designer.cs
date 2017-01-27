@@ -46,6 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.pbval_txtTotal = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbHabitant = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtExteriorNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbStreet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTotal)).BeginInit();
@@ -56,7 +58,7 @@
             this.pbval_txtExteriorNumber.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtExteriorNumber.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtExteriorNumber.Image")));
             this.pbval_txtExteriorNumber.InitialImage = null;
-            this.pbval_txtExteriorNumber.Location = new System.Drawing.Point(139, 39);
+            this.pbval_txtExteriorNumber.Location = new System.Drawing.Point(144, 61);
             this.pbval_txtExteriorNumber.Name = "pbval_txtExteriorNumber";
             this.pbval_txtExteriorNumber.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtExteriorNumber.TabIndex = 28;
@@ -69,7 +71,7 @@
             this.pbval_cmbStreet.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_cmbStreet.Image = ((System.Drawing.Image)(resources.GetObject("pbval_cmbStreet.Image")));
             this.pbval_cmbStreet.InitialImage = null;
-            this.pbval_cmbStreet.Location = new System.Drawing.Point(296, 15);
+            this.pbval_cmbStreet.Location = new System.Drawing.Point(301, 37);
             this.pbval_cmbStreet.Name = "pbval_cmbStreet";
             this.pbval_cmbStreet.Size = new System.Drawing.Size(18, 17);
             this.pbval_cmbStreet.TabIndex = 27;
@@ -80,7 +82,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 15);
+            this.label6.Location = new System.Drawing.Point(29, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 26;
@@ -90,7 +92,7 @@
             // 
             this.cmbStreet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStreet.FormattingEnabled = true;
-            this.cmbStreet.Location = new System.Drawing.Point(58, 12);
+            this.cmbStreet.Location = new System.Drawing.Point(63, 34);
             this.cmbStreet.Name = "cmbStreet";
             this.cmbStreet.Size = new System.Drawing.Size(232, 21);
             this.cmbStreet.TabIndex = 15;
@@ -98,7 +100,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 92);
+            this.label5.Location = new System.Drawing.Point(22, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 25;
@@ -109,7 +111,7 @@
             this.cbActive.AutoSize = true;
             this.cbActive.Checked = true;
             this.cbActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbActive.Location = new System.Drawing.Point(58, 91);
+            this.cbActive.Location = new System.Drawing.Point(63, 113);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(15, 14);
             this.cbActive.TabIndex = 20;
@@ -118,7 +120,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 68);
+            this.label3.Location = new System.Drawing.Point(22, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 24;
@@ -126,7 +128,7 @@
             // 
             // txtColony
             // 
-            this.txtColony.Location = new System.Drawing.Point(58, 65);
+            this.txtColony.Location = new System.Drawing.Point(63, 87);
             this.txtColony.MaxLength = 50;
             this.txtColony.Name = "txtColony";
             this.txtColony.Size = new System.Drawing.Size(232, 20);
@@ -135,7 +137,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 42);
+            this.label2.Location = new System.Drawing.Point(8, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 21;
@@ -143,7 +145,7 @@
             // 
             // txtInteriorNumber
             // 
-            this.txtInteriorNumber.Location = new System.Drawing.Point(215, 40);
+            this.txtInteriorNumber.Location = new System.Drawing.Point(220, 62);
             this.txtInteriorNumber.MaxLength = 10;
             this.txtInteriorNumber.Name = "txtInteriorNumber";
             this.txtInteriorNumber.Size = new System.Drawing.Size(75, 20);
@@ -151,7 +153,7 @@
             // 
             // txtExteriorNumber
             // 
-            this.txtExteriorNumber.Location = new System.Drawing.Point(58, 39);
+            this.txtExteriorNumber.Location = new System.Drawing.Point(63, 61);
             this.txtExteriorNumber.MaxLength = 10;
             this.txtExteriorNumber.Name = "txtExteriorNumber";
             this.txtExteriorNumber.Size = new System.Drawing.Size(75, 20);
@@ -160,7 +162,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 43);
+            this.label1.Location = new System.Drawing.Point(168, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 18;
@@ -171,7 +173,7 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(139, 121);
+            this.btnAccept.Location = new System.Drawing.Point(144, 143);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 22;
@@ -184,7 +186,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(220, 121);
+            this.btnExit.Location = new System.Drawing.Point(225, 143);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 23;
@@ -195,7 +197,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(180, 91);
+            this.label4.Location = new System.Drawing.Point(185, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 29;
@@ -203,7 +205,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(215, 88);
+            this.txtTotal.Location = new System.Drawing.Point(220, 110);
             this.txtTotal.MaxLength = 10;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(75, 20);
@@ -215,7 +217,7 @@
             this.pbval_txtTotal.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtTotal.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtTotal.Image")));
             this.pbval_txtTotal.InitialImage = null;
-            this.pbval_txtTotal.Location = new System.Drawing.Point(296, 92);
+            this.pbval_txtTotal.Location = new System.Drawing.Point(301, 114);
             this.pbval_txtTotal.Name = "pbval_txtTotal";
             this.pbval_txtTotal.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtTotal.TabIndex = 31;
@@ -223,11 +225,31 @@
             this.pbval_txtTotal.Tag = "Ingrese el total";
             this.pbval_txtTotal.Visible = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Inquilino:";
+            // 
+            // cmbHabitant
+            // 
+            this.cmbHabitant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHabitant.FormattingEnabled = true;
+            this.cmbHabitant.Location = new System.Drawing.Point(63, 7);
+            this.cmbHabitant.Name = "cmbHabitant";
+            this.cmbHabitant.Size = new System.Drawing.Size(232, 21);
+            this.cmbHabitant.TabIndex = 35;
+            // 
             // WaterIntake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 151);
+            this.ClientSize = new System.Drawing.Size(322, 178);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbHabitant);
             this.Controls.Add(this.pbval_txtTotal);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label4);
@@ -280,5 +302,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.PictureBox pbval_txtTotal;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbHabitant;
     }
 }

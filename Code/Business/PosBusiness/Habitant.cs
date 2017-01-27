@@ -18,6 +18,12 @@ namespace PosBusiness
 
         public string observations { get; set; }
 
+        public int? Year { get; set; }
+
+        public int? Month { get; set; }
+
+        public string MonthName { get; set; }
+
         #endregion
 
         #region Builder
@@ -45,6 +51,8 @@ namespace PosBusiness
                 this.Materno = e.Materno;
                 this.observations = e.observations;
                 this.Active = e.Active;
+                this.Year = e.Year;
+                this.Month = e.Month;
 
                 return true;
             }
@@ -75,11 +83,11 @@ namespace PosBusiness
             {
                 if (!this.Id.HasValue)
                 {
-                    this.AccessMsSql.Sicap.Habitantadd.ExeScalar<int>(this.UserId, this.Name, this.Paterno, this.Materno, this.observations);
+                    this.AccessMsSql.Sicap.Habitantadd.ExeScalar<int>(this.UserId, this.Name, this.Paterno, this.Materno, this.observations, this.Year, this.Month, this.Active);
                 }
                 else
                 {
-                    this.Id = this.AccessMsSql.Sicap.Habitantupdate.ExeScalar<int>(this.UserId, this.Id, this.Name, this.Paterno, this.Materno, this.observations, this.Active);
+                    this.Id = this.AccessMsSql.Sicap.Habitantupdate.ExeScalar<int>(this.UserId, this.Id, this.Name, this.Paterno, this.Materno, this.observations, this.Active, this.Year, this.Month);
                 }
 
                 return true;

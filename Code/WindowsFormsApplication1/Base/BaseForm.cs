@@ -25,7 +25,9 @@ namespace WindowsFormsApplication1.Base
 
         #region Properties
 
-        public bool UpdateButton { get; set; }
+        protected bool UpdateButton { get; set; }
+
+        protected bool LoadComplete { get; set; }
 
         #endregion
 
@@ -34,7 +36,7 @@ namespace WindowsFormsApplication1.Base
         public BaseForm()
             : base()
         {
-
+            this.LoadComplete = false;
         }
 
         #endregion

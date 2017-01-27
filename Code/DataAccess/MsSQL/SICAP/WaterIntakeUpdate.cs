@@ -18,11 +18,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene una lista del tipo de objectos indicado con el merge entre las propiedades del objeto y el resulset obtenido de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public List<T> ExeList<T>(int? idUser = null, int? id = null, int? idStreet = null, String exteriorNumber = null, String interiorNumber = null, String colony = null, Boolean? active = null, Decimal? total = null) where T : new()
+        public List<T> ExeList<T>(int? idUser = null, int? idRent = null, int? id = null, int? idStreet = null, String exteriorNumber = null, String interiorNumber = null, String colony = null, Boolean? active = null, Decimal? total = null) where T : new()
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@idStreet", SqlDbType.Int, idStreet, null).Add("@exteriorNumber", SqlDbType.VarChar, exteriorNumber, 10).Add("@interiorNumber", SqlDbType.VarChar, interiorNumber, 10).Add("@colony", SqlDbType.VarChar, colony, 50).Add("@active", SqlDbType.Bit, active, null).Add("@total", SqlDbType.Money, total, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@idRent", SqlDbType.Int, idRent, null).Add("@id", SqlDbType.Int, id, null).Add("@idStreet", SqlDbType.Int, idStreet, null).Add("@exteriorNumber", SqlDbType.VarChar, exteriorNumber, 10).Add("@interiorNumber", SqlDbType.VarChar, interiorNumber, 10).Add("@colony", SqlDbType.VarChar, colony, 50).Add("@active", SqlDbType.Bit, active, null).Add("@total", SqlDbType.Money, total, null);
 
         	return this.GetListBase<T>("SICAP", "WaterIntakeUpdate",parameters.ToArray());
         }
@@ -31,11 +31,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene el scalar resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public T ExeScalar<T>(int? idUser = null, int? id = null, int? idStreet = null, String exteriorNumber = null, String interiorNumber = null, String colony = null, Boolean? active = null, Decimal? total = null)
+        public T ExeScalar<T>(int? idUser = null, int? idRent = null, int? id = null, int? idStreet = null, String exteriorNumber = null, String interiorNumber = null, String colony = null, Boolean? active = null, Decimal? total = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@idStreet", SqlDbType.Int, idStreet, null).Add("@exteriorNumber", SqlDbType.VarChar, exteriorNumber, 10).Add("@interiorNumber", SqlDbType.VarChar, interiorNumber, 10).Add("@colony", SqlDbType.VarChar, colony, 50).Add("@active", SqlDbType.Bit, active, null).Add("@total", SqlDbType.Money, total, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@idRent", SqlDbType.Int, idRent, null).Add("@id", SqlDbType.Int, id, null).Add("@idStreet", SqlDbType.Int, idStreet, null).Add("@exteriorNumber", SqlDbType.VarChar, exteriorNumber, 10).Add("@interiorNumber", SqlDbType.VarChar, interiorNumber, 10).Add("@colony", SqlDbType.VarChar, colony, 50).Add("@active", SqlDbType.Bit, active, null).Add("@total", SqlDbType.Money, total, null);
 
         	return this.ExecuteScalar<T>("SICAP", "WaterIntakeUpdate",parameters.ToArray());
         }
@@ -44,11 +44,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Ejecuta el procedimiento almacenado.
         /// </summary>
         /// <returns></returns>
-        public int ExeNonQuery(int? idUser = null, int? id = null, int? idStreet = null, String exteriorNumber = null, String interiorNumber = null, String colony = null, Boolean? active = null, Decimal? total = null)
+        public int ExeNonQuery(int? idUser = null, int? idRent = null, int? id = null, int? idStreet = null, String exteriorNumber = null, String interiorNumber = null, String colony = null, Boolean? active = null, Decimal? total = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@idStreet", SqlDbType.Int, idStreet, null).Add("@exteriorNumber", SqlDbType.VarChar, exteriorNumber, 10).Add("@interiorNumber", SqlDbType.VarChar, interiorNumber, 10).Add("@colony", SqlDbType.VarChar, colony, 50).Add("@active", SqlDbType.Bit, active, null).Add("@total", SqlDbType.Money, total, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@idRent", SqlDbType.Int, idRent, null).Add("@id", SqlDbType.Int, id, null).Add("@idStreet", SqlDbType.Int, idStreet, null).Add("@exteriorNumber", SqlDbType.VarChar, exteriorNumber, 10).Add("@interiorNumber", SqlDbType.VarChar, interiorNumber, 10).Add("@colony", SqlDbType.VarChar, colony, 50).Add("@active", SqlDbType.Bit, active, null).Add("@total", SqlDbType.Money, total, null);
 
         	return this.ExecuteNonQuery("SICAP", "WaterIntakeUpdate",parameters.ToArray());
         }
@@ -57,11 +57,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene un objeto IDataReader resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public IDataReader ExeReader(int? idUser = null, int? id = null, int? idStreet = null, String exteriorNumber = null, String interiorNumber = null, String colony = null, Boolean? active = null, Decimal? total = null)
+        public IDataReader ExeReader(int? idUser = null, int? idRent = null, int? id = null, int? idStreet = null, String exteriorNumber = null, String interiorNumber = null, String colony = null, Boolean? active = null, Decimal? total = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@idStreet", SqlDbType.Int, idStreet, null).Add("@exteriorNumber", SqlDbType.VarChar, exteriorNumber, 10).Add("@interiorNumber", SqlDbType.VarChar, interiorNumber, 10).Add("@colony", SqlDbType.VarChar, colony, 50).Add("@active", SqlDbType.Bit, active, null).Add("@total", SqlDbType.Money, total, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@idRent", SqlDbType.Int, idRent, null).Add("@id", SqlDbType.Int, id, null).Add("@idStreet", SqlDbType.Int, idStreet, null).Add("@exteriorNumber", SqlDbType.VarChar, exteriorNumber, 10).Add("@interiorNumber", SqlDbType.VarChar, interiorNumber, 10).Add("@colony", SqlDbType.VarChar, colony, 50).Add("@active", SqlDbType.Bit, active, null).Add("@total", SqlDbType.Money, total, null);
 
         	return this.GetReader("SICAP", "WaterIntakeUpdate",parameters.ToArray());
         }

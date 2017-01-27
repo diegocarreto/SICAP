@@ -43,6 +43,14 @@ namespace WindowsFormsApplication1
 
         #region Methods
 
+        private void FillHabitant()
+        {
+            using (var habitant = new posb.Habitant())
+            {
+                this.cmbHabitant.Fill(habitant.List());
+            }
+        }
+
         private void FillStreet()
         {
             using (var e = new PosBusiness.Catalogs())
@@ -59,6 +67,7 @@ namespace WindowsFormsApplication1
                 Id = this.Id,
                 IdHabitant = this.IdHabitant,
                 IdStreet = this.cmbStreet.GetVal<int>(),
+                IdRent = this.cmbHabitant.GetVal<int>(),
                 ExteriorNumber = this.txtExteriorNumber.Text,
                 InteriorNumber = this.txtInteriorNumber.Text,
                 Colony = this.txtColony.Text,
@@ -83,6 +92,9 @@ namespace WindowsFormsApplication1
             {
                 e.Get();
 
+                if (e.IdRent.HasValue)
+                    this.cmbHabitant.SelectedValue = e.IdRent;
+                
                 this.cmbStreet.SelectedValue = e.IdStreet;
                 this.txtExteriorNumber.Text = e.ExteriorNumber;
                 this.txtInteriorNumber.Text = e.InteriorNumber;
@@ -125,6 +137,7 @@ namespace WindowsFormsApplication1
         private void WaterIntake_Load(object sender, EventArgs e)
         {
             this.FillStreet();
+            this.FillHabitant();
 
             if (this.Id.HasValue)
             {

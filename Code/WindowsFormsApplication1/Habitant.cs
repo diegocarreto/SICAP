@@ -37,6 +37,37 @@ namespace WindowsFormsApplication1
 
         #region Methods
 
+        private void FillYears()
+        {
+            this.cmbYear.Items.Add("Seleccionar...");
+
+            for (int i = 1995; i < 2050; i++)
+            {
+                this.cmbYear.Items.Add(i);
+            }
+
+            var currentYear = DateTime.Now.Year.ToString();
+
+            this.cmbYear.Text = currentYear;
+        }
+
+        private void FillMonth()
+        {
+            string[] months = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                              "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+
+            this.cmbMonth.Items.Add("Seleccionar...");
+
+            for (int i = 0; i < months.Length; i++)
+            {
+                this.cmbMonth.Items.Add(months[i]);
+            }
+
+            var currentMonth = DateTime.Now.Month + 1;
+
+            this.cmbMonth.SelectedIndex = currentMonth;
+        }
+
         private void LoadData(int? Id)
         {
             using (var e = new posb.Habitant
@@ -51,6 +82,8 @@ namespace WindowsFormsApplication1
                 this.txtMotherLastName.Text = e.Materno;
                 this.txtObservations.Text = e.observations;
                 this.cbActive.Checked = e.Active.Value;
+                this.cmbYear.Text = e.Year.ToString();
+                this.cmbMonth.SelectedIndex = e.Month.Value;
             }
         }
 
@@ -63,7 +96,9 @@ namespace WindowsFormsApplication1
                 Paterno = this.txtLastName.Text,
                 Materno = this.txtMotherLastName.Text,
                 observations = this.txtObservations.Text,
-                Active = this.cbActive.Checked
+                Active = this.cbActive.Checked,
+                Year = int.Parse(this.cmbYear.Text),
+                Month = this.cmbMonth.SelectedIndex
             })
             {
                 e.Save();
@@ -78,6 +113,9 @@ namespace WindowsFormsApplication1
 
         private void Habitant_Load(object sender, EventArgs e)
         {
+            this.FillYears();
+            this.FillMonth();
+
             if (this.Id.HasValue)
             {
                 this.LoadData(this.Id);

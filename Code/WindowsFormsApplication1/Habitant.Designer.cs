@@ -44,14 +44,22 @@
             this.btnWaterIntake = new System.Windows.Forms.Button();
             this.pbval_txtName = new System.Windows.Forms.PictureBox();
             this.pbval_txtLastName = new System.Windows.Forms.PictureBox();
+            this.pbVal_cmbMonth = new System.Windows.Forms.PictureBox();
+            this.pbVal_cmbYear = new System.Windows.Forms.PictureBox();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbYear = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtLastName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbMonth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbYear)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 196);
+            this.label5.Location = new System.Drawing.Point(47, 254);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 23;
@@ -62,7 +70,7 @@
             this.cbActive.AutoSize = true;
             this.cbActive.Checked = true;
             this.cbActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbActive.Location = new System.Drawing.Point(93, 196);
+            this.cbActive.Location = new System.Drawing.Point(93, 254);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(15, 14);
             this.cbActive.TabIndex = 17;
@@ -71,7 +79,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 89);
+            this.label4.Location = new System.Drawing.Point(9, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 22;
@@ -88,7 +96,7 @@
             // 
             // txtObservations
             // 
-            this.txtObservations.Location = new System.Drawing.Point(93, 86);
+            this.txtObservations.Location = new System.Drawing.Point(93, 144);
             this.txtObservations.MaxLength = 2000;
             this.txtObservations.Multiline = true;
             this.txtObservations.Name = "txtObservations";
@@ -146,7 +154,7 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(132, 216);
+            this.btnAccept.Location = new System.Drawing.Point(132, 274);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 19;
@@ -159,7 +167,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(213, 216);
+            this.btnExit.Location = new System.Drawing.Point(213, 274);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 20;
@@ -172,7 +180,7 @@
             this.btnWaterIntake.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWaterIntake.Image = ((System.Drawing.Image)(resources.GetObject("btnWaterIntake.Image")));
             this.btnWaterIntake.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWaterIntake.Location = new System.Drawing.Point(51, 216);
+            this.btnWaterIntake.Location = new System.Drawing.Point(51, 274);
             this.btnWaterIntake.Name = "btnWaterIntake";
             this.btnWaterIntake.Size = new System.Drawing.Size(75, 23);
             this.btnWaterIntake.TabIndex = 24;
@@ -206,11 +214,79 @@
             this.pbval_txtLastName.Tag = "Ingrese el apellido paterno";
             this.pbval_txtLastName.Visible = false;
             // 
+            // pbVal_cmbMonth
+            // 
+            this.pbVal_cmbMonth.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pbVal_cmbMonth.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbMonth.Image")));
+            this.pbVal_cmbMonth.InitialImage = null;
+            this.pbVal_cmbMonth.Location = new System.Drawing.Point(294, 112);
+            this.pbVal_cmbMonth.Name = "pbVal_cmbMonth";
+            this.pbVal_cmbMonth.Size = new System.Drawing.Size(18, 17);
+            this.pbVal_cmbMonth.TabIndex = 106;
+            this.pbVal_cmbMonth.TabStop = false;
+            this.pbVal_cmbMonth.Tag = "Indique el mes";
+            this.pbVal_cmbMonth.Visible = false;
+            // 
+            // pbVal_cmbYear
+            // 
+            this.pbVal_cmbYear.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pbVal_cmbYear.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbYear.Image")));
+            this.pbVal_cmbYear.InitialImage = null;
+            this.pbVal_cmbYear.Location = new System.Drawing.Point(294, 89);
+            this.pbVal_cmbYear.Name = "pbVal_cmbYear";
+            this.pbVal_cmbYear.Size = new System.Drawing.Size(18, 17);
+            this.pbVal_cmbYear.TabIndex = 105;
+            this.pbVal_cmbYear.TabStop = false;
+            this.pbVal_cmbYear.Tag = "Indique el año";
+            this.pbVal_cmbYear.Visible = false;
+            // 
+            // cmbMonth
+            // 
+            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Location = new System.Drawing.Point(93, 113);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(196, 21);
+            this.cmbMonth.TabIndex = 102;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 104;
+            this.label6.Text = "Mes:";
+            // 
+            // cmbYear
+            // 
+            this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbYear.FormattingEnabled = true;
+            this.cmbYear.Location = new System.Drawing.Point(93, 86);
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Size = new System.Drawing.Size(195, 21);
+            this.cmbYear.TabIndex = 101;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(55, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.TabIndex = 103;
+            this.label7.Text = "Año:";
+            // 
             // Habitant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 246);
+            this.ClientSize = new System.Drawing.Size(318, 309);
+            this.Controls.Add(this.pbVal_cmbMonth);
+            this.Controls.Add(this.pbVal_cmbYear);
+            this.Controls.Add(this.cmbMonth);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cmbYear);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.pbval_txtLastName);
             this.Controls.Add(this.pbval_txtName);
             this.Controls.Add(this.btnWaterIntake);
@@ -236,6 +312,8 @@
             this.Load += new System.EventHandler(this.Habitant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtLastName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbMonth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +336,11 @@
         private System.Windows.Forms.Button btnWaterIntake;
         private System.Windows.Forms.PictureBox pbval_txtName;
         private System.Windows.Forms.PictureBox pbval_txtLastName;
+        private System.Windows.Forms.PictureBox pbVal_cmbMonth;
+        private System.Windows.Forms.PictureBox pbVal_cmbYear;
+        private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbYear;
+        private System.Windows.Forms.Label label7;
     }
 }

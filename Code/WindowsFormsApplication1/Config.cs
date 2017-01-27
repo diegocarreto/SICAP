@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1.Base;
 using posb = PosBusiness;
+using UtilitiesForm.Extensions;
 
 namespace WindowsFormsApplication1
 {
@@ -30,10 +32,20 @@ namespace WindowsFormsApplication1
 
         private void LoadData()
         {
+            this.cmbPrinter.Items.Add("Seleccione...");
+
+            foreach (var printer in PrinterSettings.InstalledPrinters)
+            {
+                this.cmbPrinter.Items.Add(printer);
+            }
+
+            this.cmbPrinter.SelectedIndex = 0;
+
             using (var e = new posb.Config())
             {
                 this.txtAlta.Text = String.Format("{0:0.00}", e.Alta());
                 this.txtMensualidad.Text = String.Format("{0:0.00}", e.Mensualidad());
+                this.cmbPrinter.Text = e.Printer();
             }
         }
 
@@ -45,6 +57,7 @@ namespace WindowsFormsApplication1
                 {
                     e.Alta(this.txtAlta.Text);
                     e.Mensualidad(this.txtMensualidad.Text);
+                    e.Printer(this.cmbPrinter.Text);
                 }
 
                 this.Close();

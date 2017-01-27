@@ -139,5 +139,10 @@ namespace WindowsFormsApplication1
                 this.OpenEdit(this.EntityId);
             }
         }
+
+        private void txtFind_KeyUp(object sender, KeyEventArgs e)
+        {
+            this.FillGridView();
+        }
     }
 }

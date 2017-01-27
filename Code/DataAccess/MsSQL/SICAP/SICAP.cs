@@ -54,6 +54,26 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Expenseupdate Expenseupdate = new DataAccess.MsSqlCommands.Sicap.Expenseupdate();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Faenaadd.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Faenaadd Faenaadd = new DataAccess.MsSqlCommands.Sicap.Faenaadd();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Faenadelete.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Faenadelete Faenadelete = new DataAccess.MsSqlCommands.Sicap.Faenadelete();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Faenalist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Faenalist Faenalist = new DataAccess.MsSqlCommands.Sicap.Faenalist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Faenaupdate.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Faenaupdate Faenaupdate = new DataAccess.MsSqlCommands.Sicap.Faenaupdate();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Habitantadd.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Habitantadd Habitantadd = new DataAccess.MsSqlCommands.Sicap.Habitantadd();
@@ -82,6 +102,11 @@ namespace DataAccess.MSSQL.Sicap
 		/// Controla la ejecucion del procedimiento almacenado Paymentdelete.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Paymentdelete Paymentdelete = new DataAccess.MsSqlCommands.Sicap.Paymentdelete();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Paymentexist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Paymentexist Paymentexist = new DataAccess.MsSqlCommands.Sicap.Paymentexist();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Paymentlist.
@@ -164,6 +189,18 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Expenseupdate != null)
 				this.Expenseupdate.Dispose();
 
+			if (this.Faenaadd != null)
+				this.Faenaadd.Dispose();
+
+			if (this.Faenadelete != null)
+				this.Faenadelete.Dispose();
+
+			if (this.Faenalist != null)
+				this.Faenalist.Dispose();
+
+			if (this.Faenaupdate != null)
+				this.Faenaupdate.Dispose();
+
 			if (this.Habitantadd != null)
 				this.Habitantadd.Dispose();
 
@@ -181,6 +218,9 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Paymentdelete != null)
 				this.Paymentdelete.Dispose();
+
+			if (this.Paymentexist != null)
+				this.Paymentexist.Dispose();
 
 			if (this.Paymentlist != null)
 				this.Paymentlist.Dispose();

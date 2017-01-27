@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.MSSQL;
 using Utilities;
+using System.IO;
 
 namespace PosBusiness
 {
@@ -119,7 +120,16 @@ namespace PosBusiness
         {
             var nameFile = System.AppDomain.CurrentDomain.BaseDirectory + "Cookie.dll";
 
-            var cookie = TxtHandler.Read(nameFile);
+            var cookie = string.Empty;
+
+            if (File.Exists(nameFile))
+            {
+                cookie = TxtHandler.Read(nameFile);
+            }
+            else
+            {
+                cookie = "0|0";
+            }
 
             var parts = cookie.Split('|');
 

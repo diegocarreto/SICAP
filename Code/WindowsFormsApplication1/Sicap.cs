@@ -8,7 +8,13 @@ namespace WindowsFormsApplication1
     {
         public string UserName;
 
+        public Login Login;
+
         #region Members
+
+        private FaenasList FaenasList = null;
+
+        private InputOutputsList InputOutputsList = null; 
 
         private Config Config = null;
 
@@ -189,5 +195,22 @@ namespace WindowsFormsApplication1
         }
 
         #endregion
+
+        private void entradasYSalidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputOutputsList = ShowOrActiveForm(InputOutputsList, typeof(InputOutputsList)) as InputOutputsList;
+        }
+
+        private void faenasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FaenasList = ShowOrActiveForm(FaenasList, typeof(FaenasList)) as FaenasList;
+        }
+
+        private void bloquearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            this.Login.Show();
+        }
     }
 }

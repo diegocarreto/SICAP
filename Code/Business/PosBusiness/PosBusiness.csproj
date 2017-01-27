@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Catalogs.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="Faena.cs" />
     <Compile Include="Expense.cs" />
     <Compile Include="WaterIntake.cs" />
     <Compile Include="User.cs" />

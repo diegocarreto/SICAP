@@ -35,7 +35,7 @@ namespace Utilities
         public static string Read(string Path)
         {
             var content = string.Empty;
-
+           
             using (var fileStream = new FileStream(Path, FileMode.Open, FileAccess.Read))
             {
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))

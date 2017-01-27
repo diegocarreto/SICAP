@@ -13,6 +13,8 @@ namespace PosBusiness
 
         private const string MENSUALIDAD = "mensualidad";
 
+        private const string PRINTER = "printer";
+
         #endregion
 
         #region Properties
@@ -72,6 +74,27 @@ namespace PosBusiness
                 this.AccessMsSql.Sicap.Configset.ExeNonQuery(MENSUALIDAD, Value);
 
                 return 0;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public string Printer(string Value = "")
+        {
+            if (string.IsNullOrEmpty(Value))
+            {
+
+                var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(PRINTER);
+
+                return value;
+            }
+            else
+            {
+                this.AccessMsSql.Sicap.Configset.ExeNonQuery(PRINTER, Value);
+
+                return string.Empty;
             }
         }
 

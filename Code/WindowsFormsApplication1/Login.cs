@@ -67,6 +67,11 @@ namespace WindowsFormsApplication1
                             ms.Show();
 
                             this.Hide();
+
+                            this.txtUser.Clear();
+                            this.txtPassword.Clear();
+
+                            ms.Login = this;
                         }
                         else
                         {
