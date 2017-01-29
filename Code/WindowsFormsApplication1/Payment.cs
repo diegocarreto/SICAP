@@ -196,46 +196,120 @@ namespace WindowsFormsApplication1
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            //var p = new PrintDocument();
+            var p = new PrintDocument();
 
-            //p.PrintPage += delegate(object sender1, PrintPageEventArgs e1)
-            //{
-            //    string font = "Times New Roman";
-            //    SolidBrush brush = new SolidBrush(Color.Black);
+            p.PrintPage += delegate(object sender1, PrintPageEventArgs e1)
+            {
+                var line = string.Empty;
+                for (int i = 0; i < 81; i++)
+                    line += "_";
 
-            //    Font titleFont = new Font(font, 18, FontStyle.Bold),
-            //         f14 = new Font(font, 14, FontStyle.Bold),
-            //         f11 = new Font(font, 11),
-            //         f10 = new Font(font, 10),
-            //         f09 = new Font(font, 09),
-            //         f08 = new Font(font, 08),
-            //         f04 = new Font(font, 04);
+                var line2 = string.Empty;
+                for (int i = 0; i < 125; i++)
+                    line2 += " - ";
 
-            //    e1.Graphics.DrawString("Delegación de San Diego", titleFont, brush, 160, 20);
+                var font = "Times New Roman";
+                var brush = new SolidBrush(Color.Black);
+                var brushTwo = new SolidBrush(Color.LightGray);
 
-            //    e1.Graphics.DrawString("Folio: 0004563", f14, brush, 20, 50);
-            //    e1.Graphics.DrawString("Fecha de pago: 10/02/1986 14:56", f14, brush, 20, 70);
-            //    e1.Graphics.DrawString("Fecha de impresion: 10/02/1986 14:56", f14, brush, 20, 90);
+                var brushRed = new SolidBrush(Color.Red);
 
-            //    e1.Graphics.DrawString("Habitante: Diego Alberto Ortega Carreto", f14, brush, 20, 140);
-            //    e1.Graphics.DrawString("Toma de agua: Cerrada de constituyentes #16 -2 Barrio 2", f14, brush, 20, 160);
-            //};
+                Font titleFont = new Font(font, 18, FontStyle.Bold),
+                     titleSubFont = new Font(font, 16, FontStyle.Bold),
+                     f14 = new Font(font, 14, FontStyle.Bold),
+                     f11 = new Font(font, 11),
+                     f10 = new Font(font, 10),
+                     f09 = new Font(font, 09),
+                     f08 = new Font(font, 08),
+                     f06 = new Font(font, 06);
 
-            //try
-            //{
-            //    using (var printer = new posb.Config())
-            //    {
-            //        p.PrinterSettings.PrinterName = printer.Printer();
-            //    }
+                var pen = new Pen(Brushes.Black);
+                pen.Width = 0.8F;
 
-            //    p.Print();
-            //}
-            //catch (Exception ex)
-            //{
-            //    this.Alert("Ocurrió un error al intentar imprimir el ticket. Descripcion: " + ex.Message, eForm.TypeError.Error);
-            //}
+                var imageCom = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad.jpg");
+                var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.jpg");
+                var image = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad2.jpg");
 
-            //return;
+                for (int i = 0; i <= 1; i++)
+                {
+                    var copy = i * 520;
+
+                    
+                    e1.Graphics.DrawImage(imageCom, 20, 7 + copy, 90, 110);
+
+                    e1.Graphics.DrawString("COMITÉ DE AGUA POTABLE", titleFont, brush, 240, 40 + copy);
+                    e1.Graphics.DrawString("SAN DIEGO TLAILOTLACAN", titleFont, brush, 240, 65 + copy);
+                    e1.Graphics.DrawImage(image, 760, 37 + copy, 60, 80);
+
+                    e1.Graphics.FillRectangle(brush, new Rectangle(20, 106 + copy, 795, 6));
+                    e1.Graphics.DrawRectangle(pen, new Rectangle(20, 112 + copy, 795, 30));
+                    e1.Graphics.DrawString("RECIBO OFICIAL DE INGRESOS", titleSubFont, brush, 30, 115 + copy);
+
+                    e1.Graphics.DrawString("FOLIO", titleSubFont, brush, 550, 115 + copy);
+                    e1.Graphics.DrawString("N° " + "1".PadLeft(10, '0'), titleSubFont, brushRed, 630, 115 + copy);
+
+                    e1.Graphics.DrawRectangle(pen, new Rectangle(20, 158 + copy, 795, 127));
+                    e1.Graphics.DrawRectangle(pen, new Rectangle(20, 158 + copy, 222, 127));
+                   
+                    e1.Graphics.DrawString("RECIBI DEL(A) SR(A)", f14, brush, 30, 170 + copy);
+                    e1.Graphics.DrawString("Laura Camacho Sanchez", f14, brush, 250, 160 + copy);
+                    e1.Graphics.DrawString("Este recibo no proporciona derechos al arrendatario de la propiedad a la cual pertenece la toma de agua", f06, brush, 250, 182 + copy);
+                    e1.Graphics.DrawString(line, f14, brush, 17, 170 + copy);
+
+                    e1.Graphics.DrawString("CANTIDAD", f14, brush, 30, 200 + copy);
+                    e1.Graphics.DrawString("$3,000.00 MX", f14, brush, 250, 200 + copy);
+                    e1.Graphics.DrawString(line, f14, brush, 17, 200 + copy);
+
+                    e1.Graphics.DrawString("CONCEPTO", f14, brush, 30, 230 + copy);
+                    e1.Graphics.DrawString("Pago por extracción de agua potable", f14, brush, 250, 230 + copy);
+                    e1.Graphics.DrawString(line, f14, brush, 17, 230 + copy);
+
+                    e1.Graphics.DrawString("TOMA DE AGUA", f14, brush, 30, 260 + copy);
+                    e1.Graphics.DrawString("Capulines #16 -2 Barrio 2", f14, brush, 250, 260 + copy);
+
+                    e1.Graphics.FillRectangle(brushTwo, new Rectangle(20, 299 + copy, 795, 27));
+                    e1.Graphics.DrawRectangle(pen, new Rectangle(20, 299 + copy, 795, 27));
+                    e1.Graphics.DrawString("PERIODO DE PAGO", titleSubFont, brush, 309, 300 + copy);
+
+                    e1.Graphics.DrawRectangle(pen, new Rectangle(20, 326 + copy, 398, 27));
+                    e1.Graphics.DrawRectangle(pen, new Rectangle(418, 326 + copy, 397, 27));
+
+                    e1.Graphics.DrawString("IMPRESIÓN " + (i + 1) + " - " + DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"), f08, brush, 20, 360 + copy);
+                    e1.Graphics.DrawString("SAN DIEGO TEXCOCO ESTADO DE MEXICO A 28 DE ENERO DE 2017", f10, brush, 345, 360 + copy);
+
+                    e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                    e1.Graphics.DrawString("TESORERO(A)", f08, brush, 163, 450 + copy);
+
+                    e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                    e1.Graphics.DrawString("VO.BO. PRESIDENTE DE COMITE", f08, brush, 520, 450 + copy);
+
+                    
+                    e1.Graphics.DrawImage(sicap, 403, 430 + copy, 40, 50);
+
+                    e1.Graphics.DrawString("SICAP V1.0.0", f06, brush, 397, 480 + copy);
+
+                    if(i.Equals(0))
+                        e1.Graphics.DrawString(line2, f06, brush, 0, 515 + copy);
+                }
+
+                pen.Dispose();
+            };
+
+            try
+            {
+                using (var printer = new posb.Config())
+                {
+                    p.PrinterSettings.PrinterName = printer.Printer();
+                }
+
+                p.Print();
+            }
+            catch (Exception ex)
+            {
+                this.Alert("Ocurrió un error al intentar imprimir el ticket. Descripcion: " + ex.Message, eForm.TypeError.Error);
+            }
+
+            return;
 
             if (this.ValidateForm())
             {

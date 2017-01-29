@@ -39,6 +39,8 @@ namespace WindowsFormsApplication1
         {
             this.ConfigureRol();
             this.AddStatusBar();
+
+            PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
         }
 
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)

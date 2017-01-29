@@ -269,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 283);
+            this.ClientSize = new System.Drawing.Size(474, 286);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtObservations);
             this.Controls.Add(this.pbVal_cmbMonth);
@@ -290,6 +290,7 @@
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnExit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Payment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

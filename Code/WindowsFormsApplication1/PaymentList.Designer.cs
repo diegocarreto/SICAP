@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentList));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -54,6 +54,14 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbYear = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpDate2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDate1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,6 +121,7 @@
             this.cmbWaterIntake.Name = "cmbWaterIntake";
             this.cmbWaterIntake.Size = new System.Drawing.Size(277, 21);
             this.cmbWaterIntake.TabIndex = 15;
+            this.cmbWaterIntake.SelectedIndexChanged += new System.EventHandler(this.cmbWaterIntake_SelectedIndexChanged);
             // 
             // comboBox3
             // 
@@ -147,6 +156,8 @@
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(1057, 20);
             this.txtFind.TabIndex = 19;
+            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
+            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
             // 
             // label6
             // 
@@ -249,8 +260,8 @@
             // Monto
             // 
             this.Monto.DataPropertyName = "amount";
-            dataGridViewCellStyle2.Format = "N2";
-            this.Monto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            this.Monto.DefaultCellStyle = dataGridViewCellStyle1;
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
@@ -286,11 +297,93 @@
             this.Alta.ReadOnly = true;
             this.Alta.Width = 130;
             // 
+            // cmbMonth
+            // 
+            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Location = new System.Drawing.Point(406, 65);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(196, 21);
+            this.cmbMonth.TabIndex = 102;
+            this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(374, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(30, 13);
+            this.label7.TabIndex = 104;
+            this.label7.Text = "Mes:";
+            // 
+            // cmbYear
+            // 
+            this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbYear.FormattingEnabled = true;
+            this.cmbYear.Location = new System.Drawing.Point(406, 38);
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Size = new System.Drawing.Size(195, 21);
+            this.cmbYear.TabIndex = 101;
+            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(375, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.TabIndex = 103;
+            this.label8.Text = "Año:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(625, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.TabIndex = 108;
+            this.label9.Text = "Fin:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(614, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 107;
+            this.label10.Text = "Inicio:";
+            // 
+            // dtpDate2
+            // 
+            this.dtpDate2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDate2.Location = new System.Drawing.Point(655, 65);
+            this.dtpDate2.Name = "dtpDate2";
+            this.dtpDate2.Size = new System.Drawing.Size(114, 20);
+            this.dtpDate2.TabIndex = 106;
+            this.dtpDate2.ValueChanged += new System.EventHandler(this.dtpDate2_ValueChanged);
+            // 
+            // dtpDate1
+            // 
+            this.dtpDate1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDate1.Location = new System.Drawing.Point(655, 38);
+            this.dtpDate1.Name = "dtpDate1";
+            this.dtpDate1.Size = new System.Drawing.Size(114, 20);
+            this.dtpDate1.TabIndex = 105;
+            this.dtpDate1.ValueChanged += new System.EventHandler(this.dtpDate1_ValueChanged);
+            // 
             // PaymentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 559);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dtpDate2);
+            this.Controls.Add(this.dtpDate1);
+            this.Controls.Add(this.cmbMonth);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbYear);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.gvList);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -312,7 +405,7 @@
             this.MaximizeBox = false;
             this.Name = "PaymentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Habitantes";
+            this.Text = "Pagos";
             this.Load += new System.EventHandler(this.HabitantList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
             this.ResumeLayout(false);
@@ -346,5 +439,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alta;
+        private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbYear;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dtpDate2;
+        private System.Windows.Forms.DateTimePicker dtpDate1;
     }
 }

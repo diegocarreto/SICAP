@@ -18,11 +18,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene una lista del tipo de objectos indicado con el merge entre las propiedades del objeto y el resulset obtenido de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public List<T> ExeList<T>(String nameHabitant = null, int? idWaterIntake = null, int? month = null, int? year = null) where T : new()
+        public List<T> ExeList<T>(String nameHabitant = null, int? idHabitant = null, int? idWaterIntake = null, int? month = null, int? year = null, DateTime? startDate = null, DateTime? finishDate = null) where T : new()
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@nameHabitant", SqlDbType.VarChar, nameHabitant, 200).Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@month", SqlDbType.Int, month, null).Add("@year", SqlDbType.Int, year, null);
+        	parameters.Add("@nameHabitant", SqlDbType.VarChar, nameHabitant, 200).Add("@idHabitant", SqlDbType.Int, idHabitant, null).Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@month", SqlDbType.Int, month, null).Add("@year", SqlDbType.Int, year, null).Add("@startDate", SqlDbType.Date, startDate, null).Add("@finishDate", SqlDbType.Date, finishDate, null);
 
         	return this.GetListBase<T>("SICAP", "PaymentList",parameters.ToArray());
         }
@@ -31,11 +31,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene el scalar resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public T ExeScalar<T>(String nameHabitant = null, int? idWaterIntake = null, int? month = null, int? year = null)
+        public T ExeScalar<T>(String nameHabitant = null, int? idHabitant = null, int? idWaterIntake = null, int? month = null, int? year = null, DateTime? startDate = null, DateTime? finishDate = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@nameHabitant", SqlDbType.VarChar, nameHabitant, 200).Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@month", SqlDbType.Int, month, null).Add("@year", SqlDbType.Int, year, null);
+        	parameters.Add("@nameHabitant", SqlDbType.VarChar, nameHabitant, 200).Add("@idHabitant", SqlDbType.Int, idHabitant, null).Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@month", SqlDbType.Int, month, null).Add("@year", SqlDbType.Int, year, null).Add("@startDate", SqlDbType.Date, startDate, null).Add("@finishDate", SqlDbType.Date, finishDate, null);
 
         	return this.ExecuteScalar<T>("SICAP", "PaymentList",parameters.ToArray());
         }
@@ -44,11 +44,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Ejecuta el procedimiento almacenado.
         /// </summary>
         /// <returns></returns>
-        public int ExeNonQuery(String nameHabitant = null, int? idWaterIntake = null, int? month = null, int? year = null)
+        public int ExeNonQuery(String nameHabitant = null, int? idHabitant = null, int? idWaterIntake = null, int? month = null, int? year = null, DateTime? startDate = null, DateTime? finishDate = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@nameHabitant", SqlDbType.VarChar, nameHabitant, 200).Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@month", SqlDbType.Int, month, null).Add("@year", SqlDbType.Int, year, null);
+        	parameters.Add("@nameHabitant", SqlDbType.VarChar, nameHabitant, 200).Add("@idHabitant", SqlDbType.Int, idHabitant, null).Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@month", SqlDbType.Int, month, null).Add("@year", SqlDbType.Int, year, null).Add("@startDate", SqlDbType.Date, startDate, null).Add("@finishDate", SqlDbType.Date, finishDate, null);
 
         	return this.ExecuteNonQuery("SICAP", "PaymentList",parameters.ToArray());
         }
@@ -57,11 +57,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene un objeto IDataReader resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public IDataReader ExeReader(String nameHabitant = null, int? idWaterIntake = null, int? month = null, int? year = null)
+        public IDataReader ExeReader(String nameHabitant = null, int? idHabitant = null, int? idWaterIntake = null, int? month = null, int? year = null, DateTime? startDate = null, DateTime? finishDate = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@nameHabitant", SqlDbType.VarChar, nameHabitant, 200).Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@month", SqlDbType.Int, month, null).Add("@year", SqlDbType.Int, year, null);
+        	parameters.Add("@nameHabitant", SqlDbType.VarChar, nameHabitant, 200).Add("@idHabitant", SqlDbType.Int, idHabitant, null).Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@month", SqlDbType.Int, month, null).Add("@year", SqlDbType.Int, year, null).Add("@startDate", SqlDbType.Date, startDate, null).Add("@finishDate", SqlDbType.Date, finishDate, null);
 
         	return this.GetReader("SICAP", "PaymentList",parameters.ToArray());
         }

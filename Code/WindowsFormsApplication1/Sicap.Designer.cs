@@ -32,7 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sicap));
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bloquearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnArchivoReiniciar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnArchivoSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.habitantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +53,6 @@
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.bloquearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,20 +71,32 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(127, 6);
+            // 
+            // bloquearToolStripMenuItem
+            // 
+            this.bloquearToolStripMenuItem.Name = "bloquearToolStripMenuItem";
+            this.bloquearToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.bloquearToolStripMenuItem.Text = "Bloquear...";
+            this.bloquearToolStripMenuItem.Click += new System.EventHandler(this.bloquearToolStripMenuItem_Click);
             // 
             // mnArchivoReiniciar
             // 
             this.mnArchivoReiniciar.Name = "mnArchivoReiniciar";
-            this.mnArchivoReiniciar.Size = new System.Drawing.Size(152, 22);
+            this.mnArchivoReiniciar.Size = new System.Drawing.Size(130, 22);
             this.mnArchivoReiniciar.Text = "Reiniciar";
             this.mnArchivoReiniciar.Click += new System.EventHandler(this.mnArchivoReiniciar_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(127, 6);
             // 
             // mnArchivoSalir
             // 
             this.mnArchivoSalir.Image = ((System.Drawing.Image)(resources.GetObject("mnArchivoSalir.Image")));
             this.mnArchivoSalir.Name = "mnArchivoSalir";
-            this.mnArchivoSalir.Size = new System.Drawing.Size(152, 22);
+            this.mnArchivoSalir.Size = new System.Drawing.Size(130, 22);
             this.mnArchivoSalir.Text = "Salir";
             this.mnArchivoSalir.Click += new System.EventHandler(this.mnArchivoSalir_Click);
             // 
@@ -220,18 +232,6 @@
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.opcionesToolStripMenuItem.Text = "Opciones...";
             this.opcionesToolStripMenuItem.Click += new System.EventHandler(this.opcionesToolStripMenuItem_Click);
-            // 
-            // bloquearToolStripMenuItem
-            // 
-            this.bloquearToolStripMenuItem.Name = "bloquearToolStripMenuItem";
-            this.bloquearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bloquearToolStripMenuItem.Text = "Bloquear...";
-            this.bloquearToolStripMenuItem.Click += new System.EventHandler(this.bloquearToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // Sicap
             // 
