@@ -12,6 +12,8 @@ namespace PosBusiness
 
         #region Properties
 
+        public string Nombre { get; set; }
+
         public string Paterno { get; set; }
 
         public string Materno { get; set; }
@@ -46,6 +48,7 @@ namespace PosBusiness
             {
                 var e = this.List().First();
 
+                this.Nombre = e.Nombre;
                 this.Name = e.Name;
                 this.Paterno = e.Paterno;
                 this.Materno = e.Materno;

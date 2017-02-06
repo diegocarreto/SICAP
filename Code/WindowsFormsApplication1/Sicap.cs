@@ -12,6 +12,8 @@ namespace WindowsFormsApplication1
 
         #region Members
 
+        private HabitantFaenasList HabitantFaenasList = null;
+
         private FaenasList FaenasList = null;
 
         private InputOutputsList InputOutputsList = null; 
@@ -213,6 +215,16 @@ namespace WindowsFormsApplication1
             this.Hide();
 
             this.Login.Show();
+        }
+
+        private void Sicap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Login.Close();
+        }
+
+        private void cooperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HabitantFaenasList = ShowOrActiveForm(HabitantFaenasList, typeof(HabitantFaenasList)) as HabitantFaenasList;
         }
     }
 }

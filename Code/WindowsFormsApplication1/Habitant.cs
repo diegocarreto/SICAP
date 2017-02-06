@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
                 this.cmbMonth.Items.Add(months[i]);
             }
 
-            var currentMonth = DateTime.Now.Month + 1;
+            var currentMonth = DateTime.Now.Month;
 
             this.cmbMonth.SelectedIndex = currentMonth;
         }
@@ -77,7 +77,7 @@ namespace WindowsFormsApplication1
             {
                 e.Get();
 
-                this.txtName.Text = e.Name;
+                this.txtName.Text = e.Nombre;
                 this.txtLastName.Text = e.Paterno;
                 this.txtMotherLastName.Text = e.Materno;
                 this.txtObservations.Text = e.observations;

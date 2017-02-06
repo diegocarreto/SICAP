@@ -90,6 +90,8 @@
             // 
             // cmbStreet
             // 
+            this.cmbStreet.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbStreet.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbStreet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStreet.FormattingEnabled = true;
             this.cmbStreet.Location = new System.Drawing.Point(63, 34);
@@ -236,6 +238,8 @@
             // 
             // cmbHabitant
             // 
+            this.cmbHabitant.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbHabitant.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbHabitant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHabitant.FormattingEnabled = true;
             this.cmbHabitant.Location = new System.Drawing.Point(63, 7);

@@ -62,11 +62,16 @@
     <Compile Include="MsSQL\SICAP\FaenaAdd.cs" />
     <Compile Include="MsSQL\SICAP\FaenaDelete.cs" />
     <Compile Include="MsSQL\SICAP\FaenaList.cs" />
+    <Compile Include="MsSQL\SICAP\faenaPrint.cs" />
     <Compile Include="MsSQL\SICAP\FaenasAdd.cs" />
     <Compile Include="MsSQL\SICAP\FaenasUpdate.cs" />
     <Compile Include="MsSQL\SICAP\FaenaUpdate.cs" />
     <Compile Include="MsSQL\SICAP\HabitantAdd.cs" />
     <Compile Include="MsSQL\SICAP\HabitantDelete.cs" />
+    <Compile Include="MsSQL\SICAP\habitantFaenaAdd.cs" />
+    <Compile Include="MsSQL\SICAP\habitantFaenaList.cs" />
+    <Compile Include="MsSQL\SICAP\habitantFaenaPaidOutDelete.cs" />
+    <Compile Include="MsSQL\SICAP\habitantFaenaPaidOutList.cs" />
     <Compile Include="MsSQL\SICAP\HabitantList.cs" />
     <Compile Include="MsSQL\SICAP\HabitantUpdate.cs" />
     <Compile Include="MsSQL\SICAP\PaymentAdd.cs" />
@@ -74,6 +79,7 @@
     <Compile Include="MsSQL\SICAP\PaymentExist.cs" />
     <Compile Include="MsSQL\SICAP\PaymentList.cs" />
     <Compile Include="MsSQL\SICAP\PaymentPerYear.cs" />
+    <Compile Include="MsSQL\SICAP\paymentPrint.cs" />
     <Compile Include="MsSQL\SICAP\PaymentTotalByPeriod.cs" />
     <Compile Include="MsSQL\SICAP\PaymentUpdate.cs" />
     <Compile Include="MsSQL\SICAP\RolGet.cs" />

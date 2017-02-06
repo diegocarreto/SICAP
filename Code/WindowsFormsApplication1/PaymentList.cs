@@ -19,6 +19,23 @@ namespace WindowsFormsApplication1
 
         private posb.Payment Entity { get; set; }
 
+        private int EntityId
+        {
+            get
+            {
+                return int.Parse(gvList[0, this.SelectRowIndex].Value.ToString());
+            }
+        }
+
+        private int SelectRowIndex
+        {
+            get
+            {
+                return gvList.CurrentRow.Index;
+            }
+        }
+
+
         #endregion #endregion
 
         public PaymentList()
@@ -37,6 +54,9 @@ namespace WindowsFormsApplication1
 
             this.cmbMonth.SelectedIndex = 0;
             this.cmbYear.SelectedIndex = 0;
+
+            this.cmbEndMonth.SelectedIndex = 0;
+            this.cmbEndYear.SelectedIndex = 0;
 
             this.LoadComplete = true;
 
@@ -80,10 +100,25 @@ namespace WindowsFormsApplication1
                 else
                     this.Entity.IdWaterIntake = null;
 
+                if (this.cmbYear.SelectedIndex > 0)
+                    this.Entity.Year = int.Parse(this.cmbYear.SelectedItem.ToString());
+                else
+                    this.Entity.Year = null;
+
                 if (this.cmbMonth.SelectedIndex > 0)
                     this.Entity.Month = this.cmbMonth.SelectedIndex;
                 else
                     this.Entity.Month = null;
+
+                if (this.cmbEndYear.SelectedIndex > 0)
+                    this.Entity.YearEnd = int.Parse(this.cmbEndYear.SelectedItem.ToString());
+                else
+                    this.Entity.YearEnd = null;
+
+                if (this.cmbEndMonth.SelectedIndex > 0)
+                    this.Entity.MonthEnd = this.cmbEndMonth.SelectedIndex;
+                else
+                    this.Entity.MonthEnd = null;
 
                 this.gvList.AutoGenerateColumns = false;
                 this.gvList.AllowUserToResizeColumns = false;
@@ -129,10 +164,12 @@ namespace WindowsFormsApplication1
         private void FillYears()
         {
             this.cmbYear.Items.Add("Seleccionar...");
+            this.cmbEndYear.Items.Add("Seleccionar...");
 
             for (int i = 1995; i < 2050; i++)
             {
                 this.cmbYear.Items.Add(i);
+                this.cmbEndYear.Items.Add(i);
             }
 
             //var currentYear = DateTime.Now.Year.ToString();
@@ -146,10 +183,12 @@ namespace WindowsFormsApplication1
                                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
             this.cmbMonth.Items.Add("Seleccionar...");
+            this.cmbEndMonth.Items.Add("Seleccionar...");
 
             for (int i = 0; i < months.Length; i++)
             {
                 this.cmbMonth.Items.Add(months[i]);
+                this.cmbEndMonth.Items.Add(months[i]);
             }
 
             //var currentMonth = DateTime.Now.Month + 1;
@@ -174,7 +213,7 @@ namespace WindowsFormsApplication1
 
         private void txtFind_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void txtFind_KeyUp(object sender, KeyEventArgs e)
@@ -201,6 +240,57 @@ namespace WindowsFormsApplication1
         private void dtpDate2_ValueChanged(object sender, EventArgs e)
         {
             this.FillGridView();
+        }
+
+        private void gvList_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            this.gvList.Cursor = Cursors.Default;
+        }
+
+        private void gvList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex.Equals(8))
+                this.gvList.Cursor = Cursors.Hand;
+            else
+                this.gvList.Cursor = Cursors.Default;
+        }
+
+        private void gvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex.Equals(8) && this.UpdateButton && gvList[8, this.SelectRowIndex].Value.ToString().Equals("Activo", StringComparison.InvariantCultureIgnoreCase))
+            {
+                if (this.Confirm("¿Deseas imprimir el recibo?"))
+                {
+                    this.Print(this.EntityId);
+                }
+            }
+        }
+
+        private void cmbEndYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.FillGridView();
+        }
+
+        private void cmbEndMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.FillGridView();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.Confirm("¿Realmente deseas cancelar el pago [" + this.EntityId + "]?"))
+            {
+                this.Entity.Id = this.EntityId;
+
+                if (this.Entity.Delete())
+                {
+                    this.Entity.Id = null;
+
+                    this.FillGridView();
+                }
+                else
+                    this.Alert("Ocurrió un error al intentar cancelar el pago [" + this.EntityId + "]", eForm.TypeError.Error);
+            }
         }
     }
 }

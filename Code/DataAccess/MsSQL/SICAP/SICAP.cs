@@ -69,6 +69,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Faenalist Faenalist = new DataAccess.MsSqlCommands.Sicap.Faenalist();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Faenaprint.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Faenaprint Faenaprint = new DataAccess.MsSqlCommands.Sicap.Faenaprint();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Faenaupdate.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Faenaupdate Faenaupdate = new DataAccess.MsSqlCommands.Sicap.Faenaupdate();
@@ -82,6 +87,26 @@ namespace DataAccess.MSSQL.Sicap
 		/// Controla la ejecucion del procedimiento almacenado Habitantdelete.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Habitantdelete Habitantdelete = new DataAccess.MsSqlCommands.Sicap.Habitantdelete();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Habitantfaenaadd.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Habitantfaenaadd Habitantfaenaadd = new DataAccess.MsSqlCommands.Sicap.Habitantfaenaadd();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Habitantfaenalist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Habitantfaenalist Habitantfaenalist = new DataAccess.MsSqlCommands.Sicap.Habitantfaenalist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Habitantfaenapaidoutdelete.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Habitantfaenapaidoutdelete Habitantfaenapaidoutdelete = new DataAccess.MsSqlCommands.Sicap.Habitantfaenapaidoutdelete();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Habitantfaenapaidoutlist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Habitantfaenapaidoutlist Habitantfaenapaidoutlist = new DataAccess.MsSqlCommands.Sicap.Habitantfaenapaidoutlist();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Habitantlist.
@@ -117,6 +142,11 @@ namespace DataAccess.MSSQL.Sicap
 		/// Controla la ejecucion del procedimiento almacenado Paymentperyear.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Paymentperyear Paymentperyear = new DataAccess.MsSqlCommands.Sicap.Paymentperyear();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Paymentprint.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Paymentprint Paymentprint = new DataAccess.MsSqlCommands.Sicap.Paymentprint();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Paymenttotalbyperiod.
@@ -198,6 +228,9 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Faenalist != null)
 				this.Faenalist.Dispose();
 
+			if (this.Faenaprint != null)
+				this.Faenaprint.Dispose();
+
 			if (this.Faenaupdate != null)
 				this.Faenaupdate.Dispose();
 
@@ -206,6 +239,18 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Habitantdelete != null)
 				this.Habitantdelete.Dispose();
+
+			if (this.Habitantfaenaadd != null)
+				this.Habitantfaenaadd.Dispose();
+
+			if (this.Habitantfaenalist != null)
+				this.Habitantfaenalist.Dispose();
+
+			if (this.Habitantfaenapaidoutdelete != null)
+				this.Habitantfaenapaidoutdelete.Dispose();
+
+			if (this.Habitantfaenapaidoutlist != null)
+				this.Habitantfaenapaidoutlist.Dispose();
 
 			if (this.Habitantlist != null)
 				this.Habitantlist.Dispose();
@@ -227,6 +272,9 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Paymentperyear != null)
 				this.Paymentperyear.Dispose();
+
+			if (this.Paymentprint != null)
+				this.Paymentprint.Dispose();
 
 			if (this.Paymenttotalbyperiod != null)
 				this.Paymenttotalbyperiod.Dispose();

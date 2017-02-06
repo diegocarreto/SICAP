@@ -30,47 +30,272 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentList));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpDate2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDate1 = new System.Windows.Forms.DateTimePicker();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbYear = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.gvList = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblDeuda = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtFind = new System.Windows.Forms.TextBox();
+            this.cbDeuda = new System.Windows.Forms.CheckBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbWaterIntake = new System.Windows.Forms.ComboBox();
+            this.cmbHabitant = new System.Windows.Forms.ComboBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.cmbHabitant = new System.Windows.Forms.ComboBox();
-            this.cmbWaterIntake = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txtFind = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cmbEndMonth = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.gvList = new System.Windows.Forms.DataGridView();
+            this.cmbEndYear = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbMonth = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbYear = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtpDate2 = new System.Windows.Forms.DateTimePicker();
-            this.dtpDate1 = new System.Windows.Forms.DateTimePicker();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1023, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.TabIndex = 108;
+            this.label9.Text = "Fin:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1012, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 107;
+            this.label10.Text = "Inicio:";
+            // 
+            // dtpDate2
+            // 
+            this.dtpDate2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDate2.Location = new System.Drawing.Point(1053, 65);
+            this.dtpDate2.Name = "dtpDate2";
+            this.dtpDate2.Size = new System.Drawing.Size(114, 20);
+            this.dtpDate2.TabIndex = 106;
+            this.dtpDate2.ValueChanged += new System.EventHandler(this.dtpDate2_ValueChanged);
+            // 
+            // dtpDate1
+            // 
+            this.dtpDate1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDate1.Location = new System.Drawing.Point(1053, 38);
+            this.dtpDate1.Name = "dtpDate1";
+            this.dtpDate1.Size = new System.Drawing.Size(114, 20);
+            this.dtpDate1.TabIndex = 105;
+            this.dtpDate1.ValueChanged += new System.EventHandler(this.dtpDate1_ValueChanged);
+            // 
+            // cmbMonth
+            // 
+            this.cmbMonth.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbMonth.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Location = new System.Drawing.Point(471, 65);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(196, 21);
+            this.cmbMonth.TabIndex = 102;
+            this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(405, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 104;
+            this.label7.Text = "Mes Inicial:";
+            // 
+            // cmbYear
+            // 
+            this.cmbYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbYear.FormattingEnabled = true;
+            this.cmbYear.Location = new System.Drawing.Point(471, 38);
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Size = new System.Drawing.Size(195, 21);
+            this.cmbYear.TabIndex = 101;
+            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(406, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 103;
+            this.label8.Text = "Año Inicial:";
+            // 
+            // gvList
+            // 
+            this.gvList.AllowUserToAddRows = false;
+            this.gvList.AllowUserToDeleteRows = false;
+            this.gvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column8,
+            this.Column5,
+            this.Monto,
+            this.Column3,
+            this.Column4,
+            this.Column6,
+            this.Alta,
+            this.Column7});
+            this.gvList.Location = new System.Drawing.Point(6, 115);
+            this.gvList.Name = "gvList";
+            this.gvList.ReadOnly = true;
+            this.gvList.Size = new System.Drawing.Size(1242, 408);
+            this.gvList.TabIndex = 33;
+            this.gvList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_CellMouseDoubleClick);
+            this.gvList.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvList_CellMouseLeave);
+            this.gvList.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_CellMouseMove);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Busqueda:";
+            // 
+            // lblDeuda
+            // 
+            this.lblDeuda.AutoSize = true;
+            this.lblDeuda.Location = new System.Drawing.Point(4, 92);
+            this.lblDeuda.Name = "lblDeuda";
+            this.lblDeuda.Size = new System.Drawing.Size(78, 13);
+            this.lblDeuda.TabIndex = 31;
+            this.lblDeuda.Text = "Mostrar deuda:";
+            this.lblDeuda.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1412, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Mes:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1413, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Año:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Toma de agua:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Habitante:";
+            // 
+            // txtFind
+            // 
+            this.txtFind.Location = new System.Drawing.Point(87, 12);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(1161, 20);
+            this.txtFind.TabIndex = 19;
+            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
+            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
+            // 
+            // cbDeuda
+            // 
+            this.cbDeuda.AutoSize = true;
+            this.cbDeuda.Location = new System.Drawing.Point(87, 92);
+            this.cbDeuda.Name = "cbDeuda";
+            this.cbDeuda.Size = new System.Drawing.Size(15, 14);
+            this.cbDeuda.TabIndex = 18;
+            this.cbDeuda.UseVisualStyleBackColor = true;
+            this.cbDeuda.Visible = false;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(1448, 98);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(277, 21);
+            this.comboBox4.TabIndex = 17;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(1448, 71);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(277, 21);
+            this.comboBox3.TabIndex = 16;
+            // 
+            // cmbWaterIntake
+            // 
+            this.cmbWaterIntake.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbWaterIntake.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbWaterIntake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWaterIntake.FormattingEnabled = true;
+            this.cmbWaterIntake.Location = new System.Drawing.Point(87, 65);
+            this.cmbWaterIntake.Name = "cmbWaterIntake";
+            this.cmbWaterIntake.Size = new System.Drawing.Size(277, 21);
+            this.cmbWaterIntake.TabIndex = 15;
+            this.cmbWaterIntake.SelectedIndexChanged += new System.EventHandler(this.cmbWaterIntake_SelectedIndexChanged);
+            // 
+            // cmbHabitant
+            // 
+            this.cmbHabitant.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbHabitant.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbHabitant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHabitant.FormattingEnabled = true;
+            this.cmbHabitant.Location = new System.Drawing.Point(87, 38);
+            this.cmbHabitant.Name = "cmbHabitant";
+            this.cmbHabitant.Size = new System.Drawing.Size(277, 21);
+            this.cmbHabitant.TabIndex = 14;
+            this.cmbHabitant.SelectedIndexChanged += new System.EventHandler(this.cmbHabitant_SelectedIndexChanged);
             // 
             // btnNew
             // 
             this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNew.Location = new System.Drawing.Point(907, 529);
+            this.btnNew.Location = new System.Drawing.Point(1011, 529);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 12;
@@ -83,19 +308,21 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(988, 529);
+            this.btnDelete.Location = new System.Drawing.Point(1092, 529);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 11;
-            this.btnDelete.Text = "    Borrar";
+            this.btnDelete.Text = "Cancelar";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnExit
             // 
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(1069, 529);
+            this.btnExit.Location = new System.Drawing.Point(1173, 529);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 10;
@@ -103,135 +330,47 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // cmbHabitant
+            // cmbEndMonth
             // 
-            this.cmbHabitant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbHabitant.FormattingEnabled = true;
-            this.cmbHabitant.Location = new System.Drawing.Point(87, 38);
-            this.cmbHabitant.Name = "cmbHabitant";
-            this.cmbHabitant.Size = new System.Drawing.Size(277, 21);
-            this.cmbHabitant.TabIndex = 14;
-            this.cmbHabitant.SelectedIndexChanged += new System.EventHandler(this.cmbHabitant_SelectedIndexChanged);
-            // 
-            // cmbWaterIntake
-            // 
-            this.cmbWaterIntake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbWaterIntake.FormattingEnabled = true;
-            this.cmbWaterIntake.Location = new System.Drawing.Point(87, 65);
-            this.cmbWaterIntake.Name = "cmbWaterIntake";
-            this.cmbWaterIntake.Size = new System.Drawing.Size(277, 21);
-            this.cmbWaterIntake.TabIndex = 15;
-            this.cmbWaterIntake.SelectedIndexChanged += new System.EventHandler(this.cmbWaterIntake_SelectedIndexChanged);
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(1448, 71);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(277, 21);
-            this.comboBox3.TabIndex = 16;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(1448, 98);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(277, 21);
-            this.comboBox4.TabIndex = 17;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(87, 92);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // txtFind
-            // 
-            this.txtFind.Location = new System.Drawing.Point(87, 12);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(1057, 20);
-            this.txtFind.TabIndex = 19;
-            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
-            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Habitante:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Toma de agua:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1413, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Año:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1412, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Mes:";
+            this.cmbEndMonth.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbEndMonth.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEndMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEndMonth.FormattingEnabled = true;
+            this.cmbEndMonth.Location = new System.Drawing.Point(774, 65);
+            this.cmbEndMonth.Name = "cmbEndMonth";
+            this.cmbEndMonth.Size = new System.Drawing.Size(196, 21);
+            this.cmbEndMonth.TabIndex = 110;
+            this.cmbEndMonth.SelectedIndexChanged += new System.EventHandler(this.cmbEndMonth_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 95);
+            this.label4.Location = new System.Drawing.Point(713, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Mostrar deuda:";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 112;
+            this.label4.Text = "Mes Final:";
             // 
-            // label5
+            // cmbEndYear
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Busqueda:";
+            this.cmbEndYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbEndYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEndYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEndYear.FormattingEnabled = true;
+            this.cmbEndYear.Location = new System.Drawing.Point(774, 38);
+            this.cmbEndYear.Name = "cmbEndYear";
+            this.cmbEndYear.Size = new System.Drawing.Size(195, 21);
+            this.cmbEndYear.TabIndex = 109;
+            this.cmbEndYear.SelectedIndexChanged += new System.EventHandler(this.cmbEndYear_SelectedIndexChanged);
             // 
-            // gvList
+            // label11
             // 
-            this.gvList.AllowUserToAddRows = false;
-            this.gvList.AllowUserToDeleteRows = false;
-            this.gvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column5,
-            this.Monto,
-            this.Column3,
-            this.Column4,
-            this.Column6,
-            this.Alta});
-            this.gvList.Location = new System.Drawing.Point(6, 115);
-            this.gvList.Name = "gvList";
-            this.gvList.ReadOnly = true;
-            this.gvList.Size = new System.Drawing.Size(1138, 408);
-            this.gvList.TabIndex = 33;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(713, 41);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.TabIndex = 111;
+            this.label11.Text = "Año Final:";
             // 
             // Column1
             // 
@@ -239,7 +378,7 @@
             this.Column1.HeaderText = "Folio";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 60;
+            this.Column1.Width = 50;
             // 
             // Column2
             // 
@@ -249,13 +388,21 @@
             this.Column2.ReadOnly = true;
             this.Column2.Width = 180;
             // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "idWaterIntake";
+            this.Column8.HeaderText = "AP";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 80;
+            // 
             // Column5
             // 
             this.Column5.DataPropertyName = "Direccion";
             this.Column5.HeaderText = "Toma";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 250;
+            this.Column5.Width = 190;
             // 
             // Monto
             // 
@@ -265,19 +412,19 @@
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
+            this.Monto.Width = 70;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "year";
-            this.Column3.HeaderText = "Año";
+            this.Column3.DataPropertyName = "StartDateName";
+            this.Column3.HeaderText = "Fecha Inicial";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 60;
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "MonthName";
-            this.Column4.HeaderText = "Mes";
+            this.Column4.DataPropertyName = "EndDateName";
+            this.Column4.HeaderText = "Fecha Final";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
@@ -297,85 +444,23 @@
             this.Alta.ReadOnly = true;
             this.Alta.Width = 130;
             // 
-            // cmbMonth
+            // Column7
             // 
-            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMonth.FormattingEnabled = true;
-            this.cmbMonth.Location = new System.Drawing.Point(406, 65);
-            this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(196, 21);
-            this.cmbMonth.TabIndex = 102;
-            this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(374, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 13);
-            this.label7.TabIndex = 104;
-            this.label7.Text = "Mes:";
-            // 
-            // cmbYear
-            // 
-            this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(406, 38);
-            this.cmbYear.Name = "cmbYear";
-            this.cmbYear.Size = new System.Drawing.Size(195, 21);
-            this.cmbYear.TabIndex = 101;
-            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(375, 41);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 103;
-            this.label8.Text = "Año:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(625, 68);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 13);
-            this.label9.TabIndex = 108;
-            this.label9.Text = "Fin:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(614, 41);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 107;
-            this.label10.Text = "Inicio:";
-            // 
-            // dtpDate2
-            // 
-            this.dtpDate2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDate2.Location = new System.Drawing.Point(655, 65);
-            this.dtpDate2.Name = "dtpDate2";
-            this.dtpDate2.Size = new System.Drawing.Size(114, 20);
-            this.dtpDate2.TabIndex = 106;
-            this.dtpDate2.ValueChanged += new System.EventHandler(this.dtpDate2_ValueChanged);
-            // 
-            // dtpDate1
-            // 
-            this.dtpDate1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDate1.Location = new System.Drawing.Point(655, 38);
-            this.dtpDate1.Name = "dtpDate1";
-            this.dtpDate1.Size = new System.Drawing.Size(114, 20);
-            this.dtpDate1.TabIndex = 105;
-            this.dtpDate1.ValueChanged += new System.EventHandler(this.dtpDate1_ValueChanged);
+            this.Column7.DataPropertyName = "Printbtn";
+            this.Column7.HeaderText = "Estatus";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 70;
             // 
             // PaymentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 559);
+            this.ClientSize = new System.Drawing.Size(1260, 559);
+            this.Controls.Add(this.cmbEndMonth);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbEndYear);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpDate2);
@@ -386,13 +471,13 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.gvList);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblDeuda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtFind);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbDeuda);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.cmbWaterIntake);
@@ -422,23 +507,15 @@
         private System.Windows.Forms.ComboBox cmbWaterIntake;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbDeuda;
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblDeuda;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView gvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Alta;
         private System.Windows.Forms.ComboBox cmbMonth;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbYear;
@@ -447,5 +524,19 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpDate2;
         private System.Windows.Forms.DateTimePicker dtpDate1;
+        private System.Windows.Forms.ComboBox cmbEndMonth;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbEndYear;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Alta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

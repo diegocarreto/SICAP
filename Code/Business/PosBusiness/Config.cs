@@ -15,6 +15,10 @@ namespace PosBusiness
 
         private const string PRINTER = "printer";
 
+        private const string TESORERO = "tesorero";
+
+        private const string PRESIDENTE = "presidente";
+
         #endregion
 
         #region Properties
@@ -97,6 +101,49 @@ namespace PosBusiness
                 return string.Empty;
             }
         }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public string Tesorero(string Value = "")
+        {
+            if (string.IsNullOrEmpty(Value))
+            {
+
+                var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(TESORERO);
+
+                return value;
+            }
+            else
+            {
+                this.AccessMsSql.Sicap.Configset.ExeNonQuery(TESORERO, Value);
+
+                return string.Empty;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public string Presidente(string Value = "")
+        {
+            if (string.IsNullOrEmpty(Value))
+            {
+
+                var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(PRESIDENTE);
+
+                return value;
+            }
+            else
+            {
+                this.AccessMsSql.Sicap.Configset.ExeNonQuery(PRESIDENTE, Value);
+
+                return string.Empty;
+            }
+        }
+
 
         #endregion
     }

@@ -49,6 +49,7 @@
             this.accionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradasYSalidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cooperacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -181,7 +182,8 @@
             // 
             this.accionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.entradasYSalidasToolStripMenuItem,
-            this.pagosToolStripMenuItem});
+            this.pagosToolStripMenuItem,
+            this.cooperacionesToolStripMenuItem});
             this.accionesToolStripMenuItem.Name = "accionesToolStripMenuItem";
             this.accionesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.accionesToolStripMenuItem.Text = "Acciones";
@@ -201,6 +203,14 @@
             this.pagosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.pagosToolStripMenuItem.Text = "Pagos...";
             this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
+            // 
+            // cooperacionesToolStripMenuItem
+            // 
+            this.cooperacionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cooperacionesToolStripMenuItem.Image")));
+            this.cooperacionesToolStripMenuItem.Name = "cooperacionesToolStripMenuItem";
+            this.cooperacionesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.cooperacionesToolStripMenuItem.Text = "Cooperaciones...";
+            this.cooperacionesToolStripMenuItem.Click += new System.EventHandler(this.cooperacionesToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -246,6 +256,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SICAP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Sicap_FormClosing);
             this.Load += new System.EventHandler(this.MaxShop_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -279,5 +290,6 @@
         private System.Windows.Forms.ToolStripMenuItem faenasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bloquearToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem cooperacionesToolStripMenuItem;
     }
 }

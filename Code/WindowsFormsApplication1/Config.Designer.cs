@@ -40,15 +40,23 @@
             this.pbval_txtMensualidad = new System.Windows.Forms.PictureBox();
             this.cmbPrinter = new System.Windows.Forms.ComboBox();
             this.pbval_cmbPrinter = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTesorero = new System.Windows.Forms.TextBox();
+            this.txtPresidente = new System.Windows.Forms.TextBox();
+            this.pbval_txtTesorero = new System.Windows.Forms.PictureBox();
+            this.pbval_txtPresidente = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtAlta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtMensualidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbPrinter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTesorero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbval_txtPresidente)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 67);
+            this.label3.Location = new System.Drawing.Point(13, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 21;
@@ -95,7 +103,7 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(179, 91);
+            this.btnAccept.Location = new System.Drawing.Point(179, 145);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 19;
@@ -108,7 +116,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(260, 91);
+            this.btnExit.Location = new System.Drawing.Point(260, 145);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 20;
@@ -144,9 +152,11 @@
             // 
             // cmbPrinter
             // 
+            this.cmbPrinter.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbPrinter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPrinter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPrinter.FormattingEnabled = true;
-            this.cmbPrinter.Location = new System.Drawing.Point(75, 64);
+            this.cmbPrinter.Location = new System.Drawing.Point(75, 118);
             this.cmbPrinter.Name = "cmbPrinter";
             this.cmbPrinter.Size = new System.Drawing.Size(260, 21);
             this.cmbPrinter.TabIndex = 14;
@@ -156,7 +166,7 @@
             this.pbval_cmbPrinter.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_cmbPrinter.Image = ((System.Drawing.Image)(resources.GetObject("pbval_cmbPrinter.Image")));
             this.pbval_cmbPrinter.InitialImage = null;
-            this.pbval_cmbPrinter.Location = new System.Drawing.Point(341, 68);
+            this.pbval_cmbPrinter.Location = new System.Drawing.Point(341, 121);
             this.pbval_cmbPrinter.Name = "pbval_cmbPrinter";
             this.pbval_cmbPrinter.Size = new System.Drawing.Size(18, 17);
             this.pbval_cmbPrinter.TabIndex = 30;
@@ -164,11 +174,79 @@
             this.pbval_cmbPrinter.Tag = "Indique la impresora";
             this.pbval_cmbPrinter.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Tesorero:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 95);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Presidente:";
+            // 
+            // txtTesorero
+            // 
+            this.txtTesorero.Location = new System.Drawing.Point(75, 64);
+            this.txtTesorero.MaxLength = 50;
+            this.txtTesorero.Name = "txtTesorero";
+            this.txtTesorero.Size = new System.Drawing.Size(260, 20);
+            this.txtTesorero.TabIndex = 33;
+            this.txtTesorero.Tag = "";
+            // 
+            // txtPresidente
+            // 
+            this.txtPresidente.Location = new System.Drawing.Point(75, 92);
+            this.txtPresidente.MaxLength = 50;
+            this.txtPresidente.Name = "txtPresidente";
+            this.txtPresidente.Size = new System.Drawing.Size(260, 20);
+            this.txtPresidente.TabIndex = 34;
+            this.txtPresidente.Tag = "";
+            // 
+            // pbval_txtTesorero
+            // 
+            this.pbval_txtTesorero.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pbval_txtTesorero.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtTesorero.Image")));
+            this.pbval_txtTesorero.InitialImage = null;
+            this.pbval_txtTesorero.Location = new System.Drawing.Point(341, 64);
+            this.pbval_txtTesorero.Name = "pbval_txtTesorero";
+            this.pbval_txtTesorero.Size = new System.Drawing.Size(18, 17);
+            this.pbval_txtTesorero.TabIndex = 35;
+            this.pbval_txtTesorero.TabStop = false;
+            this.pbval_txtTesorero.Tag = "Ingrese el tesorero";
+            this.pbval_txtTesorero.Visible = false;
+            // 
+            // pbval_txtPresidente
+            // 
+            this.pbval_txtPresidente.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pbval_txtPresidente.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtPresidente.Image")));
+            this.pbval_txtPresidente.InitialImage = null;
+            this.pbval_txtPresidente.Location = new System.Drawing.Point(341, 91);
+            this.pbval_txtPresidente.Name = "pbval_txtPresidente";
+            this.pbval_txtPresidente.Size = new System.Drawing.Size(18, 17);
+            this.pbval_txtPresidente.TabIndex = 36;
+            this.pbval_txtPresidente.TabStop = false;
+            this.pbval_txtPresidente.Tag = "Ingrese el presidente";
+            this.pbval_txtPresidente.Visible = false;
+            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 118);
+            this.ClientSize = new System.Drawing.Size(365, 172);
+            this.Controls.Add(this.pbval_txtPresidente);
+            this.Controls.Add(this.pbval_txtTesorero);
+            this.Controls.Add(this.txtPresidente);
+            this.Controls.Add(this.txtTesorero);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pbval_cmbPrinter);
             this.Controls.Add(this.cmbPrinter);
             this.Controls.Add(this.pbval_txtMensualidad);
@@ -191,6 +269,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtAlta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtMensualidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbPrinter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTesorero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbval_txtPresidente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +289,11 @@
         private System.Windows.Forms.PictureBox pbval_txtMensualidad;
         private System.Windows.Forms.ComboBox cmbPrinter;
         private System.Windows.Forms.PictureBox pbval_cmbPrinter;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtTesorero;
+        private System.Windows.Forms.TextBox txtPresidente;
+        private System.Windows.Forms.PictureBox pbval_txtTesorero;
+        private System.Windows.Forms.PictureBox pbval_txtPresidente;
     }
 }

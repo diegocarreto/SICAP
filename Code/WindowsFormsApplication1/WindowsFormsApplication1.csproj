@@ -67,6 +67,18 @@
     <Compile Include="Config.Designer.cs">
       <DependentUpon>Config.cs</DependentUpon>
     </Compile>
+    <Compile Include="HabitantFaena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HabitantFaena.Designer.cs">
+      <DependentUpon>HabitantFaena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HabitantFaenasList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HabitantFaenasList.Designer.cs">
+      <DependentUpon>HabitantFaenasList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Faena.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HabitantFaena.resx">
+      <DependentUpon>HabitantFaena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HabitantFaenasList.resx">
+      <DependentUpon>HabitantFaenasList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Faena.resx">
       <DependentUpon>Faena.cs</DependentUpon>

@@ -46,6 +46,8 @@ namespace WindowsFormsApplication1
                 this.txtAlta.Text = String.Format("{0:0.00}", e.Alta());
                 this.txtMensualidad.Text = String.Format("{0:0.00}", e.Mensualidad());
                 this.cmbPrinter.Text = e.Printer();
+                this.txtPresidente.Text = e.Presidente();
+                this.txtTesorero.Text = e.Tesorero();
             }
         }
 
@@ -58,6 +60,8 @@ namespace WindowsFormsApplication1
                     e.Alta(this.txtAlta.Text);
                     e.Mensualidad(this.txtMensualidad.Text);
                     e.Printer(this.cmbPrinter.Text);
+                    e.Presidente(this.txtPresidente.Text);
+                    e.Tesorero(this.txtTesorero.Text);
                 }
 
                 this.Close();
