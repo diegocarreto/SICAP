@@ -12,6 +12,10 @@ namespace WindowsFormsApplication1
 
         #region Members
 
+        private PaymentYear PaymentYear = null;
+
+        private Concentrado Concentrado = null;
+
         private HabitantFaenasList HabitantFaenasList = null;
 
         private FaenasList FaenasList = null;
@@ -40,9 +44,7 @@ namespace WindowsFormsApplication1
         private void MaxShop_Load(object sender, EventArgs e)
         {
             this.ConfigureRol();
-            this.AddStatusBar();
-
-            PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
+            this.AddStatusBar();   
         }
 
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,6 +102,13 @@ namespace WindowsFormsApplication1
                     this.pagosToolStripMenuItem.Visible = e.Menu_Pagos.Value;
                     this.habitantesToolStripMenuItem.Visible = e.Menu_Habitantes.Value;
                     this.herramientasToolStripMenuItem.Visible = e.Menu_Opciones.Value;
+                    this.entradasYSalidasToolStripMenuItem.Visible = e.Menu_IngresosEgresos.Value;
+                    this.toolStripMenuItem2.Visible = e.Menu_Concentrado.Value;
+                    this.faenasToolStripMenuItem.Visible = e.Menu_Cooperaciones.Value;
+                    this.cooperacionesToolStripMenuItem.Visible = e.Menu_PagosCooperaciones.Value;
+
+                    if (e.Menu_Pagos.Value)
+                        PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
                 }
             }
             catch (Exception ex)
@@ -225,6 +234,16 @@ namespace WindowsFormsApplication1
         private void cooperacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HabitantFaenasList = ShowOrActiveForm(HabitantFaenasList, typeof(HabitantFaenasList)) as HabitantFaenasList;
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Concentrado = ShowOrActiveForm(Concentrado, typeof(Concentrado)) as Concentrado;
+        }
+
+        private void pagoPorAñoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PaymentYear = ShowOrActiveForm(PaymentYear, typeof(PaymentYear)) as PaymentYear;
         }
     }
 }

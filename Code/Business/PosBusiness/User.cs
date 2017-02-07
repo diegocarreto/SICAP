@@ -22,6 +22,14 @@ namespace PosBusiness
 
         public bool? Menu_Pagos { get; set; }
 
+        public bool? Menu_IngresosEgresos { get; set; }
+
+        public bool? Menu_Concentrado { get; set; }
+
+        public bool? Menu_Cooperaciones { get; set; }
+
+        public bool? Menu_PagosCooperaciones { get; set; }
+
         public bool? New { get; set; }
 
         public bool? Update { get; set; }
@@ -47,6 +55,10 @@ namespace PosBusiness
             this.Menu_Habitantes = e.Menu_Habitantes;
             this.Menu_Opciones = e.Menu_Opciones;
             this.Menu_Pagos = e.Menu_Pagos;
+            this.Menu_IngresosEgresos = e.Menu_IngresosEgresos;
+            this.Menu_Concentrado = e.Menu_Concentrado;
+            this.Menu_Cooperaciones = e.Menu_Cooperaciones;
+            this.Menu_PagosCooperaciones = e.Menu_PagosCooperaciones;
             this.Update = e.Update;
             this.New = e.New;
             this.Erase = e.Erase;

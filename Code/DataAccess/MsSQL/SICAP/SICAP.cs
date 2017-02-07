@@ -159,6 +159,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Paymentupdate Paymentupdate = new DataAccess.MsSqlCommands.Sicap.Paymentupdate();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Reportconcentrated.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Reportconcentrated Reportconcentrated = new DataAccess.MsSqlCommands.Sicap.Reportconcentrated();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Rolget.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Rolget Rolget = new DataAccess.MsSqlCommands.Sicap.Rolget();
@@ -281,6 +286,9 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Paymentupdate != null)
 				this.Paymentupdate.Dispose();
+
+			if (this.Reportconcentrated != null)
+				this.Reportconcentrated.Dispose();
 
 			if (this.Rolget != null)
 				this.Rolget.Dispose();

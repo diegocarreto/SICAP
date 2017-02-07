@@ -82,6 +82,7 @@
     <Compile Include="MsSQL\SICAP\paymentPrint.cs" />
     <Compile Include="MsSQL\SICAP\PaymentTotalByPeriod.cs" />
     <Compile Include="MsSQL\SICAP\PaymentUpdate.cs" />
+    <Compile Include="MsSQL\SICAP\ReportConcentrated.cs" />
     <Compile Include="MsSQL\SICAP\RolGet.cs" />
     <Compile Include="MsSQL\SICAP\SICAP.cs" />
     <Compile Include="MsSQL\SICAP\UserLogin.cs" />

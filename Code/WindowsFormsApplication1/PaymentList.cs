@@ -249,7 +249,7 @@ namespace WindowsFormsApplication1
 
         private void gvList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex.Equals(8))
+            if (e.ColumnIndex.Equals(9))
                 this.gvList.Cursor = Cursors.Hand;
             else
                 this.gvList.Cursor = Cursors.Default;
@@ -257,7 +257,7 @@ namespace WindowsFormsApplication1
 
         private void gvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex.Equals(8) && this.UpdateButton && gvList[8, this.SelectRowIndex].Value.ToString().Equals("Activo", StringComparison.InvariantCultureIgnoreCase))
+            if (e.ColumnIndex.Equals(9) && this.UpdateButton && gvList[9, this.SelectRowIndex].Value.ToString().Equals("Activo", StringComparison.InvariantCultureIgnoreCase))
             {
                 if (this.Confirm("¿Deseas imprimir el recibo?"))
                 {

@@ -67,6 +67,18 @@
     <Compile Include="Config.Designer.cs">
       <DependentUpon>Config.cs</DependentUpon>
     </Compile>
+    <Compile Include="Concentrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Concentrado.Designer.cs">
+      <DependentUpon>Concentrado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentYear.Designer.cs">
+      <DependentUpon>PaymentYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="HabitantFaena.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concentrado.resx">
+      <DependentUpon>Concentrado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentYear.resx">
+      <DependentUpon>PaymentYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HabitantFaena.resx">
       <DependentUpon>HabitantFaena.cs</DependentUpon>
