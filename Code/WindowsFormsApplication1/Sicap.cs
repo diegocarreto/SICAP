@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using Utilities;
 using Utilities.Extensions;
+using posb = PosBusiness;
+using UtilitiesForm.Extensions;
 
 namespace WindowsFormsApplication1
 {
@@ -20,7 +23,7 @@ namespace WindowsFormsApplication1
 
         private FaenasList FaenasList = null;
 
-        private InputOutputsList InputOutputsList = null; 
+        private InputOutputsList InputOutputsList = null;
 
         private Config Config = null;
 
@@ -44,7 +47,7 @@ namespace WindowsFormsApplication1
         private void MaxShop_Load(object sender, EventArgs e)
         {
             this.ConfigureRol();
-            this.AddStatusBar();   
+            this.AddStatusBar();
         }
 
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -228,7 +231,8 @@ namespace WindowsFormsApplication1
 
         private void Sicap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Login.Close();
+            if (this.Login != null)
+                this.Login.Close();
         }
 
         private void cooperacionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -244,6 +248,13 @@ namespace WindowsFormsApplication1
         private void pagoPorAñoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PaymentYear = ShowOrActiveForm(PaymentYear, typeof(PaymentYear)) as PaymentYear;
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var About = new About();
+
+            About.ShowDialog();
         }
     }
 }

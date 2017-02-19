@@ -58,6 +58,12 @@ namespace WindowsFormsApplication1
                 {
                     if (user.Login())
                     {
+                        if (!this.CheckKey())
+                        {
+                            this.Close();
+                            return;
+                        }
+
                         Sicap ms = new Sicap();
 
                         if (this.Cookie(user.UserId.Value, user.UserName))
@@ -95,6 +101,35 @@ namespace WindowsFormsApplication1
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private bool CheckKey()
+        {
+            using (var config = new PosBusiness.Config())
+            {
+                const int keySize = 1024;
+
+                var keyDate = config.KeyDate();
+                var publicKey = config.PublicKey();
+                var decrypted = AsymmetricEncryption.DecryptText(config.KeyDate(), keySize, config.PublicKey());
+
+                var product = decrypted.Split('|')[0];
+                var date = decrypted.Split('|')[1];
+
+                var d = int.Parse(date.Split('/')[0]);
+                var m = int.Parse(date.Split('/')[1]);
+                var a = int.Parse(date.Split('/')[2]);
+
+                var dt = new DateTime(a, m, d);
+
+                if (DateTime.Now > dt)
+                {
+                    this.Alert("La clave del producto caduco, obtenga una nueva clave de producto comunicándose con soporte técnico Scripts MX", eForm.TypeError.Error);
+                    return false;
+                }
+
+                return true;
+            }
         }
     }
 }

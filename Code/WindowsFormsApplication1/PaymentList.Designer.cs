@@ -68,7 +68,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbEndYear = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.pbSICAP = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -249,7 +251,7 @@
             // Column7
             // 
             this.Column7.DataPropertyName = "Printbtn";
-            this.Column7.HeaderText = "Estatus";
+            this.Column7.HeaderText = "Imprimir";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Width = 70;
@@ -375,7 +377,7 @@
             this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNew.Location = new System.Drawing.Point(1019, 529);
+            this.btnNew.Location = new System.Drawing.Point(1018, 538);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 12;
@@ -388,7 +390,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(1100, 529);
+            this.btnDelete.Location = new System.Drawing.Point(1099, 538);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 11;
@@ -402,7 +404,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(1181, 529);
+            this.btnExit.Location = new System.Drawing.Point(1180, 538);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 10;
@@ -452,11 +454,23 @@
             this.label11.TabIndex = 111;
             this.label11.Text = "Año Final:";
             // 
+            // pbSICAP
+            // 
+            this.pbSICAP.Image = ((System.Drawing.Image)(resources.GetObject("pbSICAP.Image")));
+            this.pbSICAP.Location = new System.Drawing.Point(6, 529);
+            this.pbSICAP.Name = "pbSICAP";
+            this.pbSICAP.Size = new System.Drawing.Size(25, 32);
+            this.pbSICAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSICAP.TabIndex = 113;
+            this.pbSICAP.TabStop = false;
+            this.pbSICAP.Tag = "Muestra ell listado de pagos del suministro de agua potable";
+            // 
             // PaymentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 559);
+            this.ClientSize = new System.Drawing.Size(1267, 564);
+            this.Controls.Add(this.pbSICAP);
             this.Controls.Add(this.cmbEndMonth);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbEndYear);
@@ -490,9 +504,10 @@
             this.MaximizeBox = false;
             this.Name = "PaymentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pagos";
+            this.Text = "SICAP - Pagos";
             this.Load += new System.EventHandler(this.HabitantList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,5 +553,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.PictureBox pbSICAP;
     }
 }

@@ -72,10 +72,16 @@ namespace WindowsFormsApplication1
                 InteriorNumber = this.txtInteriorNumber.Text,
                 Colony = this.txtColony.Text,
                 Active = this.cbActive.Checked,
-                Total = decimal.Parse(this.txtTotal.Text)
+                Total = decimal.Parse(this.txtTotal.Text),
+                Principal = this.cbPrincipal.Checked,
             })
             {
                 e.Save();
+
+                if (this.Confirm("¿Deseas imprimir el recibo?"))
+                {
+                    this.PrintWaterIntake(e.Id.Value);
+                }
 
                 this.Result(true, "Success!!");
 
@@ -101,6 +107,7 @@ namespace WindowsFormsApplication1
                 this.txtColony.Text = e.Colony;
                 this.txtTotal.Text = String.Format("{0:0.00}", e.Total);
                 this.cbActive.Checked = e.Active.Value;
+                this.cbPrincipal.Checked = e.Principal.Value;
             }
         }
 

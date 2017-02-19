@@ -18,11 +18,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene una lista del tipo de objectos indicado con el merge entre las propiedades del objeto y el resulset obtenido de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public List<T> ExeList<T>(int? idWaterIntake = null, int? year = null) where T : new()
+        public List<T> ExeList<T>(int? year = null) where T : new()
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@year", SqlDbType.Int, year, null);
+        	parameters.Add("@year", SqlDbType.Int, year, null);
 
         	return this.GetListBase<T>("SICAP", "PaymentPerYear",parameters.ToArray());
         }
@@ -31,11 +31,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene el scalar resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public T ExeScalar<T>(int? idWaterIntake = null, int? year = null)
+        public T ExeScalar<T>(int? year = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@year", SqlDbType.Int, year, null);
+        	parameters.Add("@year", SqlDbType.Int, year, null);
 
         	return this.ExecuteScalar<T>("SICAP", "PaymentPerYear",parameters.ToArray());
         }
@@ -44,11 +44,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Ejecuta el procedimiento almacenado.
         /// </summary>
         /// <returns></returns>
-        public int ExeNonQuery(int? idWaterIntake = null, int? year = null)
+        public int ExeNonQuery(int? year = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@year", SqlDbType.Int, year, null);
+        	parameters.Add("@year", SqlDbType.Int, year, null);
 
         	return this.ExecuteNonQuery("SICAP", "PaymentPerYear",parameters.ToArray());
         }
@@ -57,11 +57,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene un objeto IDataReader resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public IDataReader ExeReader(int? idWaterIntake = null, int? year = null)
+        public IDataReader ExeReader(int? year = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idWaterIntake", SqlDbType.Int, idWaterIntake, null).Add("@year", SqlDbType.Int, year, null);
+        	parameters.Add("@year", SqlDbType.Int, year, null);
 
         	return this.GetReader("SICAP", "PaymentPerYear",parameters.ToArray());
         }

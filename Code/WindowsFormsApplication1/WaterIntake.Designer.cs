@@ -48,9 +48,13 @@
             this.pbval_txtTotal = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbHabitant = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbPrincipal = new System.Windows.Forms.CheckBox();
+            this.pbSICAP = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtExteriorNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbStreet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).BeginInit();
             this.SuspendLayout();
             // 
             // pbval_txtExteriorNumber
@@ -175,7 +179,7 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(144, 143);
+            this.btnAccept.Location = new System.Drawing.Point(139, 152);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 22;
@@ -188,7 +192,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(225, 143);
+            this.btnExit.Location = new System.Drawing.Point(220, 152);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 23;
@@ -247,11 +251,45 @@
             this.cmbHabitant.Size = new System.Drawing.Size(232, 21);
             this.cmbHabitant.TabIndex = 35;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(92, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 13);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "Principal:";
+            // 
+            // cbPrincipal
+            // 
+            this.cbPrincipal.AutoSize = true;
+            this.cbPrincipal.Checked = true;
+            this.cbPrincipal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbPrincipal.Location = new System.Drawing.Point(144, 114);
+            this.cbPrincipal.Name = "cbPrincipal";
+            this.cbPrincipal.Size = new System.Drawing.Size(15, 14);
+            this.cbPrincipal.TabIndex = 37;
+            this.cbPrincipal.UseVisualStyleBackColor = true;
+            // 
+            // pbSICAP
+            // 
+            this.pbSICAP.Image = ((System.Drawing.Image)(resources.GetObject("pbSICAP.Image")));
+            this.pbSICAP.Location = new System.Drawing.Point(11, 143);
+            this.pbSICAP.Name = "pbSICAP";
+            this.pbSICAP.Size = new System.Drawing.Size(25, 32);
+            this.pbSICAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSICAP.TabIndex = 111;
+            this.pbSICAP.TabStop = false;
+            this.pbSICAP.Tag = "Permite editar tomas de agua en el sistema";
+            // 
             // WaterIntake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 178);
+            this.ClientSize = new System.Drawing.Size(322, 179);
+            this.Controls.Add(this.pbSICAP);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cbPrincipal);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbHabitant);
             this.Controls.Add(this.pbval_txtTotal);
@@ -277,11 +315,12 @@
             this.MinimizeBox = false;
             this.Name = "WaterIntake";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Toma de agua";
+            this.Text = "SICAP - Toma de agua";
             this.Load += new System.EventHandler(this.WaterIntake_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtExteriorNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbStreet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,5 +347,8 @@
         private System.Windows.Forms.PictureBox pbval_txtTotal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbHabitant;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox cbPrincipal;
+        private System.Windows.Forms.PictureBox pbSICAP;
     }
 }

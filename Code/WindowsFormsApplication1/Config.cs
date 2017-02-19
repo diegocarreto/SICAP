@@ -48,6 +48,7 @@ namespace WindowsFormsApplication1
                 this.cmbPrinter.Text = e.Printer();
                 this.txtPresidente.Text = e.Presidente();
                 this.txtTesorero.Text = e.Tesorero();
+                this.txtAltaH.Text = String.Format("{0:0.00}", e.AltaH()); 
             }
         }
 
@@ -62,6 +63,7 @@ namespace WindowsFormsApplication1
                     e.Printer(this.cmbPrinter.Text);
                     e.Presidente(this.txtPresidente.Text);
                     e.Tesorero(this.txtTesorero.Text);
+                    e.AltaH(this.txtAltaH.Text);
                 }
 
                 this.Close();

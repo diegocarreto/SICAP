@@ -12,6 +12,8 @@ namespace PosBusiness
 
         #region Properties
 
+        public string Printbtn { get; set; }
+
         public int? IdStreet { get; set; }
 
         public int? IdHabitant { get; set; }
@@ -29,6 +31,10 @@ namespace PosBusiness
         public string Colony { get; set; }
 
         public decimal Total { get; set; }
+
+        public bool? Principal { get; set; }
+
+        public string PrincipalName { get; set; }
 
         #endregion
 
@@ -61,6 +67,7 @@ namespace PosBusiness
                 this.IdHabitant = e.IdHabitant;
                 this.IdRent = e.IdRent;
                 this.RentName = e.RentName;
+                this.Principal = e.Principal;
 
                 return true;
             }
@@ -91,11 +98,11 @@ namespace PosBusiness
             {
                 if (!this.Id.HasValue)
                 {
-                    this.AccessMsSql.Sicap.Waterintakeadd.ExeScalar<int>(this.UserId, this.IdHabitant, this.IdRent, this.IdStreet, this.ExteriorNumber, this.InteriorNumber, this.Colony, this.Total);
+                    this.Id = this.AccessMsSql.Sicap.Waterintakeadd.ExeScalar<int>(this.UserId, this.IdHabitant, this.IdRent, this.IdStreet, this.ExteriorNumber, this.InteriorNumber, this.Colony, this.Total, this.Principal);
                 }
                 else
                 {
-                    this.Id = this.AccessMsSql.Sicap.Waterintakeupdate.ExeScalar<int>(this.UserId, this.IdRent, this.Id, this.IdStreet, this.ExteriorNumber, this.InteriorNumber, this.Colony, this.Active, this.Total);
+                    this.AccessMsSql.Sicap.Waterintakeupdate.ExeNonQuery(this.UserId, this.IdHabitant, this.IdRent, this.Id, this.IdStreet, this.ExteriorNumber, this.InteriorNumber, this.Colony, this.Active, this.Total, this.Principal);
                 }
 
                 return true;

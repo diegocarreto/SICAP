@@ -9,6 +9,8 @@ namespace PosBusiness
     {
         #region Members
 
+        private const string COSTH = "altaHabitante";
+
         private const string COST = "alta";
 
         private const string MENSUALIDAD = "mensualidad";
@@ -18,6 +20,10 @@ namespace PosBusiness
         private const string TESORERO = "tesorero";
 
         private const string PRESIDENTE = "presidente";
+
+        private const string KEY = "key";
+
+        private const string PUBLIC_KEY = "publicKey";
 
         #endregion
 
@@ -43,6 +49,27 @@ namespace PosBusiness
         // 
         // </summary>
         // <returns></returns>
+        public decimal AltaH(string Value = "")
+        {
+            if (string.IsNullOrEmpty(Value))
+            {
+
+                var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(COSTH);
+
+                return decimal.Parse(value);
+            }
+            else
+            {
+                this.AccessMsSql.Sicap.Configset.ExeNonQuery(COSTH, Value);
+
+                return 0;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
         public decimal Alta(string Value = "")
         {
             if (string.IsNullOrEmpty(Value))
@@ -58,6 +85,28 @@ namespace PosBusiness
 
                 return 0;
             }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public string KeyDate()
+        {
+            var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(KEY);
+
+            return value;
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public string PublicKey()
+        {
+            var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(PUBLIC_KEY);
+
+            return value;
         }
 
         // <summary>

@@ -121,7 +121,7 @@ namespace WindowsFormsApplication1
 
         private void gvList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex.Equals(0) && this.UpdateButton)
+            if ((e.ColumnIndex.Equals(0) && this.UpdateButton) || e.ColumnIndex.Equals(10))
                 this.gvList.Cursor = Cursors.Hand;
             else
                 this.gvList.Cursor = Cursors.Default;
@@ -137,6 +137,13 @@ namespace WindowsFormsApplication1
             if (e.ColumnIndex.Equals(0) && this.UpdateButton)
             {
                 this.OpenEdit(this.EntityId);
+            }
+            else if (e.ColumnIndex.Equals(10) && this.gvList[10, this.SelectRowIndex].Value.ToString().Equals("Si", StringComparison.InvariantCultureIgnoreCase))
+            {
+                if (this.Confirm("¿Deseas imprimir el recibo?"))
+                {
+                    this.PrintHabitant(this.EntityId);
+                }
             }
         }
 

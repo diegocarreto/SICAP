@@ -24,6 +24,8 @@ namespace WindowsFormsApplication1
 
         private int? StartMonth = null;
 
+        private int? idWaterIntake = null;
+
         public Payment()
         {
             InitializeComponent();
@@ -36,6 +38,8 @@ namespace WindowsFormsApplication1
 
         private void Payment_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = this.txtAP;
+
             this.SetCostPerMonth();
             this.FillYears();
             this.FillYearsEnd();
@@ -274,41 +278,52 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void FillWaterIntake(int IdHabitant)
+        {
+            using (var waterIntake = new posb.WaterIntake
+            {
+                IdHabitant = IdHabitant
+            })
+            {
+                var waterIntakeList = waterIntake.List(4);
+
+                if (waterIntakeList.Count.Equals(0))
+                {
+                    waterIntakeList = waterIntake.List(3);
+                }
+
+                this.cmbWaterIntake.Fill(waterIntakeList);
+
+                if (this.cmbWaterIntake.Items.Count.Equals(2))
+                    this.cmbWaterIntake.SelectedIndex = 1;
+
+                if (this.idWaterIntake.HasValue)
+                {
+                    this.cmbWaterIntake.SelectedValue = this.idWaterIntake;
+                    this.idWaterIntake = null;
+                }
+            }
+
+            using (var habitant = new posb.Habitant
+            {
+                Id = this.cmbHabitant.GetVal<int>()
+            })
+            {
+                habitant.Get();
+
+                this.StartYear = habitant.Year;
+                this.StartMonth = habitant.Month;
+
+                this.FillYears(this.StartYear);
+                this.FillYearsEnd(this.StartYear);
+            }
+        }
+
         private void cmbHabitant_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cmbHabitant.SelectedIndex > 0)
             {
-                using (var waterIntake = new posb.WaterIntake
-                {
-                    IdHabitant = this.cmbHabitant.GetVal<int>()
-                })
-                {
-                    var waterIntakeList = waterIntake.List();
-
-                    if (waterIntakeList.Count.Equals(0))
-                    {
-                        waterIntakeList = waterIntake.List(3);
-                    }
-
-                    this.cmbWaterIntake.Fill(waterIntakeList);
-
-                    if (this.cmbWaterIntake.Items.Count.Equals(2))
-                        this.cmbWaterIntake.SelectedIndex = 1;
-                }
-
-                using (var habitant = new posb.Habitant
-                {
-                    Id = this.cmbHabitant.GetVal<int>()
-                })
-                {
-                    habitant.Get();
-
-                    this.StartYear = habitant.Year;
-                    this.StartMonth = habitant.Month;
-
-                    this.FillYears(this.StartYear);
-                    this.FillYearsEnd(this.StartYear);
-                }
+                this.FillWaterIntake(this.cmbHabitant.GetVal<int>());
             }
             else
             {
@@ -376,6 +391,25 @@ namespace WindowsFormsApplication1
         {
             if (this.LoadComplete)
                 this.CalculateTotal();
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            var p = new posb.Payment 
+            {
+                Id = int.Parse(this.txtAP.Text)
+            };
+
+            p.FindByAP();
+
+            if (p.IdWaterIntake.HasValue && p.IdHabitantOrRent.HasValue)
+            {
+                this.idWaterIntake = p.IdWaterIntake;
+                this.cmbHabitant.SelectedValue = p.IdHabitantOrRent;
+                this.FillWaterIntake(p.IdHabitantOrRent.Value);
+            }
+            else
+                this.Alert("No se encontraron datos para el AP: " + this.txtAP.Text);
         }
     }
 }

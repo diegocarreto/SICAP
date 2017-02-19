@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
             get
             {
                 return this.gvList[1, this.SelectRowIndex].Value.ToString() + " #" +
-                       this.gvList[2, this.SelectRowIndex].Value.ToString() + 
+                       this.gvList[2, this.SelectRowIndex].Value.ToString() +
                        (this.gvList[3, this.SelectRowIndex].Value != null ? " Int" + this.gvList[3, this.SelectRowIndex].Value.ToString() : string.Empty) +
                        (this.gvList[4, this.SelectRowIndex].Value != null ? " " + this.gvList[4, this.SelectRowIndex].Value.ToString() + " " : string.Empty);
             }
@@ -121,15 +121,22 @@ namespace WindowsFormsApplication1
 
         private void gvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex.Equals(0))
+            if (e.ColumnIndex.Equals(0) && this.UpdateButton)
             {
                 this.OpenEdit(this.EntityId);
+            }
+            else if (e.ColumnIndex.Equals(10) && this.gvList[10, this.SelectRowIndex].Value.ToString().Equals("Si", StringComparison.InvariantCultureIgnoreCase))
+            {
+                if (this.Confirm("¿Deseas imprimir el recibo?"))
+                {
+                    this.PrintWaterIntake(this.EntityId);
+                }
             }
         }
 
         private void gvList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex.Equals(0))
+            if ((e.ColumnIndex.Equals(0) && this.UpdateButton) || e.ColumnIndex.Equals(10))
                 this.gvList.Cursor = Cursors.Hand;
             else
                 this.gvList.Cursor = Cursors.Default;

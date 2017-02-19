@@ -55,18 +55,23 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmbYearEnd = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtAP = new System.Windows.Forms.TextBox();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.pbSICAP = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbHabitant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbWaterIntake)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbMonthEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbYearEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(316, 309);
+            this.label3.Location = new System.Drawing.Point(313, 338);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 32;
@@ -75,7 +80,7 @@
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(356, 301);
+            this.txtTotal.Location = new System.Drawing.Point(353, 330);
             this.txtTotal.MaxLength = 10;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -88,7 +93,7 @@
             this.cmbMonth.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonth.FormattingEnabled = true;
-            this.cmbMonth.Location = new System.Drawing.Point(90, 98);
+            this.cmbMonth.Location = new System.Drawing.Point(87, 127);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(360, 21);
             this.cmbMonth.TabIndex = 30;
@@ -97,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 101);
+            this.label1.Location = new System.Drawing.Point(19, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 29;
@@ -109,7 +114,7 @@
             this.cmbYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(90, 71);
+            this.cmbYear.Location = new System.Drawing.Point(87, 100);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(359, 21);
             this.cmbYear.TabIndex = 28;
@@ -118,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 74);
+            this.label4.Location = new System.Drawing.Point(21, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 27;
@@ -127,7 +132,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 36);
+            this.label6.Location = new System.Drawing.Point(3, 65);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 13);
             this.label6.TabIndex = 26;
@@ -139,7 +144,7 @@
             this.cmbWaterIntake.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbWaterIntake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWaterIntake.FormattingEnabled = true;
-            this.cmbWaterIntake.Location = new System.Drawing.Point(90, 33);
+            this.cmbWaterIntake.Location = new System.Drawing.Point(87, 62);
             this.cmbWaterIntake.Name = "cmbWaterIntake";
             this.cmbWaterIntake.Size = new System.Drawing.Size(359, 21);
             this.cmbWaterIntake.TabIndex = 21;
@@ -147,7 +152,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 309);
+            this.label2.Location = new System.Drawing.Point(9, 338);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 23;
@@ -156,7 +161,7 @@
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(88, 301);
+            this.txtAmount.Location = new System.Drawing.Point(85, 330);
             this.txtAmount.MaxLength = 10;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.ReadOnly = true;
@@ -168,7 +173,7 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(260, 334);
+            this.btnAccept.Location = new System.Drawing.Point(256, 376);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(91, 23);
             this.btnAccept.TabIndex = 24;
@@ -181,7 +186,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(357, 334);
+            this.btnExit.Location = new System.Drawing.Point(353, 376);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(91, 23);
             this.btnExit.TabIndex = 25;
@@ -195,7 +200,7 @@
             this.cmbHabitant.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbHabitant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHabitant.FormattingEnabled = true;
-            this.cmbHabitant.Location = new System.Drawing.Point(91, 6);
+            this.cmbHabitant.Location = new System.Drawing.Point(88, 35);
             this.cmbHabitant.Name = "cmbHabitant";
             this.cmbHabitant.Size = new System.Drawing.Size(359, 21);
             this.cmbHabitant.TabIndex = 33;
@@ -204,7 +209,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 9);
+            this.label5.Location = new System.Drawing.Point(25, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 34;
@@ -215,7 +220,7 @@
             this.pbval_cmbHabitant.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_cmbHabitant.Image = ((System.Drawing.Image)(resources.GetObject("pbval_cmbHabitant.Image")));
             this.pbval_cmbHabitant.InitialImage = null;
-            this.pbval_cmbHabitant.Location = new System.Drawing.Point(456, 9);
+            this.pbval_cmbHabitant.Location = new System.Drawing.Point(453, 38);
             this.pbval_cmbHabitant.Name = "pbval_cmbHabitant";
             this.pbval_cmbHabitant.Size = new System.Drawing.Size(18, 17);
             this.pbval_cmbHabitant.TabIndex = 35;
@@ -228,7 +233,7 @@
             this.pbval_cmbWaterIntake.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_cmbWaterIntake.Image = ((System.Drawing.Image)(resources.GetObject("pbval_cmbWaterIntake.Image")));
             this.pbval_cmbWaterIntake.InitialImage = null;
-            this.pbval_cmbWaterIntake.Location = new System.Drawing.Point(455, 36);
+            this.pbval_cmbWaterIntake.Location = new System.Drawing.Point(452, 65);
             this.pbval_cmbWaterIntake.Name = "pbval_cmbWaterIntake";
             this.pbval_cmbWaterIntake.Size = new System.Drawing.Size(18, 17);
             this.pbval_cmbWaterIntake.TabIndex = 36;
@@ -241,7 +246,7 @@
             this.pbVal_cmbYear.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbVal_cmbYear.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbYear.Image")));
             this.pbVal_cmbYear.InitialImage = null;
-            this.pbVal_cmbYear.Location = new System.Drawing.Point(455, 74);
+            this.pbVal_cmbYear.Location = new System.Drawing.Point(452, 103);
             this.pbVal_cmbYear.Name = "pbVal_cmbYear";
             this.pbVal_cmbYear.Size = new System.Drawing.Size(18, 17);
             this.pbVal_cmbYear.TabIndex = 106;
@@ -254,7 +259,7 @@
             this.pbVal_cmbMonth.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbVal_cmbMonth.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbMonth.Image")));
             this.pbVal_cmbMonth.InitialImage = null;
-            this.pbVal_cmbMonth.Location = new System.Drawing.Point(455, 101);
+            this.pbVal_cmbMonth.Location = new System.Drawing.Point(452, 130);
             this.pbVal_cmbMonth.Name = "pbVal_cmbMonth";
             this.pbVal_cmbMonth.Size = new System.Drawing.Size(18, 17);
             this.pbVal_cmbMonth.TabIndex = 107;
@@ -265,7 +270,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 194);
+            this.label7.Location = new System.Drawing.Point(-1, 223);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 109;
@@ -273,7 +278,7 @@
             // 
             // txtObservations
             // 
-            this.txtObservations.Location = new System.Drawing.Point(90, 191);
+            this.txtObservations.Location = new System.Drawing.Point(87, 220);
             this.txtObservations.MaxLength = 2000;
             this.txtObservations.Multiline = true;
             this.txtObservations.Name = "txtObservations";
@@ -286,7 +291,7 @@
             this.pbVal_cmbMonthEnd.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbVal_cmbMonthEnd.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbMonthEnd.Image")));
             this.pbVal_cmbMonthEnd.InitialImage = null;
-            this.pbVal_cmbMonthEnd.Location = new System.Drawing.Point(456, 155);
+            this.pbVal_cmbMonthEnd.Location = new System.Drawing.Point(453, 184);
             this.pbVal_cmbMonthEnd.Name = "pbVal_cmbMonthEnd";
             this.pbVal_cmbMonthEnd.Size = new System.Drawing.Size(18, 17);
             this.pbVal_cmbMonthEnd.TabIndex = 115;
@@ -299,7 +304,7 @@
             this.pbVal_cmbYearEnd.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbVal_cmbYearEnd.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbYearEnd.Image")));
             this.pbVal_cmbYearEnd.InitialImage = null;
-            this.pbVal_cmbYearEnd.Location = new System.Drawing.Point(456, 128);
+            this.pbVal_cmbYearEnd.Location = new System.Drawing.Point(453, 157);
             this.pbVal_cmbYearEnd.Name = "pbVal_cmbYearEnd";
             this.pbVal_cmbYearEnd.Size = new System.Drawing.Size(18, 17);
             this.pbVal_cmbYearEnd.TabIndex = 114;
@@ -313,7 +318,7 @@
             this.cmbMonthEnd.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMonthEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonthEnd.FormattingEnabled = true;
-            this.cmbMonthEnd.Location = new System.Drawing.Point(91, 152);
+            this.cmbMonthEnd.Location = new System.Drawing.Point(88, 181);
             this.cmbMonthEnd.Name = "cmbMonthEnd";
             this.cmbMonthEnd.Size = new System.Drawing.Size(360, 21);
             this.cmbMonthEnd.TabIndex = 113;
@@ -322,7 +327,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 155);
+            this.label8.Location = new System.Drawing.Point(24, 184);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 112;
@@ -334,7 +339,7 @@
             this.cmbYearEnd.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbYearEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYearEnd.FormattingEnabled = true;
-            this.cmbYearEnd.Location = new System.Drawing.Point(91, 125);
+            this.cmbYearEnd.Location = new System.Drawing.Point(88, 154);
             this.cmbYearEnd.Name = "cmbYearEnd";
             this.cmbYearEnd.Size = new System.Drawing.Size(359, 21);
             this.cmbYearEnd.TabIndex = 111;
@@ -343,17 +348,63 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(29, 128);
+            this.label9.Location = new System.Drawing.Point(26, 157);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 110;
             this.label9.Text = "Año Final:";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(55, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 13);
+            this.label10.TabIndex = 116;
+            this.label10.Text = "AP:";
+            // 
+            // txtAP
+            // 
+            this.txtAP.Location = new System.Drawing.Point(85, 9);
+            this.txtAP.MaxLength = 10;
+            this.txtAP.Name = "txtAP";
+            this.txtAP.Size = new System.Drawing.Size(266, 20);
+            this.txtAP.TabIndex = 117;
+            this.txtAP.Tag = "txtNumber";
+            // 
+            // btnFind
+            // 
+            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFind.Location = new System.Drawing.Point(357, 9);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(91, 23);
+            this.btnFind.TabIndex = 118;
+            this.btnFind.Text = "    Buscar";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // pbSICAP
+            // 
+            this.pbSICAP.Image = ((System.Drawing.Image)(resources.GetObject("pbSICAP.Image")));
+            this.pbSICAP.Location = new System.Drawing.Point(6, 367);
+            this.pbSICAP.Name = "pbSICAP";
+            this.pbSICAP.Size = new System.Drawing.Size(25, 32);
+            this.pbSICAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSICAP.TabIndex = 119;
+            this.pbSICAP.TabStop = false;
+            this.pbSICAP.Tag = "Permite realizar pagos del suministro de agua potable";
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 363);
+            this.ClientSize = new System.Drawing.Size(474, 403);
+            this.Controls.Add(this.pbSICAP);
+            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.txtAP);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.pbVal_cmbMonthEnd);
             this.Controls.Add(this.pbVal_cmbYearEnd);
             this.Controls.Add(this.cmbMonthEnd);
@@ -384,7 +435,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Payment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pago";
+            this.Text = "SICAP - Pago";
             this.Load += new System.EventHandler(this.Payment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbHabitant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbWaterIntake)).EndInit();
@@ -392,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbMonthEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVal_cmbYearEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,5 +477,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbYearEnd;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtAP;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.PictureBox pbSICAP;
     }
 }

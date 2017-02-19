@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1.Base;
+using UtilitiesForm.Extensions;
 using posb = PosBusiness;
 
 namespace WindowsFormsApplication1
@@ -84,6 +85,7 @@ namespace WindowsFormsApplication1
                 this.cbActive.Checked = e.Active.Value;
                 this.cmbYear.Text = e.Year.ToString();
                 this.cmbMonth.SelectedIndex = e.Month.Value;
+                this.txtTotal.Text = String.Format("{0:0.00}", e.Total);
             }
         }
 
@@ -98,14 +100,35 @@ namespace WindowsFormsApplication1
                 observations = this.txtObservations.Text,
                 Active = this.cbActive.Checked,
                 Year = int.Parse(this.cmbYear.Text),
-                Month = this.cmbMonth.SelectedIndex
+                Month = this.cmbMonth.SelectedIndex,
+                Total = decimal.Parse(this.txtTotal.Text)
             })
             {
                 e.Save();
 
+                if (this.Confirm("¿Deseas imprimir el recibo?"))
+                {
+                    this.PrintHabitant(e.Id.Value);
+                }
+
                 this.Result(true, "Success!!");
 
                 this.Close();
+            }
+        }
+
+        private void SetCostAlta()
+        {
+            try
+            {
+                using (var e = new posb.Config())
+                {
+                    this.txtTotal.Text = String.Format("{0:0.00}", e.AltaH());
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
@@ -124,6 +147,8 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                this.SetCostAlta();
+
                 this.btnWaterIntake.Visible = false;
             }
         }

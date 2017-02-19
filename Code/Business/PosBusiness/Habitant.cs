@@ -12,6 +12,8 @@ namespace PosBusiness
 
         #region Properties
 
+        public string Printbtn { get; set; }
+
         public string Nombre { get; set; }
 
         public string Paterno { get; set; }
@@ -25,6 +27,8 @@ namespace PosBusiness
         public int? Month { get; set; }
 
         public string MonthName { get; set; }
+
+        public decimal Total { get; set; }
 
         #endregion
 
@@ -56,6 +60,7 @@ namespace PosBusiness
                 this.Active = e.Active;
                 this.Year = e.Year;
                 this.Month = e.Month;
+                this.Total = e.Total;
 
                 return true;
             }
@@ -86,11 +91,11 @@ namespace PosBusiness
             {
                 if (!this.Id.HasValue)
                 {
-                    this.AccessMsSql.Sicap.Habitantadd.ExeScalar<int>(this.UserId, this.Name, this.Paterno, this.Materno, this.observations, this.Year, this.Month, this.Active);
+                    this.Id = this.AccessMsSql.Sicap.Habitantadd.ExeScalar<int>(this.UserId, this.Name, this.Paterno, this.Materno, this.observations, this.Year, this.Month, this.Active, this.Total);
                 }
                 else
                 {
-                    this.Id = this.AccessMsSql.Sicap.Habitantupdate.ExeScalar<int>(this.UserId, this.Id, this.Name, this.Paterno, this.Materno, this.observations, this.Active, this.Year, this.Month);
+                   this.AccessMsSql.Sicap.Habitantupdate.ExeNonQuery(this.UserId, this.Id, this.Name, this.Paterno, this.Materno, this.observations, this.Active, this.Year, this.Month, this.Total);
                 }
 
                 return true;

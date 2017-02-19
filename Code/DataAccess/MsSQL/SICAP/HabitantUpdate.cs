@@ -18,11 +18,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene una lista del tipo de objectos indicado con el merge entre las propiedades del objeto y el resulset obtenido de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public List<T> ExeList<T>(int? idUser = null, int? id = null, String nombre = null, String paterno = null, String materno = null, String observations = null, Boolean? active = null, int? year = null, int? month = null) where T : new()
+        public List<T> ExeList<T>(int? idUser = null, int? id = null, String nombre = null, String paterno = null, String materno = null, String observations = null, Boolean? active = null, int? year = null, int? month = null, Decimal? total = null) where T : new()
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@nombre", SqlDbType.VarChar, nombre, 100).Add("@paterno", SqlDbType.VarChar, paterno, 50).Add("@materno", SqlDbType.VarChar, materno, 50).Add("@observations", SqlDbType.VarChar, observations, 2000).Add("@active", SqlDbType.Bit, active, null).Add("@year", SqlDbType.Int, year, null).Add("@month", SqlDbType.Int, month, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@nombre", SqlDbType.VarChar, nombre, 100).Add("@paterno", SqlDbType.VarChar, paterno, 50).Add("@materno", SqlDbType.VarChar, materno, 50).Add("@observations", SqlDbType.VarChar, observations, 2000).Add("@active", SqlDbType.Bit, active, null).Add("@year", SqlDbType.Int, year, null).Add("@month", SqlDbType.Int, month, null).Add("@total", SqlDbType.Money, total, null);
 
         	return this.GetListBase<T>("SICAP", "HabitantUpdate",parameters.ToArray());
         }
@@ -31,11 +31,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene el scalar resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public T ExeScalar<T>(int? idUser = null, int? id = null, String nombre = null, String paterno = null, String materno = null, String observations = null, Boolean? active = null, int? year = null, int? month = null)
+        public T ExeScalar<T>(int? idUser = null, int? id = null, String nombre = null, String paterno = null, String materno = null, String observations = null, Boolean? active = null, int? year = null, int? month = null, Decimal? total = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@nombre", SqlDbType.VarChar, nombre, 100).Add("@paterno", SqlDbType.VarChar, paterno, 50).Add("@materno", SqlDbType.VarChar, materno, 50).Add("@observations", SqlDbType.VarChar, observations, 2000).Add("@active", SqlDbType.Bit, active, null).Add("@year", SqlDbType.Int, year, null).Add("@month", SqlDbType.Int, month, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@nombre", SqlDbType.VarChar, nombre, 100).Add("@paterno", SqlDbType.VarChar, paterno, 50).Add("@materno", SqlDbType.VarChar, materno, 50).Add("@observations", SqlDbType.VarChar, observations, 2000).Add("@active", SqlDbType.Bit, active, null).Add("@year", SqlDbType.Int, year, null).Add("@month", SqlDbType.Int, month, null).Add("@total", SqlDbType.Money, total, null);
 
         	return this.ExecuteScalar<T>("SICAP", "HabitantUpdate",parameters.ToArray());
         }
@@ -44,11 +44,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Ejecuta el procedimiento almacenado.
         /// </summary>
         /// <returns></returns>
-        public int ExeNonQuery(int? idUser = null, int? id = null, String nombre = null, String paterno = null, String materno = null, String observations = null, Boolean? active = null, int? year = null, int? month = null)
+        public int ExeNonQuery(int? idUser = null, int? id = null, String nombre = null, String paterno = null, String materno = null, String observations = null, Boolean? active = null, int? year = null, int? month = null, Decimal? total = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@nombre", SqlDbType.VarChar, nombre, 100).Add("@paterno", SqlDbType.VarChar, paterno, 50).Add("@materno", SqlDbType.VarChar, materno, 50).Add("@observations", SqlDbType.VarChar, observations, 2000).Add("@active", SqlDbType.Bit, active, null).Add("@year", SqlDbType.Int, year, null).Add("@month", SqlDbType.Int, month, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@nombre", SqlDbType.VarChar, nombre, 100).Add("@paterno", SqlDbType.VarChar, paterno, 50).Add("@materno", SqlDbType.VarChar, materno, 50).Add("@observations", SqlDbType.VarChar, observations, 2000).Add("@active", SqlDbType.Bit, active, null).Add("@year", SqlDbType.Int, year, null).Add("@month", SqlDbType.Int, month, null).Add("@total", SqlDbType.Money, total, null);
 
         	return this.ExecuteNonQuery("SICAP", "HabitantUpdate",parameters.ToArray());
         }
@@ -57,11 +57,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene un objeto IDataReader resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public IDataReader ExeReader(int? idUser = null, int? id = null, String nombre = null, String paterno = null, String materno = null, String observations = null, Boolean? active = null, int? year = null, int? month = null)
+        public IDataReader ExeReader(int? idUser = null, int? id = null, String nombre = null, String paterno = null, String materno = null, String observations = null, Boolean? active = null, int? year = null, int? month = null, Decimal? total = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@nombre", SqlDbType.VarChar, nombre, 100).Add("@paterno", SqlDbType.VarChar, paterno, 50).Add("@materno", SqlDbType.VarChar, materno, 50).Add("@observations", SqlDbType.VarChar, observations, 2000).Add("@active", SqlDbType.Bit, active, null).Add("@year", SqlDbType.Int, year, null).Add("@month", SqlDbType.Int, month, null);
+        	parameters.Add("@idUser", SqlDbType.Int, idUser, null).Add("@id", SqlDbType.Int, id, null).Add("@nombre", SqlDbType.VarChar, nombre, 100).Add("@paterno", SqlDbType.VarChar, paterno, 50).Add("@materno", SqlDbType.VarChar, materno, 50).Add("@observations", SqlDbType.VarChar, observations, 2000).Add("@active", SqlDbType.Bit, active, null).Add("@year", SqlDbType.Int, year, null).Add("@month", SqlDbType.Int, month, null).Add("@total", SqlDbType.Money, total, null);
 
         	return this.GetReader("SICAP", "HabitantUpdate",parameters.ToArray());
         }

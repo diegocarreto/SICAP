@@ -73,6 +73,7 @@
     <Compile Include="MsSQL\SICAP\habitantFaenaPaidOutDelete.cs" />
     <Compile Include="MsSQL\SICAP\habitantFaenaPaidOutList.cs" />
     <Compile Include="MsSQL\SICAP\HabitantList.cs" />
+    <Compile Include="MsSQL\SICAP\HabitantPrint.cs" />
     <Compile Include="MsSQL\SICAP\HabitantUpdate.cs" />
     <Compile Include="MsSQL\SICAP\PaymentAdd.cs" />
     <Compile Include="MsSQL\SICAP\PaymentDelete.cs" />
@@ -83,12 +84,15 @@
     <Compile Include="MsSQL\SICAP\PaymentTotalByPeriod.cs" />
     <Compile Include="MsSQL\SICAP\PaymentUpdate.cs" />
     <Compile Include="MsSQL\SICAP\ReportConcentrated.cs" />
+    <Compile Include="MsSQL\SICAP\ReportPaymentYear1.cs" />
     <Compile Include="MsSQL\SICAP\RolGet.cs" />
     <Compile Include="MsSQL\SICAP\SICAP.cs" />
     <Compile Include="MsSQL\SICAP\UserLogin.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeAdd.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeDelete.cs" />
+    <Compile Include="MsSQL\SICAP\WaterIntakeFindByAp.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeList.cs" />
+    <Compile Include="MsSQL\SICAP\WaterIntakePrint.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeUpdate.cs" />
     <Compile Include="Utilities\AppConfig.cs" />
     <Compile Include="Utilities\FunctionsSql.cs" />

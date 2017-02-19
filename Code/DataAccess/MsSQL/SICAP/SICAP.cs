@@ -114,6 +114,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Habitantlist Habitantlist = new DataAccess.MsSqlCommands.Sicap.Habitantlist();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Habitantprint.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Habitantprint Habitantprint = new DataAccess.MsSqlCommands.Sicap.Habitantprint();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Habitantupdate.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Habitantupdate Habitantupdate = new DataAccess.MsSqlCommands.Sicap.Habitantupdate();
@@ -164,6 +169,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Reportconcentrated Reportconcentrated = new DataAccess.MsSqlCommands.Sicap.Reportconcentrated();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Reportpaymentyear1.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Reportpaymentyear1 Reportpaymentyear1 = new DataAccess.MsSqlCommands.Sicap.Reportpaymentyear1();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Rolget.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Rolget Rolget = new DataAccess.MsSqlCommands.Sicap.Rolget();
@@ -184,9 +194,19 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Waterintakedelete Waterintakedelete = new DataAccess.MsSqlCommands.Sicap.Waterintakedelete();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Waterintakefindbyap.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Waterintakefindbyap Waterintakefindbyap = new DataAccess.MsSqlCommands.Sicap.Waterintakefindbyap();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Waterintakelist.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Waterintakelist Waterintakelist = new DataAccess.MsSqlCommands.Sicap.Waterintakelist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Waterintakeprint.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Waterintakeprint Waterintakeprint = new DataAccess.MsSqlCommands.Sicap.Waterintakeprint();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Waterintakeupdate.
@@ -260,6 +280,9 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Habitantlist != null)
 				this.Habitantlist.Dispose();
 
+			if (this.Habitantprint != null)
+				this.Habitantprint.Dispose();
+
 			if (this.Habitantupdate != null)
 				this.Habitantupdate.Dispose();
 
@@ -290,6 +313,9 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Reportconcentrated != null)
 				this.Reportconcentrated.Dispose();
 
+			if (this.Reportpaymentyear1 != null)
+				this.Reportpaymentyear1.Dispose();
+
 			if (this.Rolget != null)
 				this.Rolget.Dispose();
 
@@ -302,8 +328,14 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Waterintakedelete != null)
 				this.Waterintakedelete.Dispose();
 
+			if (this.Waterintakefindbyap != null)
+				this.Waterintakefindbyap.Dispose();
+
 			if (this.Waterintakelist != null)
 				this.Waterintakelist.Dispose();
+
+			if (this.Waterintakeprint != null)
+				this.Waterintakeprint.Dispose();
 
 			if (this.Waterintakeupdate != null)
 				this.Waterintakeupdate.Dispose();
