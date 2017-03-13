@@ -30,6 +30,8 @@ namespace PosBusiness
 
         public bool? Menu_PagosCooperaciones { get; set; }
 
+        public bool? Menu_Calles { get; set; }        
+
         public bool? New { get; set; }
 
         public bool? Update { get; set; }
@@ -62,6 +64,7 @@ namespace PosBusiness
             this.Update = e.Update;
             this.New = e.New;
             this.Erase = e.Erase;
+            this.Menu_Calles = e.Menu_Calles;
         }
 
         // <summary>

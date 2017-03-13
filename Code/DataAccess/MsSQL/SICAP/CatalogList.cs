@@ -18,11 +18,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene una lista del tipo de objectos indicado con el merge entre las propiedades del objeto y el resulset obtenido de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public List<T> ExeList<T>(String type = null) where T : new()
+        public List<T> ExeList<T>(String type = null, int? id = null, String find = null) where T : new()
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@type", SqlDbType.VarChar, type, 50);
+        	parameters.Add("@type", SqlDbType.VarChar, type, 50).Add("@id", SqlDbType.Int, id, null).Add("@find", SqlDbType.VarChar, find, 100);
 
         	return this.GetListBase<T>("SICAP", "CatalogList",parameters.ToArray());
         }
@@ -31,11 +31,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene el scalar resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public T ExeScalar<T>(String type = null)
+        public T ExeScalar<T>(String type = null, int? id = null, String find = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@type", SqlDbType.VarChar, type, 50);
+        	parameters.Add("@type", SqlDbType.VarChar, type, 50).Add("@id", SqlDbType.Int, id, null).Add("@find", SqlDbType.VarChar, find, 100);
 
         	return this.ExecuteScalar<T>("SICAP", "CatalogList",parameters.ToArray());
         }
@@ -44,11 +44,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Ejecuta el procedimiento almacenado.
         /// </summary>
         /// <returns></returns>
-        public int ExeNonQuery(String type = null)
+        public int ExeNonQuery(String type = null, int? id = null, String find = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@type", SqlDbType.VarChar, type, 50);
+        	parameters.Add("@type", SqlDbType.VarChar, type, 50).Add("@id", SqlDbType.Int, id, null).Add("@find", SqlDbType.VarChar, find, 100);
 
         	return this.ExecuteNonQuery("SICAP", "CatalogList",parameters.ToArray());
         }
@@ -57,11 +57,11 @@ namespace DataAccess.MsSqlCommands.Sicap
         /// Obtiene un objeto IDataReader resultante de la ejecucion.
         /// </summary>
         /// <returns></returns>
-        public IDataReader ExeReader(String type = null)
+        public IDataReader ExeReader(String type = null, int? id = null, String find = null)
         {
         	List<SqlParameter> parameters = new List<SqlParameter>();
 
-        	parameters.Add("@type", SqlDbType.VarChar, type, 50);
+        	parameters.Add("@type", SqlDbType.VarChar, type, 50).Add("@id", SqlDbType.Int, id, null).Add("@find", SqlDbType.VarChar, find, 100);
 
         	return this.GetReader("SICAP", "CatalogList",parameters.ToArray());
         }

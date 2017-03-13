@@ -106,9 +106,12 @@ namespace WindowsFormsApplication1
             {
                 e.Save();
 
-                if (this.Confirm("¿Deseas imprimir el recibo?"))
+                if (e.Total > 0)
                 {
-                    this.PrintHabitant(e.Id.Value);
+                    if (this.Confirm("¿Deseas imprimir el recibo?"))
+                    {
+                        this.PrintHabitant(e.Id.Value);
+                    }
                 }
 
                 this.Result(true, "Success!!");

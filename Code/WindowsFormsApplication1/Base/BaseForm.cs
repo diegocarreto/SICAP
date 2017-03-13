@@ -11,10 +11,11 @@ using PosBusiness;
 using System.Drawing.Printing;
 using posb = PosBusiness;
 using Utilities;
+using MetroFramework.Controls;
 
 namespace WindowsFormsApplication1.Base
 {
-    public class BaseForm : Form
+    public class BaseForm : MetroFramework.Forms.MetroForm
     {
         #region Members
 
@@ -44,6 +45,7 @@ namespace WindowsFormsApplication1.Base
             : base()
         {
             this.LoadComplete = false;
+            this.Resizable = false;
         }
 
         #endregion
@@ -151,7 +153,8 @@ namespace WindowsFormsApplication1.Base
                     {
                         p.MouseHover += new EventHandler(delegate(Object o, EventArgs a)
                         {
-                            toolTip1.SetToolTip(p, p.Tag.ToString());
+                            if (p.Tag != null)
+                                toolTip1.SetToolTip(p, p.Tag.ToString());
                         });
                     }
                 }
@@ -183,6 +186,11 @@ namespace WindowsFormsApplication1.Base
                             if (ctrl is TextBox)
                             {
                                 var txt = ctrl as TextBox;
+                                isError = string.IsNullOrEmpty(txt.Text);
+                            }
+                            else if (ctrl is MetroTextBox)
+                            {
+                                var txt = ctrl as MetroTextBox;
                                 isError = string.IsNullOrEmpty(txt.Text);
                             }
                             else if (ctrl is ComboBox)
@@ -872,7 +880,7 @@ namespace WindowsFormsApplication1.Base
 
         protected override void OnLoad(EventArgs e)
         {
-            this.BackColor = ColorTranslator.FromHtml("#BEDAFE");
+            //this.BackColor = ColorTranslator.FromHtml("#BEDAFE");
 
             this.StartPosition = FormStartPosition.CenterScreen;
 

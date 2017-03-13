@@ -55,12 +55,11 @@ namespace WindowsFormsApplication1
             this.cmbMonth.SelectedIndex = 0;
             this.cmbYear.SelectedIndex = 0;
 
-            this.cmbEndMonth.SelectedIndex = 0;
-            this.cmbEndYear.SelectedIndex = 0;
-
             this.LoadComplete = true;
 
             this.FillGridView();
+
+            this.ActiveControl = this.txtFind;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -110,16 +109,6 @@ namespace WindowsFormsApplication1
                 else
                     this.Entity.Month = null;
 
-                if (this.cmbEndYear.SelectedIndex > 0)
-                    this.Entity.YearEnd = int.Parse(this.cmbEndYear.SelectedItem.ToString());
-                else
-                    this.Entity.YearEnd = null;
-
-                if (this.cmbEndMonth.SelectedIndex > 0)
-                    this.Entity.MonthEnd = this.cmbEndMonth.SelectedIndex;
-                else
-                    this.Entity.MonthEnd = null;
-
                 this.gvList.AutoGenerateColumns = false;
                 this.gvList.AllowUserToResizeColumns = false;
                 this.gvList.DataSource = this.Entity.List();
@@ -164,12 +153,10 @@ namespace WindowsFormsApplication1
         private void FillYears()
         {
             this.cmbYear.Items.Add("Seleccionar...");
-            this.cmbEndYear.Items.Add("Seleccionar...");
 
             for (int i = 1995; i < 2050; i++)
             {
                 this.cmbYear.Items.Add(i);
-                this.cmbEndYear.Items.Add(i);
             }
 
             //var currentYear = DateTime.Now.Year.ToString();
@@ -183,12 +170,10 @@ namespace WindowsFormsApplication1
                                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
             this.cmbMonth.Items.Add("Seleccionar...");
-            this.cmbEndMonth.Items.Add("Seleccionar...");
 
             for (int i = 0; i < months.Length; i++)
             {
                 this.cmbMonth.Items.Add(months[i]);
-                this.cmbEndMonth.Items.Add(months[i]);
             }
 
             //var currentMonth = DateTime.Now.Month + 1;
@@ -207,16 +192,6 @@ namespace WindowsFormsApplication1
         }
 
         private void cmbWaterIntake_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.FillGridView();
-        }
-
-        private void txtFind_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void txtFind_KeyUp(object sender, KeyEventArgs e)
         {
             this.FillGridView();
         }
@@ -291,6 +266,11 @@ namespace WindowsFormsApplication1
                 else
                     this.Alert("Ocurrió un error al intentar cancelar el pago [" + this.EntityId + "]", eForm.TypeError.Error);
             }
+        }
+
+        private void txtFind_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            this.FillGridView();
         }
     }
 }

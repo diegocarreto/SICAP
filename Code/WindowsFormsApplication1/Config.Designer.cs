@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Config));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMensualidad = new System.Windows.Forms.TextBox();
-            this.txtAlta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -42,27 +40,27 @@
             this.pbval_cmbPrinter = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTesorero = new System.Windows.Forms.TextBox();
-            this.txtPresidente = new System.Windows.Forms.TextBox();
             this.pbval_txtTesorero = new System.Windows.Forms.PictureBox();
             this.pbval_txtPresidente = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtAltaH = new System.Windows.Forms.TextBox();
             this.pbval_txtAltaH = new System.Windows.Forms.PictureBox();
-            this.pbSICAP = new System.Windows.Forms.PictureBox();
+            this.txtAltaH = new MetroFramework.Controls.MetroTextBox();
+            this.txtAlta = new MetroFramework.Controls.MetroTextBox();
+            this.txtMensualidad = new MetroFramework.Controls.MetroTextBox();
+            this.txtTesorero = new MetroFramework.Controls.MetroTextBox();
+            this.txtPresidente = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtAlta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtMensualidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbPrinter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTesorero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtPresidente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtAltaH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 142);
+            this.label3.Location = new System.Drawing.Point(25, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 21;
@@ -71,34 +69,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 62);
+            this.label2.Location = new System.Drawing.Point(11, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Mensualidad:";
             // 
-            // txtMensualidad
-            // 
-            this.txtMensualidad.Location = new System.Drawing.Point(84, 59);
-            this.txtMensualidad.MaxLength = 50;
-            this.txtMensualidad.Name = "txtMensualidad";
-            this.txtMensualidad.Size = new System.Drawing.Size(260, 20);
-            this.txtMensualidad.TabIndex = 13;
-            this.txtMensualidad.Tag = "txtMoney";
-            // 
-            // txtAlta
-            // 
-            this.txtAlta.Location = new System.Drawing.Point(84, 33);
-            this.txtAlta.MaxLength = 100;
-            this.txtAlta.Name = "txtAlta";
-            this.txtAlta.Size = new System.Drawing.Size(260, 20);
-            this.txtAlta.TabIndex = 12;
-            this.txtAlta.Tag = "txtMoney";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 36);
+            this.label1.Location = new System.Drawing.Point(23, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 15;
@@ -109,10 +89,10 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(188, 175);
+            this.btnAccept.Location = new System.Drawing.Point(191, 235);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
-            this.btnAccept.TabIndex = 19;
+            this.btnAccept.TabIndex = 6;
             this.btnAccept.Text = "    Aceptar";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
@@ -122,10 +102,10 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(269, 175);
+            this.btnExit.Location = new System.Drawing.Point(272, 235);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 20;
+            this.btnExit.TabIndex = 7;
             this.btnExit.Text = "    Salir";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -135,7 +115,7 @@
             this.pbval_txtAlta.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtAlta.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtAlta.Image")));
             this.pbval_txtAlta.InitialImage = null;
-            this.pbval_txtAlta.Location = new System.Drawing.Point(350, 33);
+            this.pbval_txtAlta.Location = new System.Drawing.Point(353, 98);
             this.pbval_txtAlta.Name = "pbval_txtAlta";
             this.pbval_txtAlta.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtAlta.TabIndex = 25;
@@ -148,7 +128,7 @@
             this.pbval_txtMensualidad.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtMensualidad.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtMensualidad.Image")));
             this.pbval_txtMensualidad.InitialImage = null;
-            this.pbval_txtMensualidad.Location = new System.Drawing.Point(350, 59);
+            this.pbval_txtMensualidad.Location = new System.Drawing.Point(353, 127);
             this.pbval_txtMensualidad.Name = "pbval_txtMensualidad";
             this.pbval_txtMensualidad.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtMensualidad.TabIndex = 26;
@@ -162,17 +142,17 @@
             this.cmbPrinter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPrinter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPrinter.FormattingEnabled = true;
-            this.cmbPrinter.Location = new System.Drawing.Point(84, 139);
+            this.cmbPrinter.Location = new System.Drawing.Point(87, 208);
             this.cmbPrinter.Name = "cmbPrinter";
             this.cmbPrinter.Size = new System.Drawing.Size(260, 21);
-            this.cmbPrinter.TabIndex = 14;
+            this.cmbPrinter.TabIndex = 5;
             // 
             // pbval_cmbPrinter
             // 
             this.pbval_cmbPrinter.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_cmbPrinter.Image = ((System.Drawing.Image)(resources.GetObject("pbval_cmbPrinter.Image")));
             this.pbval_cmbPrinter.InitialImage = null;
-            this.pbval_cmbPrinter.Location = new System.Drawing.Point(350, 142);
+            this.pbval_cmbPrinter.Location = new System.Drawing.Point(353, 212);
             this.pbval_cmbPrinter.Name = "pbval_cmbPrinter";
             this.pbval_cmbPrinter.Size = new System.Drawing.Size(18, 17);
             this.pbval_cmbPrinter.TabIndex = 30;
@@ -183,7 +163,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 88);
+            this.label4.Location = new System.Drawing.Point(29, 156);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 31;
@@ -192,36 +172,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 116);
+            this.label5.Location = new System.Drawing.Point(23, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 32;
             this.label5.Text = "Presidente:";
-            // 
-            // txtTesorero
-            // 
-            this.txtTesorero.Location = new System.Drawing.Point(84, 85);
-            this.txtTesorero.MaxLength = 50;
-            this.txtTesorero.Name = "txtTesorero";
-            this.txtTesorero.Size = new System.Drawing.Size(260, 20);
-            this.txtTesorero.TabIndex = 33;
-            this.txtTesorero.Tag = "";
-            // 
-            // txtPresidente
-            // 
-            this.txtPresidente.Location = new System.Drawing.Point(84, 113);
-            this.txtPresidente.MaxLength = 50;
-            this.txtPresidente.Name = "txtPresidente";
-            this.txtPresidente.Size = new System.Drawing.Size(260, 20);
-            this.txtPresidente.TabIndex = 34;
-            this.txtPresidente.Tag = "";
             // 
             // pbval_txtTesorero
             // 
             this.pbval_txtTesorero.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtTesorero.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtTesorero.Image")));
             this.pbval_txtTesorero.InitialImage = null;
-            this.pbval_txtTesorero.Location = new System.Drawing.Point(350, 85);
+            this.pbval_txtTesorero.Location = new System.Drawing.Point(353, 156);
             this.pbval_txtTesorero.Name = "pbval_txtTesorero";
             this.pbval_txtTesorero.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtTesorero.TabIndex = 35;
@@ -234,7 +196,7 @@
             this.pbval_txtPresidente.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtPresidente.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtPresidente.Image")));
             this.pbval_txtPresidente.InitialImage = null;
-            this.pbval_txtPresidente.Location = new System.Drawing.Point(350, 112);
+            this.pbval_txtPresidente.Location = new System.Drawing.Point(353, 185);
             this.pbval_txtPresidente.Name = "pbval_txtPresidente";
             this.pbval_txtPresidente.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtPresidente.TabIndex = 36;
@@ -245,27 +207,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1, 9);
+            this.label6.Location = new System.Drawing.Point(4, 69);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 37;
             this.label6.Text = "Alta Habitante:";
-            // 
-            // txtAltaH
-            // 
-            this.txtAltaH.Location = new System.Drawing.Point(84, 6);
-            this.txtAltaH.MaxLength = 100;
-            this.txtAltaH.Name = "txtAltaH";
-            this.txtAltaH.Size = new System.Drawing.Size(260, 20);
-            this.txtAltaH.TabIndex = 38;
-            this.txtAltaH.Tag = "txtMoney";
             // 
             // pbval_txtAltaH
             // 
             this.pbval_txtAltaH.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtAltaH.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtAltaH.Image")));
             this.pbval_txtAltaH.InitialImage = null;
-            this.pbval_txtAltaH.Location = new System.Drawing.Point(350, 6);
+            this.pbval_txtAltaH.Location = new System.Drawing.Point(353, 69);
             this.pbval_txtAltaH.Name = "pbval_txtAltaH";
             this.pbval_txtAltaH.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtAltaH.TabIndex = 39;
@@ -273,30 +226,195 @@
             this.pbval_txtAltaH.Tag = "Ingrese el alta del habitante";
             this.pbval_txtAltaH.Visible = false;
             // 
-            // pbSICAP
+            // txtAltaH
             // 
-            this.pbSICAP.Image = ((System.Drawing.Image)(resources.GetObject("pbSICAP.Image")));
-            this.pbSICAP.Location = new System.Drawing.Point(4, 166);
-            this.pbSICAP.Name = "pbSICAP";
-            this.pbSICAP.Size = new System.Drawing.Size(25, 32);
-            this.pbSICAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSICAP.TabIndex = 40;
-            this.pbSICAP.TabStop = false;
-            this.pbSICAP.Tag = "Permite configurar el sistema";
+            // 
+            // 
+            // 
+            this.txtAltaH.CustomButton.Image = null;
+            this.txtAltaH.CustomButton.Location = new System.Drawing.Point(238, 1);
+            this.txtAltaH.CustomButton.Name = "";
+            this.txtAltaH.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtAltaH.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtAltaH.CustomButton.TabIndex = 1;
+            this.txtAltaH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtAltaH.CustomButton.UseSelectable = true;
+            this.txtAltaH.CustomButton.Visible = false;
+            this.txtAltaH.DisplayIcon = true;
+            this.txtAltaH.Icon = ((System.Drawing.Image)(resources.GetObject("txtAltaH.Icon")));
+            this.txtAltaH.Lines = new string[0];
+            this.txtAltaH.Location = new System.Drawing.Point(87, 63);
+            this.txtAltaH.MaxLength = 32767;
+            this.txtAltaH.Name = "txtAltaH";
+            this.txtAltaH.PasswordChar = '\0';
+            this.txtAltaH.PromptText = "Introduzca el habitante";
+            this.txtAltaH.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAltaH.SelectedText = "";
+            this.txtAltaH.SelectionLength = 0;
+            this.txtAltaH.SelectionStart = 0;
+            this.txtAltaH.ShortcutsEnabled = true;
+            this.txtAltaH.ShowClearButton = true;
+            this.txtAltaH.Size = new System.Drawing.Size(260, 23);
+            this.txtAltaH.TabIndex = 0;
+            this.txtAltaH.UseSelectable = true;
+            this.txtAltaH.WaterMark = "Introduzca el habitante";
+            this.txtAltaH.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtAltaH.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtAlta
+            // 
+            // 
+            // 
+            // 
+            this.txtAlta.CustomButton.Image = null;
+            this.txtAlta.CustomButton.Location = new System.Drawing.Point(238, 1);
+            this.txtAlta.CustomButton.Name = "";
+            this.txtAlta.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtAlta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtAlta.CustomButton.TabIndex = 1;
+            this.txtAlta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtAlta.CustomButton.UseSelectable = true;
+            this.txtAlta.CustomButton.Visible = false;
+            this.txtAlta.DisplayIcon = true;
+            this.txtAlta.Icon = ((System.Drawing.Image)(resources.GetObject("txtAlta.Icon")));
+            this.txtAlta.Lines = new string[0];
+            this.txtAlta.Location = new System.Drawing.Point(87, 92);
+            this.txtAlta.MaxLength = 32767;
+            this.txtAlta.Name = "txtAlta";
+            this.txtAlta.PasswordChar = '\0';
+            this.txtAlta.PromptText = "Introduzca el monto";
+            this.txtAlta.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAlta.SelectedText = "";
+            this.txtAlta.SelectionLength = 0;
+            this.txtAlta.SelectionStart = 0;
+            this.txtAlta.ShortcutsEnabled = true;
+            this.txtAlta.ShowClearButton = true;
+            this.txtAlta.Size = new System.Drawing.Size(260, 23);
+            this.txtAlta.TabIndex = 1;
+            this.txtAlta.UseSelectable = true;
+            this.txtAlta.WaterMark = "Introduzca el monto";
+            this.txtAlta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtAlta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtMensualidad
+            // 
+            // 
+            // 
+            // 
+            this.txtMensualidad.CustomButton.Image = null;
+            this.txtMensualidad.CustomButton.Location = new System.Drawing.Point(238, 1);
+            this.txtMensualidad.CustomButton.Name = "";
+            this.txtMensualidad.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtMensualidad.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtMensualidad.CustomButton.TabIndex = 1;
+            this.txtMensualidad.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtMensualidad.CustomButton.UseSelectable = true;
+            this.txtMensualidad.CustomButton.Visible = false;
+            this.txtMensualidad.DisplayIcon = true;
+            this.txtMensualidad.Icon = ((System.Drawing.Image)(resources.GetObject("txtMensualidad.Icon")));
+            this.txtMensualidad.Lines = new string[0];
+            this.txtMensualidad.Location = new System.Drawing.Point(87, 121);
+            this.txtMensualidad.MaxLength = 32767;
+            this.txtMensualidad.Name = "txtMensualidad";
+            this.txtMensualidad.PasswordChar = '\0';
+            this.txtMensualidad.PromptText = "Introduzca el monto";
+            this.txtMensualidad.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtMensualidad.SelectedText = "";
+            this.txtMensualidad.SelectionLength = 0;
+            this.txtMensualidad.SelectionStart = 0;
+            this.txtMensualidad.ShortcutsEnabled = true;
+            this.txtMensualidad.ShowClearButton = true;
+            this.txtMensualidad.Size = new System.Drawing.Size(260, 23);
+            this.txtMensualidad.TabIndex = 2;
+            this.txtMensualidad.UseSelectable = true;
+            this.txtMensualidad.WaterMark = "Introduzca el monto";
+            this.txtMensualidad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtMensualidad.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtTesorero
+            // 
+            // 
+            // 
+            // 
+            this.txtTesorero.CustomButton.Image = null;
+            this.txtTesorero.CustomButton.Location = new System.Drawing.Point(238, 1);
+            this.txtTesorero.CustomButton.Name = "";
+            this.txtTesorero.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTesorero.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTesorero.CustomButton.TabIndex = 1;
+            this.txtTesorero.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTesorero.CustomButton.UseSelectable = true;
+            this.txtTesorero.CustomButton.Visible = false;
+            this.txtTesorero.DisplayIcon = true;
+            this.txtTesorero.Icon = ((System.Drawing.Image)(resources.GetObject("txtTesorero.Icon")));
+            this.txtTesorero.Lines = new string[0];
+            this.txtTesorero.Location = new System.Drawing.Point(87, 150);
+            this.txtTesorero.MaxLength = 32767;
+            this.txtTesorero.Name = "txtTesorero";
+            this.txtTesorero.PasswordChar = '\0';
+            this.txtTesorero.PromptText = "Introduzca el nombre del tesorero";
+            this.txtTesorero.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTesorero.SelectedText = "";
+            this.txtTesorero.SelectionLength = 0;
+            this.txtTesorero.SelectionStart = 0;
+            this.txtTesorero.ShortcutsEnabled = true;
+            this.txtTesorero.ShowClearButton = true;
+            this.txtTesorero.Size = new System.Drawing.Size(260, 23);
+            this.txtTesorero.TabIndex = 3;
+            this.txtTesorero.UseSelectable = true;
+            this.txtTesorero.WaterMark = "Introduzca el nombre del tesorero";
+            this.txtTesorero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTesorero.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtPresidente
+            // 
+            // 
+            // 
+            // 
+            this.txtPresidente.CustomButton.Image = null;
+            this.txtPresidente.CustomButton.Location = new System.Drawing.Point(238, 1);
+            this.txtPresidente.CustomButton.Name = "";
+            this.txtPresidente.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPresidente.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPresidente.CustomButton.TabIndex = 1;
+            this.txtPresidente.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPresidente.CustomButton.UseSelectable = true;
+            this.txtPresidente.CustomButton.Visible = false;
+            this.txtPresidente.DisplayIcon = true;
+            this.txtPresidente.Icon = ((System.Drawing.Image)(resources.GetObject("txtPresidente.Icon")));
+            this.txtPresidente.Lines = new string[0];
+            this.txtPresidente.Location = new System.Drawing.Point(87, 179);
+            this.txtPresidente.MaxLength = 32767;
+            this.txtPresidente.Name = "txtPresidente";
+            this.txtPresidente.PasswordChar = '\0';
+            this.txtPresidente.PromptText = "Introduzca el nombre del presidente";
+            this.txtPresidente.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPresidente.SelectedText = "";
+            this.txtPresidente.SelectionLength = 0;
+            this.txtPresidente.SelectionStart = 0;
+            this.txtPresidente.ShortcutsEnabled = true;
+            this.txtPresidente.ShowClearButton = true;
+            this.txtPresidente.Size = new System.Drawing.Size(260, 23);
+            this.txtPresidente.TabIndex = 4;
+            this.txtPresidente.UseSelectable = true;
+            this.txtPresidente.WaterMark = "Introduzca el nombre del presidente";
+            this.txtPresidente.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPresidente.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 206);
-            this.Controls.Add(this.pbSICAP);
-            this.Controls.Add(this.pbval_txtAltaH);
+            this.ClientSize = new System.Drawing.Size(376, 267);
+            this.Controls.Add(this.txtPresidente);
+            this.Controls.Add(this.txtTesorero);
+            this.Controls.Add(this.txtMensualidad);
+            this.Controls.Add(this.txtAlta);
             this.Controls.Add(this.txtAltaH);
+            this.Controls.Add(this.pbval_txtAltaH);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pbval_txtPresidente);
             this.Controls.Add(this.pbval_txtTesorero);
-            this.Controls.Add(this.txtPresidente);
-            this.Controls.Add(this.txtTesorero);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbval_cmbPrinter);
@@ -305,18 +423,14 @@
             this.Controls.Add(this.pbval_txtAlta);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtMensualidad);
-            this.Controls.Add(this.txtAlta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnExit);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Config";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SICAP - Configuracion";
+            this.Text = "Configuración";
             this.Load += new System.EventHandler(this.Config_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtAlta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtMensualidad)).EndInit();
@@ -324,7 +438,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTesorero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtPresidente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtAltaH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,8 +447,6 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMensualidad;
-        private System.Windows.Forms.TextBox txtAlta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnExit;
@@ -345,13 +456,14 @@
         private System.Windows.Forms.PictureBox pbval_cmbPrinter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTesorero;
-        private System.Windows.Forms.TextBox txtPresidente;
         private System.Windows.Forms.PictureBox pbval_txtTesorero;
         private System.Windows.Forms.PictureBox pbval_txtPresidente;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAltaH;
         private System.Windows.Forms.PictureBox pbval_txtAltaH;
-        private System.Windows.Forms.PictureBox pbSICAP;
+        private MetroFramework.Controls.MetroTextBox txtAltaH;
+        private MetroFramework.Controls.MetroTextBox txtAlta;
+        private MetroFramework.Controls.MetroTextBox txtMensualidad;
+        private MetroFramework.Controls.MetroTextBox txtTesorero;
+        private MetroFramework.Controls.MetroTextBox txtPresidente;
     }
 }

@@ -11,6 +11,11 @@ namespace PosBusiness
         #endregion
 
         #region Properties
+
+        public string Name { get; set; }
+
+        public string Type { get; set; }
+
         #endregion
 
         #region Builder
@@ -23,13 +28,83 @@ namespace PosBusiness
 
         #region Methods
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool Get()
+        {
+            try
+            {
+                var e = this.List("Calle").First();
+
+                this.Name = e.Name;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.SetError(ex);
+
+                return false;
+            }
+        }
+
         // <summary>
         // 
         // </summary>
         // <returns></returns>
         public List<Catalogs> List(string Type)
         {
-            return this.AccessMsSql.Sicap.Cataloglist.ExeList<Catalogs>(Type);
+            return this.AccessMsSql.Sicap.Cataloglist.ExeList<Catalogs>(Type, this.Id, this.Find);
+        }
+
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public bool Delete()
+        {
+            try
+            {
+                this.AccessMsSql.Sicap.Catalogdelete.ExeNonQuery(this.UserId, this.Id);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.SetError(ex);
+
+                return false;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public bool Save()
+        {
+            try
+            {
+                if (!this.Id.HasValue)
+                {
+                    this.Id = this.AccessMsSql.Sicap.Catalogadd.ExeScalar<int>(this.UserId, this.Name, this.Type);
+                }
+                else
+                {
+                    this.AccessMsSql.Sicap.Catalogupdate.ExeNonQuery(this.UserId, this.Id, this.Name);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.SetError(ex);
+
+                return false;
+            }
         }
 
         #endregion

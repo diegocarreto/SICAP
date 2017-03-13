@@ -78,9 +78,12 @@ namespace WindowsFormsApplication1
             {
                 e.Save();
 
-                if (this.Confirm("¿Deseas imprimir el recibo?"))
+                if (e.Total > 0)
                 {
-                    this.PrintWaterIntake(e.Id.Value);
+                    if (this.Confirm("¿Deseas imprimir el recibo?"))
+                    {
+                        this.PrintWaterIntake(e.Id.Value);
+                    }
                 }
 
                 this.Result(true, "Success!!");

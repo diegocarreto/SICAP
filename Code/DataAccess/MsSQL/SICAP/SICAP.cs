@@ -19,9 +19,24 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Binnacleadd Binnacleadd = new DataAccess.MsSqlCommands.Sicap.Binnacleadd();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Catalogadd.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Catalogadd Catalogadd = new DataAccess.MsSqlCommands.Sicap.Catalogadd();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Catalogdelete.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Catalogdelete Catalogdelete = new DataAccess.MsSqlCommands.Sicap.Catalogdelete();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Cataloglist.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Cataloglist Cataloglist = new DataAccess.MsSqlCommands.Sicap.Cataloglist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Catalogupdate.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Catalogupdate Catalogupdate = new DataAccess.MsSqlCommands.Sicap.Catalogupdate();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Configget.
@@ -169,6 +184,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Reportconcentrated Reportconcentrated = new DataAccess.MsSqlCommands.Sicap.Reportconcentrated();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Reportpayments1.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Reportpayments1 Reportpayments1 = new DataAccess.MsSqlCommands.Sicap.Reportpayments1();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Reportpaymentyear1.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Reportpaymentyear1 Reportpaymentyear1 = new DataAccess.MsSqlCommands.Sicap.Reportpaymentyear1();
@@ -223,8 +243,17 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Binnacleadd != null)
 				this.Binnacleadd.Dispose();
 
+			if (this.Catalogadd != null)
+				this.Catalogadd.Dispose();
+
+			if (this.Catalogdelete != null)
+				this.Catalogdelete.Dispose();
+
 			if (this.Cataloglist != null)
 				this.Cataloglist.Dispose();
+
+			if (this.Catalogupdate != null)
+				this.Catalogupdate.Dispose();
 
 			if (this.Configget != null)
 				this.Configget.Dispose();
@@ -312,6 +341,9 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Reportconcentrated != null)
 				this.Reportconcentrated.Dispose();
+
+			if (this.Reportpayments1 != null)
+				this.Reportpayments1.Dispose();
 
 			if (this.Reportpaymentyear1 != null)
 				this.Reportpaymentyear1.Dispose();

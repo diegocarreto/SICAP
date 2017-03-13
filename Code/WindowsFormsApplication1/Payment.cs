@@ -26,6 +26,8 @@ namespace WindowsFormsApplication1
 
         private int? idWaterIntake = null;
 
+        private bool ChangeHabitant = true;
+
         public Payment()
         {
             InitializeComponent();
@@ -321,7 +323,7 @@ namespace WindowsFormsApplication1
 
         private void cmbHabitant_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.cmbHabitant.SelectedIndex > 0)
+            if (this.cmbHabitant.SelectedIndex > 0 && this.ChangeHabitant)
             {
                 this.FillWaterIntake(this.cmbHabitant.GetVal<int>());
             }
@@ -334,6 +336,8 @@ namespace WindowsFormsApplication1
                 this.StartYear = null;
                 this.StartMonth = null;
             }
+
+            this.txtAP.Clear();
         }
 
         private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -404,9 +408,13 @@ namespace WindowsFormsApplication1
 
             if (p.IdWaterIntake.HasValue && p.IdHabitantOrRent.HasValue)
             {
+                this.ChangeHabitant = false;
+
                 this.idWaterIntake = p.IdWaterIntake;
                 this.cmbHabitant.SelectedValue = p.IdHabitantOrRent;
                 this.FillWaterIntake(p.IdHabitantOrRent.Value);
+
+                this.ChangeHabitant = true;
             }
             else
                 this.Alert("No se encontraron datos para el AP: " + this.txtAP.Text);

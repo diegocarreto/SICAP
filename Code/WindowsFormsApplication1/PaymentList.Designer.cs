@@ -55,7 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtFind = new System.Windows.Forms.TextBox();
             this.cbDeuda = new System.Windows.Forms.CheckBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -64,19 +63,14 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.cmbEndMonth = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbEndYear = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pbSICAP = new System.Windows.Forms.PictureBox();
+            this.txtFind = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1023, 68);
+            this.label9.Location = new System.Drawing.Point(741, 126);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 13);
             this.label9.TabIndex = 108;
@@ -85,7 +79,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1012, 41);
+            this.label10.Location = new System.Drawing.Point(730, 99);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 107;
@@ -94,7 +88,7 @@
             // dtpDate2
             // 
             this.dtpDate2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDate2.Location = new System.Drawing.Point(1053, 65);
+            this.dtpDate2.Location = new System.Drawing.Point(771, 123);
             this.dtpDate2.Name = "dtpDate2";
             this.dtpDate2.Size = new System.Drawing.Size(114, 20);
             this.dtpDate2.TabIndex = 106;
@@ -103,7 +97,7 @@
             // dtpDate1
             // 
             this.dtpDate1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDate1.Location = new System.Drawing.Point(1053, 38);
+            this.dtpDate1.Location = new System.Drawing.Point(771, 96);
             this.dtpDate1.Name = "dtpDate1";
             this.dtpDate1.Size = new System.Drawing.Size(114, 20);
             this.dtpDate1.TabIndex = 105;
@@ -115,7 +109,7 @@
             this.cmbMonth.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonth.FormattingEnabled = true;
-            this.cmbMonth.Location = new System.Drawing.Point(471, 65);
+            this.cmbMonth.Location = new System.Drawing.Point(470, 123);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(196, 21);
             this.cmbMonth.TabIndex = 102;
@@ -124,11 +118,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(405, 68);
+            this.label7.Location = new System.Drawing.Point(434, 129);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.Size = new System.Drawing.Size(30, 13);
             this.label7.TabIndex = 104;
-            this.label7.Text = "Mes Inicial:";
+            this.label7.Text = "Mes:";
             // 
             // cmbYear
             // 
@@ -136,7 +130,7 @@
             this.cmbYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(471, 38);
+            this.cmbYear.Location = new System.Drawing.Point(470, 96);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(195, 21);
             this.cmbYear.TabIndex = 101;
@@ -145,11 +139,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(406, 41);
+            this.label8.Location = new System.Drawing.Point(435, 99);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.Size = new System.Drawing.Size(29, 13);
             this.label8.TabIndex = 103;
-            this.label8.Text = "Año Inicial:";
+            this.label8.Text = "Año:";
             // 
             // gvList
             // 
@@ -167,10 +161,10 @@
             this.Column6,
             this.Alta,
             this.Column7});
-            this.gvList.Location = new System.Drawing.Point(6, 115);
+            this.gvList.Location = new System.Drawing.Point(5, 173);
             this.gvList.Name = "gvList";
             this.gvList.ReadOnly = true;
-            this.gvList.Size = new System.Drawing.Size(1250, 408);
+            this.gvList.Size = new System.Drawing.Size(1250, 359);
             this.gvList.TabIndex = 33;
             this.gvList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_CellMouseDoubleClick);
             this.gvList.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvList_CellMouseLeave);
@@ -259,7 +253,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 15);
+            this.label5.Location = new System.Drawing.Point(22, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 32;
@@ -268,7 +262,7 @@
             // lblDeuda
             // 
             this.lblDeuda.AutoSize = true;
-            this.lblDeuda.Location = new System.Drawing.Point(4, 92);
+            this.lblDeuda.Location = new System.Drawing.Point(3, 150);
             this.lblDeuda.Name = "lblDeuda";
             this.lblDeuda.Size = new System.Drawing.Size(78, 13);
             this.lblDeuda.TabIndex = 31;
@@ -296,7 +290,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 68);
+            this.label1.Location = new System.Drawing.Point(2, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 28;
@@ -305,25 +299,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 41);
+            this.label6.Location = new System.Drawing.Point(25, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 27;
             this.label6.Text = "Habitante:";
             // 
-            // txtFind
-            // 
-            this.txtFind.Location = new System.Drawing.Point(87, 12);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(1169, 20);
-            this.txtFind.TabIndex = 19;
-            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
-            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
-            // 
             // cbDeuda
             // 
             this.cbDeuda.AutoSize = true;
-            this.cbDeuda.Location = new System.Drawing.Point(87, 92);
+            this.cbDeuda.Location = new System.Drawing.Point(86, 150);
             this.cbDeuda.Name = "cbDeuda";
             this.cbDeuda.Size = new System.Drawing.Size(15, 14);
             this.cbDeuda.TabIndex = 18;
@@ -354,7 +339,7 @@
             this.cmbWaterIntake.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbWaterIntake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWaterIntake.FormattingEnabled = true;
-            this.cmbWaterIntake.Location = new System.Drawing.Point(87, 65);
+            this.cmbWaterIntake.Location = new System.Drawing.Point(86, 123);
             this.cmbWaterIntake.Name = "cmbWaterIntake";
             this.cmbWaterIntake.Size = new System.Drawing.Size(277, 21);
             this.cmbWaterIntake.TabIndex = 15;
@@ -366,7 +351,7 @@
             this.cmbHabitant.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbHabitant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHabitant.FormattingEnabled = true;
-            this.cmbHabitant.Location = new System.Drawing.Point(87, 38);
+            this.cmbHabitant.Location = new System.Drawing.Point(86, 96);
             this.cmbHabitant.Name = "cmbHabitant";
             this.cmbHabitant.Size = new System.Drawing.Size(277, 21);
             this.cmbHabitant.TabIndex = 14;
@@ -412,69 +397,48 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // cmbEndMonth
+            // txtFind
             // 
-            this.cmbEndMonth.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbEndMonth.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbEndMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEndMonth.FormattingEnabled = true;
-            this.cmbEndMonth.Location = new System.Drawing.Point(774, 65);
-            this.cmbEndMonth.Name = "cmbEndMonth";
-            this.cmbEndMonth.Size = new System.Drawing.Size(196, 21);
-            this.cmbEndMonth.TabIndex = 110;
-            this.cmbEndMonth.SelectedIndexChanged += new System.EventHandler(this.cmbEndMonth_SelectedIndexChanged);
             // 
-            // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(713, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 112;
-            this.label4.Text = "Mes Final:";
             // 
-            // cmbEndYear
-            // 
-            this.cmbEndYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbEndYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbEndYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEndYear.FormattingEnabled = true;
-            this.cmbEndYear.Location = new System.Drawing.Point(774, 38);
-            this.cmbEndYear.Name = "cmbEndYear";
-            this.cmbEndYear.Size = new System.Drawing.Size(195, 21);
-            this.cmbEndYear.TabIndex = 109;
-            this.cmbEndYear.SelectedIndexChanged += new System.EventHandler(this.cmbEndYear_SelectedIndexChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(713, 41);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 13);
-            this.label11.TabIndex = 111;
-            this.label11.Text = "Año Final:";
-            // 
-            // pbSICAP
-            // 
-            this.pbSICAP.Image = ((System.Drawing.Image)(resources.GetObject("pbSICAP.Image")));
-            this.pbSICAP.Location = new System.Drawing.Point(6, 529);
-            this.pbSICAP.Name = "pbSICAP";
-            this.pbSICAP.Size = new System.Drawing.Size(25, 32);
-            this.pbSICAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSICAP.TabIndex = 113;
-            this.pbSICAP.TabStop = false;
-            this.pbSICAP.Tag = "Muestra ell listado de pagos del suministro de agua potable";
+            this.txtFind.CustomButton.Image = null;
+            this.txtFind.CustomButton.Location = new System.Drawing.Point(1147, 1);
+            this.txtFind.CustomButton.Name = "";
+            this.txtFind.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtFind.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFind.CustomButton.TabIndex = 1;
+            this.txtFind.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFind.CustomButton.UseSelectable = true;
+            this.txtFind.CustomButton.Visible = false;
+            this.txtFind.DisplayIcon = true;
+            this.txtFind.Icon = ((System.Drawing.Image)(resources.GetObject("txtFind.Icon")));
+            this.txtFind.Lines = new string[0];
+            this.txtFind.Location = new System.Drawing.Point(86, 63);
+            this.txtFind.MaxLength = 32767;
+            this.txtFind.Name = "txtFind";
+            this.txtFind.PasswordChar = '\0';
+            this.txtFind.PromptText = "Introduzca su búsqueda";
+            this.txtFind.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFind.SelectedText = "";
+            this.txtFind.SelectionLength = 0;
+            this.txtFind.SelectionStart = 0;
+            this.txtFind.ShortcutsEnabled = true;
+            this.txtFind.ShowClearButton = true;
+            this.txtFind.Size = new System.Drawing.Size(1169, 23);
+            this.txtFind.TabIndex = 109;
+            this.txtFind.UseSelectable = true;
+            this.txtFind.WaterMark = "Introduzca su búsqueda";
+            this.txtFind.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFind.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp_1);
             // 
             // PaymentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 564);
-            this.Controls.Add(this.pbSICAP);
-            this.Controls.Add(this.cmbEndMonth);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbEndYear);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(1267, 570);
+            this.Controls.Add(this.txtFind);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpDate2);
@@ -490,7 +454,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtFind);
             this.Controls.Add(this.cbDeuda);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
@@ -499,15 +462,13 @@
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnExit);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "PaymentList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SICAP - Pagos";
+            this.Resizable = false;
+            this.Text = "Pagos";
             this.Load += new System.EventHandler(this.HabitantList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,7 +484,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.CheckBox cbDeuda;
-        private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -539,10 +499,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpDate2;
         private System.Windows.Forms.DateTimePicker dtpDate1;
-        private System.Windows.Forms.ComboBox cmbEndMonth;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbEndYear;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -553,6 +509,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.PictureBox pbSICAP;
+        private MetroFramework.Controls.MetroTextBox txtFind;
     }
 }

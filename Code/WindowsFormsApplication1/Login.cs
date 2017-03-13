@@ -100,7 +100,8 @@ namespace WindowsFormsApplication1
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            //this.ActiveControl = this.txtUser;
+            //this.txtUser.Focus();
         }
 
         private bool CheckKey()

@@ -15,6 +15,10 @@ namespace WindowsFormsApplication1
 
         #region Members
 
+        private CalleList CalleList = null;
+
+        private Pagos Pagos = null;
+
         private PaymentYear PaymentYear = null;
 
         private Concentrado Concentrado = null;
@@ -109,6 +113,7 @@ namespace WindowsFormsApplication1
                     this.toolStripMenuItem2.Visible = e.Menu_Concentrado.Value;
                     this.faenasToolStripMenuItem.Visible = e.Menu_Cooperaciones.Value;
                     this.cooperacionesToolStripMenuItem.Visible = e.Menu_PagosCooperaciones.Value;
+                    this.callesToolStripMenuItem.Visible = e.Menu_Calles.Value;
 
                     if (e.Menu_Pagos.Value)
                         PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
@@ -255,6 +260,16 @@ namespace WindowsFormsApplication1
             var About = new About();
 
             About.ShowDialog();
+        }
+
+        private void pagosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Pagos = ShowOrActiveForm(Pagos, typeof(Pagos)) as Pagos;
+        }
+
+        private void callesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CalleList = ShowOrActiveForm(CalleList, typeof(CalleList)) as CalleList;
         }
     }
 }
