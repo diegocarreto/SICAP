@@ -106,6 +106,14 @@
     <Compile Include="Calle.Designer.cs">
       <DependentUpon>Calle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pager.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Pager.Designer.cs">
+      <DependentUpon>Pager.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Pagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +237,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calle.resx">
       <DependentUpon>Calle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pager.resx">
+      <DependentUpon>Pager.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagos.resx">
       <DependentUpon>Pagos.cs</DependentUpon>

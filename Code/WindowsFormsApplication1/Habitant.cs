@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
         {
             this.cmbYear.Items.Add("Seleccionar...");
 
-            for (int i = 1995; i < 2050; i++)
+            for (int i = 1970; i < 2050; i++)
             {
                 this.cmbYear.Items.Add(i);
             }

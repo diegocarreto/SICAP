@@ -69,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(314, 392);
+            this.label3.Location = new System.Drawing.Point(314, 381);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 32;
@@ -81,16 +81,16 @@
             this.cmbMonth.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonth.FormattingEnabled = true;
-            this.cmbMonth.Location = new System.Drawing.Point(88, 181);
+            this.cmbMonth.Location = new System.Drawing.Point(88, 170);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(360, 21);
-            this.cmbMonth.TabIndex = 30;
+            this.cmbMonth.TabIndex = 5;
             this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 184);
+            this.label1.Location = new System.Drawing.Point(20, 173);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 29;
@@ -102,16 +102,16 @@
             this.cmbYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(88, 154);
+            this.cmbYear.Location = new System.Drawing.Point(88, 143);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(359, 21);
-            this.cmbYear.TabIndex = 28;
+            this.cmbYear.TabIndex = 4;
             this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 157);
+            this.label4.Location = new System.Drawing.Point(22, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 27;
@@ -135,12 +135,12 @@
             this.cmbWaterIntake.Location = new System.Drawing.Point(88, 116);
             this.cmbWaterIntake.Name = "cmbWaterIntake";
             this.cmbWaterIntake.Size = new System.Drawing.Size(359, 21);
-            this.cmbWaterIntake.TabIndex = 21;
+            this.cmbWaterIntake.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 392);
+            this.label2.Location = new System.Drawing.Point(10, 381);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 23;
@@ -151,10 +151,10 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(257, 413);
+            this.btnAccept.Location = new System.Drawing.Point(257, 402);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(91, 23);
-            this.btnAccept.TabIndex = 24;
+            this.btnAccept.TabIndex = 11;
             this.btnAccept.Text = "    Aceptar";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
@@ -164,10 +164,10 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(354, 413);
+            this.btnExit.Location = new System.Drawing.Point(354, 402);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(91, 23);
-            this.btnExit.TabIndex = 25;
+            this.btnExit.TabIndex = 12;
             this.btnExit.Text = "    Salir";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -181,7 +181,7 @@
             this.cmbHabitant.Location = new System.Drawing.Point(86, 89);
             this.cmbHabitant.Name = "cmbHabitant";
             this.cmbHabitant.Size = new System.Drawing.Size(362, 21);
-            this.cmbHabitant.TabIndex = 33;
+            this.cmbHabitant.TabIndex = 2;
             this.cmbHabitant.SelectedIndexChanged += new System.EventHandler(this.cmbHabitant_SelectedIndexChanged);
             // 
             // label5
@@ -224,7 +224,7 @@
             this.pbVal_cmbYear.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbVal_cmbYear.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbYear.Image")));
             this.pbVal_cmbYear.InitialImage = null;
-            this.pbVal_cmbYear.Location = new System.Drawing.Point(453, 157);
+            this.pbVal_cmbYear.Location = new System.Drawing.Point(453, 146);
             this.pbVal_cmbYear.Name = "pbVal_cmbYear";
             this.pbVal_cmbYear.Size = new System.Drawing.Size(18, 17);
             this.pbVal_cmbYear.TabIndex = 106;
@@ -237,7 +237,7 @@
             this.pbVal_cmbMonth.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbVal_cmbMonth.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbMonth.Image")));
             this.pbVal_cmbMonth.InitialImage = null;
-            this.pbVal_cmbMonth.Location = new System.Drawing.Point(453, 184);
+            this.pbVal_cmbMonth.Location = new System.Drawing.Point(453, 173);
             this.pbVal_cmbMonth.Name = "pbVal_cmbMonth";
             this.pbVal_cmbMonth.Size = new System.Drawing.Size(18, 17);
             this.pbVal_cmbMonth.TabIndex = 107;
@@ -248,7 +248,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1, 272);
+            this.label7.Location = new System.Drawing.Point(1, 261);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 109;
@@ -259,7 +259,7 @@
             this.pbVal_cmbMonthEnd.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbVal_cmbMonthEnd.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbMonthEnd.Image")));
             this.pbVal_cmbMonthEnd.InitialImage = null;
-            this.pbVal_cmbMonthEnd.Location = new System.Drawing.Point(454, 238);
+            this.pbVal_cmbMonthEnd.Location = new System.Drawing.Point(454, 227);
             this.pbVal_cmbMonthEnd.Name = "pbVal_cmbMonthEnd";
             this.pbVal_cmbMonthEnd.Size = new System.Drawing.Size(18, 17);
             this.pbVal_cmbMonthEnd.TabIndex = 115;
@@ -272,7 +272,7 @@
             this.pbVal_cmbYearEnd.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbVal_cmbYearEnd.Image = ((System.Drawing.Image)(resources.GetObject("pbVal_cmbYearEnd.Image")));
             this.pbVal_cmbYearEnd.InitialImage = null;
-            this.pbVal_cmbYearEnd.Location = new System.Drawing.Point(454, 211);
+            this.pbVal_cmbYearEnd.Location = new System.Drawing.Point(454, 200);
             this.pbVal_cmbYearEnd.Name = "pbVal_cmbYearEnd";
             this.pbVal_cmbYearEnd.Size = new System.Drawing.Size(18, 17);
             this.pbVal_cmbYearEnd.TabIndex = 114;
@@ -286,16 +286,16 @@
             this.cmbMonthEnd.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMonthEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonthEnd.FormattingEnabled = true;
-            this.cmbMonthEnd.Location = new System.Drawing.Point(89, 235);
+            this.cmbMonthEnd.Location = new System.Drawing.Point(89, 224);
             this.cmbMonthEnd.Name = "cmbMonthEnd";
             this.cmbMonthEnd.Size = new System.Drawing.Size(360, 21);
-            this.cmbMonthEnd.TabIndex = 113;
+            this.cmbMonthEnd.TabIndex = 7;
             this.cmbMonthEnd.SelectedIndexChanged += new System.EventHandler(this.cmbMonthEnd_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 238);
+            this.label8.Location = new System.Drawing.Point(25, 227);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 112;
@@ -307,16 +307,16 @@
             this.cmbYearEnd.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbYearEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYearEnd.FormattingEnabled = true;
-            this.cmbYearEnd.Location = new System.Drawing.Point(89, 208);
+            this.cmbYearEnd.Location = new System.Drawing.Point(89, 197);
             this.cmbYearEnd.Name = "cmbYearEnd";
             this.cmbYearEnd.Size = new System.Drawing.Size(359, 21);
-            this.cmbYearEnd.TabIndex = 111;
+            this.cmbYearEnd.TabIndex = 6;
             this.cmbYearEnd.SelectedIndexChanged += new System.EventHandler(this.cmbYearEnd_SelectedIndexChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 211);
+            this.label9.Location = new System.Drawing.Point(27, 200);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 110;
@@ -339,7 +339,7 @@
             this.btnFind.Location = new System.Drawing.Point(358, 60);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(91, 23);
-            this.btnFind.TabIndex = 118;
+            this.btnFind.TabIndex = 1;
             this.btnFind.Text = "    Buscar";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -373,7 +373,7 @@
             this.txtAP.ShortcutsEnabled = true;
             this.txtAP.ShowClearButton = true;
             this.txtAP.Size = new System.Drawing.Size(266, 23);
-            this.txtAP.TabIndex = 119;
+            this.txtAP.TabIndex = 0;
             this.txtAP.UseSelectable = true;
             this.txtAP.WaterMark = "Introduzca el AP del habitante";
             this.txtAP.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -396,7 +396,7 @@
             this.txtObservations.DisplayIcon = true;
             this.txtObservations.Icon = ((System.Drawing.Image)(resources.GetObject("txtObservations.Icon")));
             this.txtObservations.Lines = new string[0];
-            this.txtObservations.Location = new System.Drawing.Point(89, 262);
+            this.txtObservations.Location = new System.Drawing.Point(89, 251);
             this.txtObservations.MaxLength = 32767;
             this.txtObservations.Multiline = true;
             this.txtObservations.Name = "txtObservations";
@@ -409,7 +409,7 @@
             this.txtObservations.ShortcutsEnabled = true;
             this.txtObservations.ShowClearButton = true;
             this.txtObservations.Size = new System.Drawing.Size(358, 116);
-            this.txtObservations.TabIndex = 120;
+            this.txtObservations.TabIndex = 8;
             this.txtObservations.UseSelectable = true;
             this.txtObservations.WaterMark = "Introduzca las observaciones del habitante";
             this.txtObservations.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -433,7 +433,7 @@
             this.txtAmount.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtAmount.Icon = ((System.Drawing.Image)(resources.GetObject("txtAmount.Icon")));
             this.txtAmount.Lines = new string[0];
-            this.txtAmount.Location = new System.Drawing.Point(89, 384);
+            this.txtAmount.Location = new System.Drawing.Point(89, 373);
             this.txtAmount.MaxLength = 32767;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.PasswordChar = '\0';
@@ -446,7 +446,8 @@
             this.txtAmount.ShortcutsEnabled = true;
             this.txtAmount.ShowClearButton = true;
             this.txtAmount.Size = new System.Drawing.Size(91, 23);
-            this.txtAmount.TabIndex = 121;
+            this.txtAmount.TabIndex = 9;
+            this.txtAmount.TabStop = false;
             this.txtAmount.UseSelectable = true;
             this.txtAmount.WaterMark = "0.00";
             this.txtAmount.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -471,7 +472,7 @@
             this.txtTotal.Icon = ((System.Drawing.Image)(resources.GetObject("txtTotal.Icon")));
             this.txtTotal.Lines = new string[] {
         "0.00"};
-            this.txtTotal.Location = new System.Drawing.Point(354, 384);
+            this.txtTotal.Location = new System.Drawing.Point(354, 373);
             this.txtTotal.MaxLength = 32767;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
@@ -484,7 +485,8 @@
             this.txtTotal.ShortcutsEnabled = true;
             this.txtTotal.ShowClearButton = true;
             this.txtTotal.Size = new System.Drawing.Size(91, 23);
-            this.txtTotal.TabIndex = 122;
+            this.txtTotal.TabIndex = 10;
+            this.txtTotal.TabStop = false;
             this.txtTotal.Text = "0.00";
             this.txtTotal.UseSelectable = true;
             this.txtTotal.WaterMark = "0.00";
@@ -495,7 +497,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 451);
+            this.ClientSize = new System.Drawing.Size(478, 436);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtObservations);

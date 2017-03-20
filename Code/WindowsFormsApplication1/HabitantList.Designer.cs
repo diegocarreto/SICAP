@@ -44,12 +44,11 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFind = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
-            this.pbSICAP = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFind = new MetroFramework.Controls.MetroTextBox();
+            this.pager1 = new WindowsFormsApplication1.Pager();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).BeginInit();
             this.SuspendLayout();
             // 
             // gvList
@@ -69,7 +68,7 @@
             this.Column6,
             this.Column7,
             this.Column11});
-            this.gvList.Location = new System.Drawing.Point(12, 37);
+            this.gvList.Location = new System.Drawing.Point(21, 92);
             this.gvList.Name = "gvList";
             this.gvList.ReadOnly = true;
             this.gvList.Size = new System.Drawing.Size(1103, 365);
@@ -167,7 +166,7 @@
             this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNew.Location = new System.Drawing.Point(878, 417);
+            this.btnNew.Location = new System.Drawing.Point(887, 463);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 12;
@@ -180,7 +179,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(959, 417);
+            this.btnDelete.Location = new System.Drawing.Point(968, 463);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 11;
@@ -194,7 +193,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(1040, 417);
+            this.btnExit.Location = new System.Drawing.Point(1049, 463);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 10;
@@ -202,29 +201,12 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Buscar:";
-            // 
-            // txtFind
-            // 
-            this.txtFind.Location = new System.Drawing.Point(54, 8);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(1061, 20);
-            this.txtFind.TabIndex = 15;
-            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
-            // 
             // btnFind
             // 
             this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
             this.btnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFind.Location = new System.Drawing.Point(1133, 11);
+            this.btnFind.Location = new System.Drawing.Point(1166, 58);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 23);
             this.btnFind.TabIndex = 16;
@@ -232,39 +214,76 @@
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // pbSICAP
+            // label5
             // 
-            this.pbSICAP.Image = ((System.Drawing.Image)(resources.GetObject("pbSICAP.Image")));
-            this.pbSICAP.Location = new System.Drawing.Point(12, 408);
-            this.pbSICAP.Name = "pbSICAP";
-            this.pbSICAP.Size = new System.Drawing.Size(25, 32);
-            this.pbSICAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSICAP.TabIndex = 103;
-            this.pbSICAP.TabStop = false;
-            this.pbSICAP.Tag = "Muestra un listado de habitantes en el sistema";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 110;
+            this.label5.Text = "Busqueda:";
+            // 
+            // txtFind
+            // 
+            // 
+            // 
+            // 
+            this.txtFind.CustomButton.Image = null;
+            this.txtFind.CustomButton.Location = new System.Drawing.Point(1020, 1);
+            this.txtFind.CustomButton.Name = "";
+            this.txtFind.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtFind.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFind.CustomButton.TabIndex = 1;
+            this.txtFind.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFind.CustomButton.UseSelectable = true;
+            this.txtFind.CustomButton.Visible = false;
+            this.txtFind.DisplayIcon = true;
+            this.txtFind.Icon = ((System.Drawing.Image)(resources.GetObject("txtFind.Icon")));
+            this.txtFind.Lines = new string[0];
+            this.txtFind.Location = new System.Drawing.Point(82, 63);
+            this.txtFind.MaxLength = 32767;
+            this.txtFind.Name = "txtFind";
+            this.txtFind.PasswordChar = '\0';
+            this.txtFind.PromptText = "Introduzca su búsqueda";
+            this.txtFind.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFind.SelectedText = "";
+            this.txtFind.SelectionLength = 0;
+            this.txtFind.SelectionStart = 0;
+            this.txtFind.ShortcutsEnabled = true;
+            this.txtFind.ShowClearButton = true;
+            this.txtFind.Size = new System.Drawing.Size(1042, 23);
+            this.txtFind.TabIndex = 111;
+            this.txtFind.UseSelectable = true;
+            this.txtFind.WaterMark = "Introduzca su búsqueda";
+            this.txtFind.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFind.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pager1
+            // 
+            this.pager1.Location = new System.Drawing.Point(21, 463);
+            this.pager1.Name = "pager1";
+            this.pager1.Size = new System.Drawing.Size(396, 30);
+            this.pager1.TabIndex = 112;
             // 
             // HabitantList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 444);
-            this.Controls.Add(this.pbSICAP);
-            this.Controls.Add(this.btnFind);
+            this.ClientSize = new System.Drawing.Size(1133, 500);
+            this.Controls.Add(this.pager1);
             this.Controls.Add(this.txtFind);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnFind);
             this.Controls.Add(this.gvList);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnExit);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HabitantList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SICAP - Habitantes";
+            this.Text = "Habitantes";
             this.Load += new System.EventHandler(this.HabitantList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,8 +295,6 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -290,6 +307,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.PictureBox pbSICAP;
+        private System.Windows.Forms.Label label5;
+        private MetroFramework.Controls.MetroTextBox txtFind;
+        private Pager pager1;
     }
 }

@@ -90,9 +90,9 @@ namespace WindowsFormsApplication1.Base
         {
             foreach (Control p in this.Controls)
             {
-                if (p is TextBox)
+                if (p is MetroTextBox)
                 {
-                    var txt = p as TextBox;
+                    var txt = p as MetroTextBox;
 
                     if (txt.Tag != null)
                     {
@@ -835,7 +835,7 @@ namespace WindowsFormsApplication1.Base
 
         protected void txt_KeyPressMoney(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = sender as TextBox;
+            MetroTextBox txt = sender as MetroTextBox;
 
             if (txt.Text.Contains('.'))
             {
@@ -865,7 +865,7 @@ namespace WindowsFormsApplication1.Base
 
         protected void txt_KeyPressNumber(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = sender as TextBox;
+            MetroTextBox txt = sender as MetroTextBox;
 
             if (!char.IsDigit(e.KeyChar))
             {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaterIntakeList));
             this.gvList = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +45,8 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pbSICAP = new System.Windows.Forms.PictureBox();
+            this.pager1 = new WindowsFormsApplication1.Pager();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).BeginInit();
             this.SuspendLayout();
             // 
             // gvList
@@ -67,7 +66,7 @@
             this.Column10,
             this.Column7,
             this.Column11});
-            this.gvList.Location = new System.Drawing.Point(12, 12);
+            this.gvList.Location = new System.Drawing.Point(11, 63);
             this.gvList.Name = "gvList";
             this.gvList.ReadOnly = true;
             this.gvList.Size = new System.Drawing.Size(1155, 365);
@@ -127,8 +126,8 @@
             // Column8
             // 
             this.Column8.DataPropertyName = "total";
-            dataGridViewCellStyle1.Format = "N2";
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column8.HeaderText = "Total";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -171,7 +170,7 @@
             this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNew.Location = new System.Drawing.Point(930, 392);
+            this.btnNew.Location = new System.Drawing.Point(929, 443);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 16;
@@ -184,7 +183,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(1011, 392);
+            this.btnDelete.Location = new System.Drawing.Point(1010, 443);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 15;
@@ -198,7 +197,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(1092, 392);
+            this.btnExit.Location = new System.Drawing.Point(1091, 443);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 14;
@@ -206,36 +205,29 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // pbSICAP
+            // pager1
             // 
-            this.pbSICAP.Image = ((System.Drawing.Image)(resources.GetObject("pbSICAP.Image")));
-            this.pbSICAP.Location = new System.Drawing.Point(12, 383);
-            this.pbSICAP.Name = "pbSICAP";
-            this.pbSICAP.Size = new System.Drawing.Size(25, 32);
-            this.pbSICAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSICAP.TabIndex = 104;
-            this.pbSICAP.TabStop = false;
-            this.pbSICAP.Tag = "Muestra un listado de tomas de agua en el sistema";
+            this.pager1.Location = new System.Drawing.Point(11, 436);
+            this.pager1.Name = "pager1";
+            this.pager1.Size = new System.Drawing.Size(396, 30);
+            this.pager1.TabIndex = 111;
             // 
             // WaterIntakeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 420);
-            this.Controls.Add(this.pbSICAP);
+            this.ClientSize = new System.Drawing.Size(1179, 483);
+            this.Controls.Add(this.pager1);
             this.Controls.Add(this.gvList);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnExit);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WaterIntakeList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SICAP - Tomas de agua";
+            this.Text = "Tomas de agua";
             this.Load += new System.EventHandler(this.WaterIntakeList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSICAP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,6 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.PictureBox pbSICAP;
+        private Pager pager1;
     }
 }

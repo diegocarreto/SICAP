@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentList));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtFind = new MetroFramework.Controls.MetroTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpDate2 = new System.Windows.Forms.DateTimePicker();
@@ -63,9 +64,45 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.txtFind = new MetroFramework.Controls.MetroTextBox();
+            this.pager1 = new WindowsFormsApplication1.Pager();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.SuspendLayout();
+            // 
+            // txtFind
+            // 
+            // 
+            // 
+            // 
+            this.txtFind.CustomButton.Image = null;
+            this.txtFind.CustomButton.Location = new System.Drawing.Point(1147, 1);
+            this.txtFind.CustomButton.Name = "";
+            this.txtFind.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtFind.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFind.CustomButton.TabIndex = 1;
+            this.txtFind.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFind.CustomButton.UseSelectable = true;
+            this.txtFind.CustomButton.Visible = false;
+            this.txtFind.DisplayIcon = true;
+            this.txtFind.Icon = ((System.Drawing.Image)(resources.GetObject("txtFind.Icon")));
+            this.txtFind.Lines = new string[0];
+            this.txtFind.Location = new System.Drawing.Point(86, 63);
+            this.txtFind.MaxLength = 32767;
+            this.txtFind.Name = "txtFind";
+            this.txtFind.PasswordChar = '\0';
+            this.txtFind.PromptText = "Introduzca su búsqueda";
+            this.txtFind.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFind.SelectedText = "";
+            this.txtFind.SelectionLength = 0;
+            this.txtFind.SelectionStart = 0;
+            this.txtFind.ShortcutsEnabled = true;
+            this.txtFind.ShowClearButton = true;
+            this.txtFind.Size = new System.Drawing.Size(1169, 23);
+            this.txtFind.TabIndex = 109;
+            this.txtFind.UseSelectable = true;
+            this.txtFind.WaterMark = "Introduzca su búsqueda";
+            this.txtFind.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFind.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp_1);
             // 
             // label9
             // 
@@ -253,7 +290,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 73);
+            this.label5.Location = new System.Drawing.Point(23, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 32;
@@ -397,47 +434,19 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // txtFind
+            // pager1
             // 
-            // 
-            // 
-            // 
-            this.txtFind.CustomButton.Image = null;
-            this.txtFind.CustomButton.Location = new System.Drawing.Point(1147, 1);
-            this.txtFind.CustomButton.Name = "";
-            this.txtFind.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtFind.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtFind.CustomButton.TabIndex = 1;
-            this.txtFind.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFind.CustomButton.UseSelectable = true;
-            this.txtFind.CustomButton.Visible = false;
-            this.txtFind.DisplayIcon = true;
-            this.txtFind.Icon = ((System.Drawing.Image)(resources.GetObject("txtFind.Icon")));
-            this.txtFind.Lines = new string[0];
-            this.txtFind.Location = new System.Drawing.Point(86, 63);
-            this.txtFind.MaxLength = 32767;
-            this.txtFind.Name = "txtFind";
-            this.txtFind.PasswordChar = '\0';
-            this.txtFind.PromptText = "Introduzca su búsqueda";
-            this.txtFind.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtFind.SelectedText = "";
-            this.txtFind.SelectionLength = 0;
-            this.txtFind.SelectionStart = 0;
-            this.txtFind.ShortcutsEnabled = true;
-            this.txtFind.ShowClearButton = true;
-            this.txtFind.Size = new System.Drawing.Size(1169, 23);
-            this.txtFind.TabIndex = 109;
-            this.txtFind.UseSelectable = true;
-            this.txtFind.WaterMark = "Introduzca su búsqueda";
-            this.txtFind.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtFind.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp_1);
+            this.pager1.Location = new System.Drawing.Point(5, 538);
+            this.pager1.Name = "pager1";
+            this.pager1.Size = new System.Drawing.Size(396, 30);
+            this.pager1.TabIndex = 110;
             // 
             // PaymentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 570);
+            this.ClientSize = new System.Drawing.Size(1267, 579);
+            this.Controls.Add(this.pager1);
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -465,7 +474,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "PaymentList";
-            this.Resizable = false;
             this.Text = "Pagos";
             this.Load += new System.EventHandler(this.HabitantList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
@@ -510,5 +518,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Alta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private MetroFramework.Controls.MetroTextBox txtFind;
+        private Pager pager1;
     }
 }
