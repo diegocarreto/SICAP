@@ -56,7 +56,7 @@ namespace PosBusiness
         // <returns></returns>
         public List<Catalogs> List(string Type)
         {
-            return this.AccessMsSql.Sicap.Cataloglist.ExeList<Catalogs>(Type, this.Id, this.Find);
+            return this.AccessMsSql.Sicap.Cataloglist.ExeList<Catalogs>(Type, this.Id, this.Find, this.Page, this.Rows, this.SortName, this.Order);
         }
 
 

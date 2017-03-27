@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Bases\MsSql\AccessMsSql.cs" />
     <Compile Include="MsSQL\MsSql.cs" />
+    <Compile Include="MsSQL\SICAP\backupdb.cs" />
     <Compile Include="MsSQL\SICAP\BinnacleAdd.cs" />
     <Compile Include="MsSQL\SICAP\CatalogAdd.cs" />
     <Compile Include="MsSQL\SICAP\CatalogDelete.cs" />

@@ -38,6 +38,7 @@
             this.pbval_txtUser = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtUser)).BeginInit();
@@ -195,6 +196,10 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Usuario:";
             // 
+            // ofd
+            // 
+            this.ofd.FileName = "openFileDialog1";
+            // 
             // Login
             // 
             this.AcceptButton = this.btnAccept;
@@ -236,5 +241,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTextBox txtUser;
         private MetroFramework.Controls.MetroTextBox txtPassword;
+        private System.Windows.Forms.OpenFileDialog ofd;
     }
 }

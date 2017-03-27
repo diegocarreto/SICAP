@@ -24,10 +24,24 @@ namespace WindowsFormsApplication1.Base
         private const string TXT_TEXT = "txtText";
 
         private const string TXT_MONEY = "txtMoney";
-        private ToolTip ToolTip;
-        private System.ComponentModel.IContainer components;
 
         private const string TXT_NUMBER = "txtNumber";
+
+        private ToolTip ToolTip;
+        
+        private System.ComponentModel.IContainer components;
+
+        internal static string ASC = "asc";
+
+        internal static string DESC = "desc";
+
+        internal string Order = ASC;
+
+        internal string SortName = "id";
+
+        internal int Page = 1;
+
+        internal int Rows = 15;
 
         #endregion
 

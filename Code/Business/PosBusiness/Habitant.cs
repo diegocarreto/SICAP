@@ -78,7 +78,7 @@ namespace PosBusiness
         // <returns></returns>
         public List<Habitant> List(int Type = 1)
         {
-            return this.AccessMsSql.Sicap.Habitantlist.ExeList<Habitant>(Type, this.Id, this.Find);
+            return this.AccessMsSql.Sicap.Habitantlist.ExeList<Habitant>(Type, this.Id, this.Find, this.Page, this.Rows, this.SortName, this.Order);
         }
 
         // <summary>

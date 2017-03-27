@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
@@ -191,8 +192,8 @@ namespace DataAccess.MSSQL
 
                 }
                 catch (Exception ex)
-                { 
-                
+                {
+
                 }
             }
 
@@ -209,25 +210,24 @@ namespace DataAccess.MSSQL
         /// <returns></returns>
         protected List<T> GetListBase<T>(string ConnectionName, string StoreProcedure, params SqlParameter[] Parameters) where T : new()
         {
+            List<T> list = new List<T>();
+
             using (SqlCommand cmd = GetCommand(ConnectionName, StoreProcedure, Parameters))
             {
-                using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                try
                 {
-                    List<T> list = new List<T>();
-
-                    try
+                    using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleResult))
                     {
-
                         while (reader.Read())
                         {
                             list.Add(ToObject<T>(reader));
                         }
-                    }
-                    catch (Exception ex)
-                    { 
-                    
-                    }
 
+                        return list;
+                    }
+                }
+                catch (Exception ex)
+                {
                     return list;
                 }
             }
@@ -318,6 +318,60 @@ namespace DataAccess.MSSQL
                 }
             }
             return obj;
+        }
+
+        public bool CheckDataBase(string Name)
+        {
+            try
+            {
+                var connection = "Data Source=" + ConfigurationManager.AppSettings["DataSource"] +
+                                 ";Initial Catalog=master" +
+                                 ";User Id=" + ConfigurationManager.AppSettings["UserId"] +
+                                 ";Password=" + ConfigurationManager.AppSettings["Password"];
+
+                using (var con = new SqlConnection(connection))
+                {
+                    using (var cmd = new SqlCommand("SELECT COUNT(*) FROM sysdatabases WHERE NAME ='" + Name + "'", con))
+                    {
+                        con.Open();
+
+                        var total = int.Parse(cmd.ExecuteScalar().ToString());
+
+                        return total.Equals(1);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool RestoreDataBase(string Name)
+        {
+            try
+            {
+                var connection = "Data Source=" + ConfigurationManager.AppSettings["DataSource"] +
+                                 ";Initial Catalog=master" +
+                                 ";User Id=" + ConfigurationManager.AppSettings["UserId"] +
+                                 ";Password=" + ConfigurationManager.AppSettings["Password"];
+
+                using (var con = new SqlConnection(connection))
+                {
+                    using (var cmd = new SqlCommand(@"restore database SICAP from disk = '" + Name + "'", con))
+                    {
+                        con.Open();
+
+                        cmd.ExecuteNonQuery();
+
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         #endregion

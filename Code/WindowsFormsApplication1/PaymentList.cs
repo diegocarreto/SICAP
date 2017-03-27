@@ -57,9 +57,17 @@ namespace WindowsFormsApplication1
 
             this.LoadComplete = true;
 
-            this.FillGridView();
-
             this.ActiveControl = this.txtFind;
+
+            this.pageList.Result += delegate(int Page, int Rows)
+            {
+                this.Page = Page;
+                this.Rows = Rows;
+
+                this.FillGridView();
+            };
+
+            this.FillGridView();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -85,6 +93,11 @@ namespace WindowsFormsApplication1
         {
             if (this.LoadComplete)
             {
+                this.Entity.Page  = this.Page;
+                this.Entity.Rows  = this.Rows;
+                this.Entity.SortName  = this.SortName;
+                this.Entity.Order = this.Order;
+
                 this.Entity.Find = this.txtFind.Text;
                 this.Entity.StartDate = this.dtpDate1.Value;
                 this.Entity.EndDate = this.dtpDate2.Value;
@@ -109,9 +122,14 @@ namespace WindowsFormsApplication1
                 else
                     this.Entity.Month = null;
 
+                var list = this.Entity.List();
+
                 this.gvList.AutoGenerateColumns = false;
                 this.gvList.AllowUserToResizeColumns = false;
-                this.gvList.DataSource = this.Entity.List();
+                this.gvList.DataSource = list;
+
+                if (list.Any())
+                    this.pageList.SetTotal(list.First().Pages);
             }
         }
 
@@ -270,6 +288,18 @@ namespace WindowsFormsApplication1
 
         private void txtFind_KeyUp_1(object sender, KeyEventArgs e)
         {
+            this.FillGridView();
+        }
+
+        private void gvList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.SortName = gvList.Columns[e.ColumnIndex].Name;
+
+            if (this.Order == ASC)
+                this.Order = DESC;
+            else
+                this.Order = ASC;
+
             this.FillGridView();
         }
     }

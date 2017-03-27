@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.MSSQL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -193,6 +194,53 @@ namespace PosBusiness
             }
         }
 
+        public bool BackUp(string Path)
+        {
+            try
+            {
+                this.AccessMsSql.Sicap.Backupdb.ExeNonQuery(Path);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.ErrorMessage = ex.Message;
+
+                return false;
+            }
+        }
+
+        public bool Restore(string Path)
+        {
+            try
+            {
+                var msSql = new AccessMsSQL();
+
+                return msSql.RestoreDataBase(Path);
+            }
+            catch (Exception ex)
+            {
+                this.ErrorMessage = ex.Message;
+
+                return false;
+            }
+        }
+
+        public bool ExistDataBase(string Name)
+        {
+            try
+            {
+                var msSql = new AccessMsSQL();
+
+                return msSql.CheckDataBase(Name);
+            }
+            catch (Exception ex)
+            {
+                this.ErrorMessage = ex.Message;
+
+                return false;
+            }
+        }
 
         #endregion
     }

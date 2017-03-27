@@ -95,6 +95,31 @@ namespace PosBusiness
         public string Find { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public int Pages { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Page { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Rows { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string SortName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Order { get; set; }
+
+        /// <summary>
         /// Gestiona la comunicación entre la aplicación y Microsoft SQL Server.
         /// </summary>
         public MsSQL AccessMsSql

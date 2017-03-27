@@ -100,8 +100,36 @@ namespace WindowsFormsApplication1
 
         private void Login_Load(object sender, EventArgs e)
         {
-            //this.ActiveControl = this.txtUser;
-            //this.txtUser.Focus();
+            this.ConfigureDialogs();
+
+            using (var config = new PosBusiness.Config())
+            {
+                var result = config.ExistDataBase("SICAP");
+
+                if (!result)
+                {
+                    if (this.Confirm("La base de datos SICAP no se encuentra instalada, ¿Desea instalarla?"))
+                    {
+                        if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            config.Restore(ofd.FileName);
+                        }
+                    }
+                    else
+                        Application.Exit();
+                }
+            }
+        }
+
+        private void ConfigureDialogs()
+        {
+            ofd.Title = "Seleccione el respaldo SICAP";
+            ofd.FileName = string.Empty;
+            ofd.CheckFileExists = true;
+            ofd.CheckPathExists = true;
+            ofd.Filter = "bak files (*.bak)|*.bak";
+
+            ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         }
 
         private bool CheckKey()

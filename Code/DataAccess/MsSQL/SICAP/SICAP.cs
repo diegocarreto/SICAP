@@ -14,6 +14,11 @@ namespace DataAccess.MSSQL.Sicap
 		#region Properties
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Backupdb.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Backupdb Backupdb = new DataAccess.MsSqlCommands.Sicap.Backupdb();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Binnacleadd.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Binnacleadd Binnacleadd = new DataAccess.MsSqlCommands.Sicap.Binnacleadd();
@@ -240,6 +245,9 @@ namespace DataAccess.MSSQL.Sicap
 
 		public void Dispose()
 		{
+			if (this.Backupdb != null)
+				this.Backupdb.Dispose();
+
 			if (this.Binnacleadd != null)
 				this.Binnacleadd.Dispose();
 

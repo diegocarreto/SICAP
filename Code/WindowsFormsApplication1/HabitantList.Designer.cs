@@ -30,24 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HabitantList));
             this.gvList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtFind = new MetroFramework.Controls.MetroTextBox();
-            this.pager1 = new WindowsFormsApplication1.Pager();
+            this.pageList = new WindowsFormsApplication1.Pager();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observations = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonthName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aux = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aux2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Printbtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,17 +57,17 @@
             this.gvList.AllowUserToDeleteRows = false;
             this.gvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column6,
-            this.Column7,
-            this.Column11});
+            this.Id,
+            this.Name,
+            this.Paterno,
+            this.Materno,
+            this.Observations,
+            this.Year,
+            this.MonthName,
+            this.Total,
+            this.Aux,
+            this.Aux2,
+            this.Printbtn});
             this.gvList.Location = new System.Drawing.Point(21, 92);
             this.gvList.Name = "gvList";
             this.gvList.ReadOnly = true;
@@ -76,90 +76,7 @@
             this.gvList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_CellMouseDoubleClick);
             this.gvList.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvList_CellMouseLeave);
             this.gvList.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_CellMouseMove);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "Id";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "name";
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "paterno";
-            this.Column3.HeaderText = "Paterno";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "materno";
-            this.Column4.HeaderText = "Materno";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "observations";
-            this.Column5.HeaderText = "Observaciones";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 200;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "year";
-            this.Column8.HeaderText = "Año";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 60;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "MonthName";
-            this.Column9.HeaderText = "Mes";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "total";
-            this.Column10.HeaderText = "Monto";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 80;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "aux";
-            this.Column6.HeaderText = "Activo";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 45;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "aux2";
-            this.Column7.HeaderText = "Alta";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 120;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "Printbtn";
-            this.Column11.HeaderText = "Imprimir";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 70;
+            this.gvList.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_ColumnHeaderMouseClick);
             // 
             // btnNew
             // 
@@ -258,19 +175,104 @@
             this.txtFind.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFind.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // pager1
+            // pageList
             // 
-            this.pager1.Location = new System.Drawing.Point(21, 463);
-            this.pager1.Name = "pager1";
-            this.pager1.Size = new System.Drawing.Size(396, 30);
-            this.pager1.TabIndex = 112;
+            this.pageList.Location = new System.Drawing.Point(21, 463);
+            this.pageList.Name = "pageList";
+            this.pageList.Size = new System.Drawing.Size(396, 30);
+            this.pageList.TabIndex = 112;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 50;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "name";
+            this.Name.HeaderText = "Nombre";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Paterno
+            // 
+            this.Paterno.DataPropertyName = "paterno";
+            this.Paterno.HeaderText = "Paterno";
+            this.Paterno.Name = "Paterno";
+            this.Paterno.ReadOnly = true;
+            // 
+            // Materno
+            // 
+            this.Materno.DataPropertyName = "materno";
+            this.Materno.HeaderText = "Materno";
+            this.Materno.Name = "Materno";
+            this.Materno.ReadOnly = true;
+            // 
+            // Observations
+            // 
+            this.Observations.DataPropertyName = "observations";
+            this.Observations.HeaderText = "Observaciones";
+            this.Observations.Name = "Observations";
+            this.Observations.ReadOnly = true;
+            this.Observations.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Observations.Width = 200;
+            // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "year";
+            this.Year.HeaderText = "Año";
+            this.Year.Name = "Year";
+            this.Year.ReadOnly = true;
+            this.Year.Width = 60;
+            // 
+            // MonthName
+            // 
+            this.MonthName.DataPropertyName = "MonthName";
+            this.MonthName.HeaderText = "Mes";
+            this.MonthName.Name = "MonthName";
+            this.MonthName.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "total";
+            this.Total.HeaderText = "Monto";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 80;
+            // 
+            // Aux
+            // 
+            this.Aux.DataPropertyName = "aux";
+            this.Aux.HeaderText = "Activo";
+            this.Aux.Name = "Aux";
+            this.Aux.ReadOnly = true;
+            this.Aux.Width = 45;
+            // 
+            // Aux2
+            // 
+            this.Aux2.DataPropertyName = "aux2";
+            this.Aux2.HeaderText = "Alta";
+            this.Aux2.Name = "Aux2";
+            this.Aux2.ReadOnly = true;
+            this.Aux2.Width = 120;
+            // 
+            // Printbtn
+            // 
+            this.Printbtn.DataPropertyName = "Printbtn";
+            this.Printbtn.HeaderText = "Imprimir";
+            this.Printbtn.Name = "Printbtn";
+            this.Printbtn.ReadOnly = true;
+            this.Printbtn.Width = 70;
             // 
             // HabitantList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 500);
-            this.Controls.Add(this.pager1);
+            this.Controls.Add(this.pageList);
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnFind);
@@ -280,7 +282,6 @@
             this.Controls.Add(this.btnExit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "HabitantList";
             this.Text = "Habitantes";
             this.Load += new System.EventHandler(this.HabitantList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
@@ -296,19 +297,19 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Label label5;
         private MetroFramework.Controls.MetroTextBox txtFind;
-        private Pager pager1;
+        private Pager pageList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Materno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observations;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MonthName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Aux;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Aux2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Printbtn;
     }
 }

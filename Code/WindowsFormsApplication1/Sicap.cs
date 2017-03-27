@@ -9,6 +9,8 @@ namespace WindowsFormsApplication1
 {
     public partial class Sicap : Form
     {
+        public BackUp BackUp;
+
         public string UserName;
 
         public Login Login;
@@ -270,6 +272,11 @@ namespace WindowsFormsApplication1
         private void callesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CalleList = ShowOrActiveForm(CalleList, typeof(CalleList)) as CalleList;
+        }
+
+        private void respaldoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackUp = ShowOrActiveForm(BackUp, typeof(BackUp)) as BackUp;
         }
     }
 }

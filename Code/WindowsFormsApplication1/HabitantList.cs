@@ -57,11 +57,19 @@ namespace WindowsFormsApplication1
 
         private void FillGridView()
         {
+            this.Entity.Page = this.Page;
+            this.Entity.Rows = this.Rows;
+            this.Entity.SortName = this.SortName;
+            this.Entity.Order = this.Order;
+
             Entity.Find = this.txtFind.Text;
 
             this.gvList.AutoGenerateColumns = false;
             this.gvList.AllowUserToResizeColumns = false;
-            this.gvList.DataSource = Entity.List(2);
+
+            var list = Entity.List(2);
+
+            this.gvList.DataSource = list;
         }
 
         private void OpenEdit(int? Id = null)
@@ -83,6 +91,14 @@ namespace WindowsFormsApplication1
         private void HabitantList_Load(object sender, EventArgs e)
         {
             this.ActiveControl = this.txtFind;
+
+            this.pageList.Result += delegate(int Page, int Rows)
+            {
+                this.Page = Page;
+                this.Rows = Rows;
+
+                this.FillGridView();
+            };
 
             this.FillGridView();
         }
@@ -150,6 +166,21 @@ namespace WindowsFormsApplication1
         private void txtFind_KeyUp(object sender, KeyEventArgs e)
         {
             this.FillGridView();
+        }
+
+        private void gvList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (gvList.Columns[e.ColumnIndex].SortMode != DataGridViewColumnSortMode.NotSortable)
+            {
+                this.SortName = gvList.Columns[e.ColumnIndex].Name;
+
+                if (this.Order == ASC)
+                    this.Order = DESC;
+                else
+                    this.Order = ASC;
+
+                this.FillGridView();
+            }
         }
     }
 }

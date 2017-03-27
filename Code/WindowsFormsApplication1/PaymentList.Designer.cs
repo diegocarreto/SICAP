@@ -40,16 +40,6 @@
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.gvList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDeuda = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,7 +54,17 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pager1 = new WindowsFormsApplication1.Pager();
+            this.pageList = new WindowsFormsApplication1.Pager();
+            this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Propietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Toma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuienPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Print = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,16 +188,16 @@
             this.gvList.AllowUserToDeleteRows = false;
             this.gvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column8,
-            this.Column5,
+            this.Folio,
+            this.Propietario,
+            this.AP,
+            this.Toma,
             this.Monto,
-            this.Column3,
-            this.Column4,
-            this.Column6,
+            this.FechaInicial,
+            this.FechaFinal,
+            this.QuienPago,
             this.Alta,
-            this.Column7});
+            this.Print});
             this.gvList.Location = new System.Drawing.Point(5, 173);
             this.gvList.Name = "gvList";
             this.gvList.ReadOnly = true;
@@ -206,86 +206,7 @@
             this.gvList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_CellMouseDoubleClick);
             this.gvList.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvList_CellMouseLeave);
             this.gvList.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_CellMouseMove);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Folio";
-            this.Column1.HeaderText = "Folio";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 70;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Propietario";
-            this.Column2.HeaderText = "Propietario";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 180;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "idWaterIntake";
-            this.Column8.HeaderText = "AP";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Direccion";
-            this.Column5.HeaderText = "Toma";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 190;
-            // 
-            // Monto
-            // 
-            this.Monto.DataPropertyName = "amount";
-            dataGridViewCellStyle1.Format = "N2";
-            this.Monto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            this.Monto.ReadOnly = true;
-            this.Monto.Width = 70;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "StartDateName";
-            this.Column3.HeaderText = "Fecha Inicial";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "EndDateName";
-            this.Column4.HeaderText = "Fecha Final";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "RentName";
-            this.Column6.HeaderText = "¿Quién pago?";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 180;
-            // 
-            // Alta
-            // 
-            this.Alta.DataPropertyName = "CreationDate";
-            this.Alta.HeaderText = "Alta";
-            this.Alta.Name = "Alta";
-            this.Alta.ReadOnly = true;
-            this.Alta.Width = 130;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Printbtn";
-            this.Column7.HeaderText = "Imprimir";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 70;
+            this.gvList.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_ColumnHeaderMouseClick);
             // 
             // label5
             // 
@@ -434,19 +355,99 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // pager1
+            // pageList
             // 
-            this.pager1.Location = new System.Drawing.Point(5, 538);
-            this.pager1.Name = "pager1";
-            this.pager1.Size = new System.Drawing.Size(396, 30);
-            this.pager1.TabIndex = 110;
+            this.pageList.Location = new System.Drawing.Point(5, 538);
+            this.pageList.Name = "pageList";
+            this.pageList.Size = new System.Drawing.Size(396, 30);
+            this.pageList.TabIndex = 110;
+            // 
+            // Folio
+            // 
+            this.Folio.DataPropertyName = "Folio";
+            this.Folio.HeaderText = "Folio";
+            this.Folio.Name = "Folio";
+            this.Folio.ReadOnly = true;
+            this.Folio.Width = 70;
+            // 
+            // Propietario
+            // 
+            this.Propietario.DataPropertyName = "Propietario";
+            this.Propietario.HeaderText = "Propietario";
+            this.Propietario.Name = "Propietario";
+            this.Propietario.ReadOnly = true;
+            this.Propietario.Width = 180;
+            // 
+            // AP
+            // 
+            this.AP.DataPropertyName = "idWaterIntake";
+            this.AP.HeaderText = "AP";
+            this.AP.Name = "AP";
+            this.AP.ReadOnly = true;
+            this.AP.Width = 80;
+            // 
+            // Toma
+            // 
+            this.Toma.DataPropertyName = "Direccion";
+            this.Toma.HeaderText = "Toma";
+            this.Toma.Name = "Toma";
+            this.Toma.ReadOnly = true;
+            this.Toma.Width = 190;
+            // 
+            // Monto
+            // 
+            this.Monto.DataPropertyName = "amount";
+            dataGridViewCellStyle1.Format = "N2";
+            this.Monto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
+            this.Monto.Width = 70;
+            // 
+            // FechaInicial
+            // 
+            this.FechaInicial.DataPropertyName = "StartDateName";
+            this.FechaInicial.HeaderText = "Fecha Inicial";
+            this.FechaInicial.Name = "FechaInicial";
+            this.FechaInicial.ReadOnly = true;
+            // 
+            // FechaFinal
+            // 
+            this.FechaFinal.DataPropertyName = "EndDateName";
+            this.FechaFinal.HeaderText = "Fecha Final";
+            this.FechaFinal.Name = "FechaFinal";
+            this.FechaFinal.ReadOnly = true;
+            // 
+            // QuienPago
+            // 
+            this.QuienPago.DataPropertyName = "RentName";
+            this.QuienPago.HeaderText = "¿Quién pago?";
+            this.QuienPago.Name = "QuienPago";
+            this.QuienPago.ReadOnly = true;
+            this.QuienPago.Width = 180;
+            // 
+            // Alta
+            // 
+            this.Alta.DataPropertyName = "CreationDate";
+            this.Alta.HeaderText = "Alta";
+            this.Alta.Name = "Alta";
+            this.Alta.ReadOnly = true;
+            this.Alta.Width = 130;
+            // 
+            // Print
+            // 
+            this.Print.DataPropertyName = "Printbtn";
+            this.Print.HeaderText = "Imprimir";
+            this.Print.Name = "Print";
+            this.Print.ReadOnly = true;
+            this.Print.Width = 70;
             // 
             // PaymentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 579);
-            this.Controls.Add(this.pager1);
+            this.Controls.Add(this.pageList);
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -507,17 +508,17 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpDate2;
         private System.Windows.Forms.DateTimePicker dtpDate1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Alta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private MetroFramework.Controls.MetroTextBox txtFind;
-        private Pager pager1;
+        private Pager pageList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Folio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Propietario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Toma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuienPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Alta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Print;
     }
 }
