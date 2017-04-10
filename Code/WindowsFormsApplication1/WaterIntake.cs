@@ -55,7 +55,6 @@ namespace WindowsFormsApplication1
         {
             using (var e = new PosBusiness.Catalogs())
             {
-
                 this.cmbStreet.Fill(e.List(STREET));
             }
         }

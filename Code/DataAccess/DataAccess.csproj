@@ -60,12 +60,14 @@
   <ItemGroup>
     <Compile Include="Bases\MsSql\AccessMsSql.cs" />
     <Compile Include="MsSQL\MsSql.cs" />
+    <Compile Include="MsSQL\SICAP\AddImage.cs" />
     <Compile Include="MsSQL\SICAP\backupdb.cs" />
     <Compile Include="MsSQL\SICAP\BinnacleAdd.cs" />
     <Compile Include="MsSQL\SICAP\CatalogAdd.cs" />
     <Compile Include="MsSQL\SICAP\CatalogDelete.cs" />
     <Compile Include="MsSQL\SICAP\CatalogList.cs" />
     <Compile Include="MsSQL\SICAP\CatalogUpdate.cs" />
+    <Compile Include="MsSQL\SICAP\ChangePassword.cs" />
     <Compile Include="MsSQL\SICAP\ConfigGet.cs" />
     <Compile Include="MsSQL\SICAP\ConfigSet.cs" />
     <Compile Include="MsSQL\SICAP\ExpenseAdd.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="MsSQL\SICAP\FaenasAdd.cs" />
     <Compile Include="MsSQL\SICAP\FaenasUpdate.cs" />
     <Compile Include="MsSQL\SICAP\FaenaUpdate.cs" />
+    <Compile Include="MsSQL\SICAP\GetImage.cs" />
     <Compile Include="MsSQL\SICAP\HabitantAdd.cs" />
     <Compile Include="MsSQL\SICAP\HabitantDelete.cs" />
     <Compile Include="MsSQL\SICAP\habitantFaenaAdd.cs" />
@@ -100,8 +103,13 @@
     <Compile Include="MsSQL\SICAP\ReportPayments1.cs" />
     <Compile Include="MsSQL\SICAP\ReportPaymentYear1.cs" />
     <Compile Include="MsSQL\SICAP\RolGet.cs" />
+    <Compile Include="MsSQL\SICAP\RolList.cs" />
     <Compile Include="MsSQL\SICAP\SICAP.cs" />
+    <Compile Include="MsSQL\SICAP\UserAdd.cs" />
+    <Compile Include="MsSQL\SICAP\UserDelete.cs" />
+    <Compile Include="MsSQL\SICAP\UserList.cs" />
     <Compile Include="MsSQL\SICAP\UserLogin.cs" />
+    <Compile Include="MsSQL\SICAP\UserUpdate.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeAdd.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeDelete.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeFindByAp.cs" />

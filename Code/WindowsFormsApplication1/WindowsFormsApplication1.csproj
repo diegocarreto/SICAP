@@ -112,6 +112,30 @@
     <Compile Include="BackUp.Designer.cs">
       <DependentUpon>BackUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Image.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Image.Designer.cs">
+      <DependentUpon>Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserEdit.Designer.cs">
+      <DependentUpon>UserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pager.cs">
       <SubType>UserControl</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -246,6 +270,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BackUp.resx">
       <DependentUpon>BackUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image.resx">
+      <DependentUpon>Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserEdit.resx">
+      <DependentUpon>UserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pager.resx">
       <DependentUpon>Pager.cs</DependentUpon>

@@ -10,6 +10,8 @@ namespace PosBusiness
     {
         #region Members
 
+        private const string ADD_NAMES = "agregarNombres";
+
         private const string COSTH = "altaHabitante";
 
         private const string COST = "alta";
@@ -34,6 +36,8 @@ namespace PosBusiness
 
         public string Value { get; set; }
 
+        public byte[] Image { get; set; }
+
         #endregion
 
         #region Builder
@@ -45,6 +49,27 @@ namespace PosBusiness
         #endregion
 
         #region Methods
+
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public bool AltaAddNames(bool? Value = null)
+        {
+            if (!Value.HasValue)
+            {
+                var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(ADD_NAMES);
+
+                return bool.Parse(value);
+            }
+            else
+            {
+                this.AccessMsSql.Sicap.Configset.ExeNonQuery(ADD_NAMES, Value.ToString());
+
+                return true;
+            }
+        }
 
         // <summary>
         // 
@@ -240,6 +265,33 @@ namespace PosBusiness
 
                 return false;
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Image"></param>
+        /// <returns></returns>
+        public bool SaveImage(string EntityName, int EntityId, byte[] Image)
+        {
+            this.AccessMsSql.Sicap.Addimage.ExeNonQuery(EntityId, EntityName, Image);
+
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Image"></param>
+        /// <returns></returns>
+        public byte[] GetImage(string EntityName, int EntityId)
+        {
+            var list = this.AccessMsSql.Sicap.Getimage.ExeList<Config>(EntityId, EntityName);
+
+            if (list.Count > 0)
+                return list.First().Image;
+            else
+                return null;
         }
 
         #endregion

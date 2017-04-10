@@ -39,10 +39,6 @@
             this.callesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.habitantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.faenasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnVentanasCascada = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnVentanasHorizontal = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnVentanasVertical = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +52,9 @@
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.respaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -131,37 +130,6 @@
             this.faenasToolStripMenuItem.Text = "Cooperaciones...";
             this.faenasToolStripMenuItem.Click += new System.EventHandler(this.faenasToolStripMenuItem_Click);
             // 
-            // ventanaToolStripMenuItem
-            // 
-            this.ventanaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnVentanasCascada,
-            this.mnVentanasHorizontal,
-            this.mnVentanasVertical});
-            this.ventanaToolStripMenuItem.Name = "ventanaToolStripMenuItem";
-            this.ventanaToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.ventanaToolStripMenuItem.Text = "Ventanas";
-            // 
-            // mnVentanasCascada
-            // 
-            this.mnVentanasCascada.Name = "mnVentanasCascada";
-            this.mnVentanasCascada.Size = new System.Drawing.Size(129, 22);
-            this.mnVentanasCascada.Text = "Cascada";
-            this.mnVentanasCascada.Click += new System.EventHandler(this.mnVentanasCascada_Click);
-            // 
-            // mnVentanasHorizontal
-            // 
-            this.mnVentanasHorizontal.Name = "mnVentanasHorizontal";
-            this.mnVentanasHorizontal.Size = new System.Drawing.Size(129, 22);
-            this.mnVentanasHorizontal.Text = "Horizontal";
-            this.mnVentanasHorizontal.Click += new System.EventHandler(this.mnVentanasHorizontal_Click);
-            // 
-            // mnVentanasVertical
-            // 
-            this.mnVentanasVertical.Name = "mnVentanasVertical";
-            this.mnVentanasVertical.Size = new System.Drawing.Size(129, 22);
-            this.mnVentanasVertical.Text = "Vertical";
-            this.mnVentanasVertical.Click += new System.EventHandler(this.mnVentanasVertical_Click);
-            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -220,7 +188,7 @@
             this.toolStripMenuItem1,
             this.reportesToolStripMenuItem,
             this.herramientasToolStripMenuItem,
-            this.ventanaToolStripMenuItem,
+            this.usuarioToolStripMenuItem1,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -278,6 +246,31 @@
             this.respaldoToolStripMenuItem.Text = "Respaldo...";
             this.respaldoToolStripMenuItem.Click += new System.EventHandler(this.respaldoToolStripMenuItem_Click);
             // 
+            // usuarioToolStripMenuItem1
+            // 
+            this.usuarioToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cambiarContraseñaToolStripMenuItem,
+            this.usuariosToolStripMenuItem});
+            this.usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
+            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
+            this.usuarioToolStripMenuItem1.Text = "Usuario";
+            // 
+            // cambiarContraseñaToolStripMenuItem
+            // 
+            this.cambiarContraseñaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cambiarContraseñaToolStripMenuItem.Image")));
+            this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
+            this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar contraseña...";
+            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("usuariosToolStripMenuItem.Image")));
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios...";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
             // Sicap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,10 +299,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mnArchivoSalir;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ventanaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnVentanasCascada;
-        private System.Windows.Forms.ToolStripMenuItem mnVentanasHorizontal;
-        private System.Windows.Forms.ToolStripMenuItem mnVentanasVertical;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accionesToolStripMenuItem;
@@ -329,5 +318,8 @@
         private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem callesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem respaldoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
     }
 }

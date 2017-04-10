@@ -32,11 +32,11 @@ namespace WindowsFormsApplication1
 
         #region Methods
 
-        private bool Cookie(int Id, string name)
+        private bool Cookie(int Id, string Name, string Alias)
         {
             var nameFile = System.AppDomain.CurrentDomain.BaseDirectory + "Cookie.dll";
 
-            return TxtHandler.Write(nameFile, Id.ToString() + "|" + name);
+            return TxtHandler.Write(nameFile, Id.ToString() + "|" + Name + "|" + Alias);
         }
 
         #endregion
@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
 
                         Sicap ms = new Sicap();
 
-                        if (this.Cookie(user.UserId.Value, user.UserName))
+                        if (this.Cookie(user.UserId.Value, user.UserName, user.Alias))
                         {
                             ms.UserName = user.UserName;
 
@@ -119,6 +119,13 @@ namespace WindowsFormsApplication1
                         Application.Exit();
                 }
             }
+
+            this.ActiveControl = this.txtUser;
+
+            this.txtUser.Focus();
+
+            this.Activate();
+
         }
 
         private void ConfigureDialogs()

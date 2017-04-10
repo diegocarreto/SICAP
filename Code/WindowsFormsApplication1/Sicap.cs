@@ -17,6 +17,10 @@ namespace WindowsFormsApplication1
 
         #region Members
 
+        private UserList UserList = null;
+
+        private User User = null;
+
         private CalleList CalleList = null;
 
         private Pagos Pagos = null;
@@ -116,6 +120,9 @@ namespace WindowsFormsApplication1
                     this.faenasToolStripMenuItem.Visible = e.Menu_Cooperaciones.Value;
                     this.cooperacionesToolStripMenuItem.Visible = e.Menu_PagosCooperaciones.Value;
                     this.callesToolStripMenuItem.Visible = e.Menu_Calles.Value;
+                    this.usuarioToolStripMenuItem1.Visible = e.menu_Usuarios.Value;
+                    this.cambiarContraseñaToolStripMenuItem.Visible = e.menu_Contrasena.Value;
+                    this.usuariosToolStripMenuItem.Visible = e.menu_UsuariosEdit.Value;
 
                     if (e.Menu_Pagos.Value)
                         PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
@@ -277,6 +284,21 @@ namespace WindowsFormsApplication1
         private void respaldoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BackUp = ShowOrActiveForm(BackUp, typeof(BackUp)) as BackUp;
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            User = ShowOrActiveForm(BackUp, typeof(User)) as User;
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserList = ShowOrActiveForm(BackUp, typeof(UserList)) as UserList;
         }
     }
 }

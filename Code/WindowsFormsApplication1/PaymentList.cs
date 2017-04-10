@@ -93,9 +93,9 @@ namespace WindowsFormsApplication1
         {
             if (this.LoadComplete)
             {
-                this.Entity.Page  = this.Page;
-                this.Entity.Rows  = this.Rows;
-                this.Entity.SortName  = this.SortName;
+                this.Entity.Page = this.Page;
+                this.Entity.Rows = this.Rows;
+                this.Entity.SortName = this.SortName;
                 this.Entity.Order = this.Order;
 
                 this.Entity.Find = this.txtFind.Text;
@@ -293,14 +293,17 @@ namespace WindowsFormsApplication1
 
         private void gvList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            this.SortName = gvList.Columns[e.ColumnIndex].Name;
+            if (gvList.Columns[e.ColumnIndex].SortMode != DataGridViewColumnSortMode.NotSortable)
+            {
+                this.SortName = gvList.Columns[e.ColumnIndex].Name;
 
-            if (this.Order == ASC)
-                this.Order = DESC;
-            else
-                this.Order = ASC;
+                if (this.Order == ASC)
+                    this.Order = DESC;
+                else
+                    this.Order = ASC;
 
-            this.FillGridView();
+                this.FillGridView();
+            }
         }
     }
 }

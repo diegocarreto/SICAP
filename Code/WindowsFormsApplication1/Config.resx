@@ -121,7 +121,7 @@
   <data name="txtPresidente.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHISURBVDhPhZNNKERhFIbvWhpkUP4aNz9dTQ0rV0qTvxrJ
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHISURBVDhPhZNNKERhFIbvWhpkUP4aNz9dTQ0rV0qTvxrJ
         SPkpcu3MlAUZJVEWQyllYWMx+ZkoNRaUlAUpRFkSyQZlRewsveb97neZO0ZOvc2Zc573fPd8c0f5K7xe
         L1yaB6qqgrks/x+6XiuMDf4edA0OCTFnjT2JpY4aXUdhmRvlVTWoqNaFrJyf7JGR+O9wZOfCWeCyiaee
         RoZRXeUW38lI3B4E0xyZQs6cHLS31GFzMQRcrwJXETztTaGz0YP0jKzUq1SWFiE6Xo+X/XFhwP0O8HAA
@@ -135,7 +135,7 @@
   <data name="txtTesorero.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHkSURBVDhPhU9LSBtRFJ21C1GURFBBQS1KSCZBMEGQqlVB
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHkSURBVDhPhU9LSBtRFJ21C1GURFBBQS1KSCZBMEGQqlVB
         MGqKWmgRdwrpRtRFi4WudGPpvkih0oILFQUVRReCrQhCQSzNIqlfXIglftHiIqc5972xjh964DBvzue+
         +4yHUP2kBvlFxUKetfx/BAIB5BV7UNXYhpaOTiHP1Ojp2P0o8/uRU+hCkVmGR16/jdToMaPjd5Ga4UBm
         dp6N5YFSfB1+Ca/pkn9mdNwOrpeSmiZ0OJ0I1pbjy/te4OdnYGMYu9P9CFV7xL/3KSUFuRjpq8DhbJ8U
@@ -163,7 +163,7 @@
   <data name="txtAlta.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAHlSURBVDhPY8AFZONElR2umL2zv2J2R8ZChhMqTDzQ6VUN
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHlSURBVDhPY8AFZONElR2umL2zv2J2R8ZChhMqTDzQ6VUN
         dLhi/h+ElfIk5aDChIH+XLUwh8tm5xwum/+DGQDE721OmSxVLZPXhCrDDow36RbCNNmfN4MbYH/ZDEJf
         Mf+i1qhoClWOCkD+BNr8GaLZ/KHpSr0MmAG2R83WwtjWh4yXQLWgAlEPUWXnq1b/QdjpitVlk6V6wTC+
         fL68gtUGoxmOxy0fG0zQioJqQQPGDKzOF6xfuV6z+Q/B1p9hbK0KZRWoKvxAp1bD1e283UeP6/b/UfA1
@@ -177,7 +177,7 @@
   <data name="txtAltaH.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHlSURBVDhPY8AFZONElR2umL2zv2J2R8ZChhMqTDzQ6VUN
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHlSURBVDhPY8AFZONElR2umL2zv2J2R8ZChhMqTDzQ6VUN
         dLhi/h+ElfIk5aDChIH+XLUwh8tm5xwum/+DGQDE721OmSxVLZPXhCrDDow36RbCNNmfN4MbYH/ZDEJf
         Mf+i1qhoClWOCkD+BNr8GaLZ/KHpSr0MmAG2R83WwtjWh4yXQLWgAlEPUWXnq1b/QdjpitVlk6V6wTC+
         fL68gtUGoxmOxy0fG0zQioJqQQPGDKzOF6xfuV6z+Q/B1p9hbK0KZRWoKvxAp1bD1e283UeP6/b/UfA1

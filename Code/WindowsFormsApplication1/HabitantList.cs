@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using UtilitiesForm.Extensions;
 using WindowsFormsApplication1.Base;
+using System.Linq;
 using posb = PosBusiness;
 
 namespace WindowsFormsApplication1
@@ -70,6 +71,9 @@ namespace WindowsFormsApplication1
             var list = Entity.List(2);
 
             this.gvList.DataSource = list;
+
+            if (list.Any())
+                this.pageList.SetTotal(list.First().Pages);
         }
 
         private void OpenEdit(int? Id = null)

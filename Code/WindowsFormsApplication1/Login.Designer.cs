@@ -32,13 +32,13 @@
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
-            this.txtUser = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbval_txtPassword = new System.Windows.Forms.PictureBox();
             this.pbval_txtUser = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.txtUser = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtUser)).BeginInit();
@@ -107,41 +107,6 @@
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // txtUser
-            // 
-            // 
-            // 
-            // 
-            this.txtUser.CustomButton.Image = null;
-            this.txtUser.CustomButton.Location = new System.Drawing.Point(145, 1);
-            this.txtUser.CustomButton.Name = "";
-            this.txtUser.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtUser.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtUser.CustomButton.TabIndex = 1;
-            this.txtUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUser.CustomButton.UseSelectable = true;
-            this.txtUser.CustomButton.Visible = false;
-            this.txtUser.DisplayIcon = true;
-            this.txtUser.Icon = ((System.Drawing.Image)(resources.GetObject("txtUser.Icon")));
-            this.txtUser.Lines = new string[0];
-            this.txtUser.Location = new System.Drawing.Point(169, 63);
-            this.txtUser.MaxLength = 32767;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.PasswordChar = '\0';
-            this.txtUser.PromptText = "Introduzca el usuario";
-            this.txtUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUser.SelectedText = "";
-            this.txtUser.SelectionLength = 0;
-            this.txtUser.SelectionStart = 0;
-            this.txtUser.ShortcutsEnabled = true;
-            this.txtUser.ShowClearButton = true;
-            this.txtUser.Size = new System.Drawing.Size(167, 23);
-            this.txtUser.TabIndex = 0;
-            this.txtUser.UseSelectable = true;
-            this.txtUser.WaterMark = "Introduzca el usuario";
-            this.txtUser.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUser.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -200,6 +165,41 @@
             // 
             this.ofd.FileName = "openFileDialog1";
             // 
+            // txtUser
+            // 
+            // 
+            // 
+            // 
+            this.txtUser.CustomButton.Image = null;
+            this.txtUser.CustomButton.Location = new System.Drawing.Point(145, 1);
+            this.txtUser.CustomButton.Name = "";
+            this.txtUser.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtUser.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUser.CustomButton.TabIndex = 1;
+            this.txtUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUser.CustomButton.UseSelectable = true;
+            this.txtUser.CustomButton.Visible = false;
+            this.txtUser.DisplayIcon = true;
+            this.txtUser.Icon = ((System.Drawing.Image)(resources.GetObject("txtUser.Icon")));
+            this.txtUser.Lines = new string[0];
+            this.txtUser.Location = new System.Drawing.Point(169, 63);
+            this.txtUser.MaxLength = 32767;
+            this.txtUser.Name = "txtUser";
+            this.txtUser.PasswordChar = '\0';
+            this.txtUser.PromptText = "Introduzca el usuario";
+            this.txtUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUser.SelectedText = "";
+            this.txtUser.SelectionLength = 0;
+            this.txtUser.SelectionStart = 0;
+            this.txtUser.ShortcutsEnabled = true;
+            this.txtUser.ShowClearButton = true;
+            this.txtUser.Size = new System.Drawing.Size(167, 23);
+            this.txtUser.TabIndex = 25;
+            this.txtUser.UseSelectable = true;
+            this.txtUser.WaterMark = "Introduzca el usuario";
+            this.txtUser.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUser.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // Login
             // 
             this.AcceptButton = this.btnAccept;
@@ -207,8 +207,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(364, 160);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbval_txtPassword);
             this.Controls.Add(this.pbval_txtUser);
@@ -239,8 +239,8 @@
         private System.Windows.Forms.PictureBox pbval_txtUser;
         private System.Windows.Forms.PictureBox pbval_txtPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroTextBox txtUser;
         private MetroFramework.Controls.MetroTextBox txtPassword;
         private System.Windows.Forms.OpenFileDialog ofd;
+        private MetroFramework.Controls.MetroTextBox txtUser;
     }
 }

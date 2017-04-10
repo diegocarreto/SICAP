@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaterIntakeList));
             this.gvList = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,8 +126,8 @@
             // Column8
             // 
             this.Column8.DataPropertyName = "total";
-            dataGridViewCellStyle2.Format = "N2";
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column8.HeaderText = "Total";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -207,7 +207,7 @@
             // 
             // pager1
             // 
-            this.pager1.Location = new System.Drawing.Point(11, 436);
+            this.pager1.Location = new System.Drawing.Point(11, 511);
             this.pager1.Name = "pager1";
             this.pager1.Size = new System.Drawing.Size(396, 30);
             this.pager1.TabIndex = 111;
@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 483);
+            this.ClientSize = new System.Drawing.Size(1179, 478);
             this.Controls.Add(this.pager1);
             this.Controls.Add(this.gvList);
             this.Controls.Add(this.btnNew);

@@ -14,6 +14,11 @@ namespace DataAccess.MSSQL.Sicap
 		#region Properties
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Addimage.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Addimage Addimage = new DataAccess.MsSqlCommands.Sicap.Addimage();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Backupdb.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Backupdb Backupdb = new DataAccess.MsSqlCommands.Sicap.Backupdb();
@@ -42,6 +47,11 @@ namespace DataAccess.MSSQL.Sicap
 		/// Controla la ejecucion del procedimiento almacenado Catalogupdate.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Catalogupdate Catalogupdate = new DataAccess.MsSqlCommands.Sicap.Catalogupdate();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Changepassword.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Changepassword Changepassword = new DataAccess.MsSqlCommands.Sicap.Changepassword();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Configget.
@@ -97,6 +107,11 @@ namespace DataAccess.MSSQL.Sicap
 		/// Controla la ejecucion del procedimiento almacenado Faenaupdate.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Faenaupdate Faenaupdate = new DataAccess.MsSqlCommands.Sicap.Faenaupdate();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Getimage.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Getimage Getimage = new DataAccess.MsSqlCommands.Sicap.Getimage();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Habitantadd.
@@ -204,9 +219,34 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Rolget Rolget = new DataAccess.MsSqlCommands.Sicap.Rolget();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Rollist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Rollist Rollist = new DataAccess.MsSqlCommands.Sicap.Rollist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Useradd.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Useradd Useradd = new DataAccess.MsSqlCommands.Sicap.Useradd();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Userdelete.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Userdelete Userdelete = new DataAccess.MsSqlCommands.Sicap.Userdelete();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Userlist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Userlist Userlist = new DataAccess.MsSqlCommands.Sicap.Userlist();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Userlogin.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Userlogin Userlogin = new DataAccess.MsSqlCommands.Sicap.Userlogin();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Userupdate.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Userupdate Userupdate = new DataAccess.MsSqlCommands.Sicap.Userupdate();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Waterintakeadd.
@@ -245,6 +285,9 @@ namespace DataAccess.MSSQL.Sicap
 
 		public void Dispose()
 		{
+			if (this.Addimage != null)
+				this.Addimage.Dispose();
+
 			if (this.Backupdb != null)
 				this.Backupdb.Dispose();
 
@@ -262,6 +305,9 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Catalogupdate != null)
 				this.Catalogupdate.Dispose();
+
+			if (this.Changepassword != null)
+				this.Changepassword.Dispose();
 
 			if (this.Configget != null)
 				this.Configget.Dispose();
@@ -295,6 +341,9 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Faenaupdate != null)
 				this.Faenaupdate.Dispose();
+
+			if (this.Getimage != null)
+				this.Getimage.Dispose();
 
 			if (this.Habitantadd != null)
 				this.Habitantadd.Dispose();
@@ -359,8 +408,23 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Rolget != null)
 				this.Rolget.Dispose();
 
+			if (this.Rollist != null)
+				this.Rollist.Dispose();
+
+			if (this.Useradd != null)
+				this.Useradd.Dispose();
+
+			if (this.Userdelete != null)
+				this.Userdelete.Dispose();
+
+			if (this.Userlist != null)
+				this.Userlist.Dispose();
+
 			if (this.Userlogin != null)
 				this.Userlogin.Dispose();
+
+			if (this.Userupdate != null)
+				this.Userupdate.Dispose();
 
 			if (this.Waterintakeadd != null)
 				this.Waterintakeadd.Dispose();

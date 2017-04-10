@@ -12,6 +12,7 @@ using System.Drawing.Printing;
 using posb = PosBusiness;
 using Utilities;
 using MetroFramework.Controls;
+using System.IO;
 
 namespace WindowsFormsApplication1.Base
 {
@@ -28,7 +29,7 @@ namespace WindowsFormsApplication1.Base
         private const string TXT_NUMBER = "txtNumber";
 
         private ToolTip ToolTip;
-        
+
         private System.ComponentModel.IContainer components;
 
         internal static string ASC = "asc";
@@ -129,7 +130,7 @@ namespace WindowsFormsApplication1.Base
         }
 
         private void ConfigureToolTip()
-        {           
+        {
             var toolTip1 = new ToolTip();
             toolTip1.ToolTipTitle = "Validación incorrecta";
             toolTip1.AutoPopDelay = 6000;
@@ -197,12 +198,12 @@ namespace WindowsFormsApplication1.Base
                             var ctrl = this.Controls[controlValidate];
                             var isError = false;
 
-                            if (ctrl is TextBox)
+                            if (ctrl is TextBox && ctrl.Enabled)
                             {
                                 var txt = ctrl as TextBox;
                                 isError = string.IsNullOrEmpty(txt.Text);
                             }
-                            else if (ctrl is MetroTextBox)
+                            else if (ctrl is MetroTextBox && ctrl.Enabled)
                             {
                                 var txt = ctrl as MetroTextBox;
                                 isError = string.IsNullOrEmpty(txt.Text);
@@ -285,9 +286,11 @@ namespace WindowsFormsApplication1.Base
                 var pen = new Pen(Brushes.Black);
                 pen.Width = 0.8F;
 
-                var imageCom = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad.jpg");
+                var picture1 = new posb.Config().GetImage("Voucher", 1);
+                var picture2 = new posb.Config().GetImage("Voucher", 2);
+                var imageCom = new Bitmap(new MemoryStream(picture1));
+                var image = new Bitmap(new MemoryStream(picture2));
                 var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.dll");
-                var image = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad2.jpg");
 
                 using (posb.Payment payment = new posb.Payment
                 {
@@ -363,13 +366,33 @@ namespace WindowsFormsApplication1.Base
 
                         e1.Graphics.DrawString("SAN DIEGO TEXCOCO ESTADO DE MEXICO A " + payment.CreationDate.Value.ToString("dd") + " DE " + months[int.Parse(payment.CreationDate.Value.ToString("MM")) - 1] + " DE " + payment.CreationDate.Value.ToString("yyyy"), f10, brush, 340, 360 + copy);
 
-                        e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
-                        e1.Graphics.DrawString("TESORERO(A): " + payment.Tesorero, f08, brush, 100, 450 + copy);
-                        //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
 
-                        e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
-                        e1.Graphics.DrawString("PRESIDENTE(A): " + payment.Presidente, f08, brush, 500, 450 + copy);
-                        //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                        using (var addNames = new posb.Config())
+                        {
+                            var showNames = addNames.AltaAddNames();
+
+                            if (showNames)
+                            {
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                                e1.Graphics.DrawString("TESORERO(A): " + payment.Tesorero, f08, brush, 100, 450 + copy);
+                                //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                                e1.Graphics.DrawString("PRESIDENTE(A): " + payment.Presidente, f08, brush, 500, 450 + copy);
+                                //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            }
+                            else
+                            {
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                                e1.Graphics.DrawString("TESORERO(A)", f08, brush, 170, 450 + copy);
+                                //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                                e1.Graphics.DrawString("PRESIDENTE(A)", f08, brush, 565, 450 + copy);
+                                //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            }
+                        }
 
                         e1.Graphics.DrawImage(sicap, 403, 430 + copy, 40, 50);
 
@@ -451,9 +474,11 @@ namespace WindowsFormsApplication1.Base
                 var pen = new Pen(Brushes.Black);
                 pen.Width = 0.8F;
 
-                var imageCom = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad.jpg");
+                var picture1 = new posb.Config().GetImage("Voucher", 1);
+                var picture2 = new posb.Config().GetImage("Voucher", 2);
+                var imageCom = new Bitmap(new MemoryStream(picture1));
+                var image = new Bitmap(new MemoryStream(picture2));
                 var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.dll");
-                var image = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad2.jpg");
 
                 using (posb.Payment payment = new posb.Payment
                 {
@@ -510,13 +535,32 @@ namespace WindowsFormsApplication1.Base
 
                         e1.Graphics.DrawString("SAN DIEGO TEXCOCO ESTADO DE MEXICO A " + payment.CreationDate.Value.ToString("dd") + " DE " + months[int.Parse(payment.CreationDate.Value.ToString("MM")) - 1] + " DE " + payment.CreationDate.Value.ToString("yyyy"), f10, brush, 340, 360 + copy);
 
-                        e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
-                        e1.Graphics.DrawString("TESORERO(A): " + payment.Tesorero, f08, brush, 100, 450 + copy);
-                        //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+                        using (var addNames = new posb.Config())
+                        {
+                            var showNames = addNames.AltaAddNames();
 
-                        e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
-                        e1.Graphics.DrawString("PRESIDENTE(A): " + payment.Presidente, f08, brush, 500, 450 + copy);
-                        //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            if (showNames)
+                            {
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                                e1.Graphics.DrawString("TESORERO(A): " + payment.Tesorero, f08, brush, 100, 450 + copy);
+                                //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                                e1.Graphics.DrawString("PRESIDENTE(A): " + payment.Presidente, f08, brush, 500, 450 + copy);
+                                //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            }
+                            else
+                            {
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                                e1.Graphics.DrawString("TESORERO(A)", f08, brush, 170, 450 + copy);
+                                //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                                e1.Graphics.DrawString("PRESIDENTE(A)", f08, brush, 565, 450 + copy);
+                                //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            }
+                        }
 
                         e1.Graphics.DrawImage(sicap, 403, 430 + copy, 40, 50);
 
@@ -598,9 +642,11 @@ namespace WindowsFormsApplication1.Base
                 var pen = new Pen(Brushes.Black);
                 pen.Width = 0.8F;
 
-                var imageCom = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad.jpg");
+                var picture1 = new posb.Config().GetImage("Voucher", 1);
+                var picture2 = new posb.Config().GetImage("Voucher", 2);
+                var imageCom = new Bitmap(new MemoryStream(picture1));
+                var image = new Bitmap(new MemoryStream(picture2));
                 var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.dll");
-                var image = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad2.jpg");
 
                 using (posb.Payment payment = new posb.Payment
                 {
@@ -655,11 +701,32 @@ namespace WindowsFormsApplication1.Base
 
                         e1.Graphics.DrawString("SAN DIEGO TEXCOCO ESTADO DE MEXICO A " + payment.CreationDate.Value.ToString("dd") + " DE " + months[int.Parse(payment.CreationDate.Value.ToString("MM")) - 1] + " DE " + payment.CreationDate.Value.ToString("yyyy"), f10, brush, 340, 360 + copy);
 
-                        e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
-                        e1.Graphics.DrawString("TESORERO(A): " + payment.Tesorero, f08, brush, 100, 450 + copy);
+                        using (var addNames = new posb.Config())
+                        {
+                            var showNames = addNames.AltaAddNames();
 
-                        e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
-                        e1.Graphics.DrawString("PRESIDENTE(A): " + payment.Presidente, f08, brush, 500, 450 + copy);
+                            if (showNames)
+                            {
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                                e1.Graphics.DrawString("TESORERO(A): " + payment.Tesorero, f08, brush, 100, 450 + copy);
+                                //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                                e1.Graphics.DrawString("PRESIDENTE(A): " + payment.Presidente, f08, brush, 500, 450 + copy);
+                                //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            }
+                            else
+                            {
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                                e1.Graphics.DrawString("TESORERO(A)", f08, brush, 170, 450 + copy);
+                                //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                                e1.Graphics.DrawString("PRESIDENTE(A)", f08, brush, 565, 450 + copy);
+                                //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            }
+                        }
 
                         e1.Graphics.DrawImage(sicap, 403, 430 + copy, 40, 50);
 
@@ -741,9 +808,11 @@ namespace WindowsFormsApplication1.Base
                 var pen = new Pen(Brushes.Black);
                 pen.Width = 0.8F;
 
-                var imageCom = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad.jpg");
+                var picture1 = new posb.Config().GetImage("Voucher", 1);
+                var picture2 = new posb.Config().GetImage("Voucher", 2);
+                var imageCom = new Bitmap(new MemoryStream(picture1));
+                var image = new Bitmap(new MemoryStream(picture2));
                 var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.dll");
-                var image = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "comunidad2.jpg");
 
                 using (posb.Payment payment = new posb.Payment
                 {
@@ -798,11 +867,32 @@ namespace WindowsFormsApplication1.Base
 
                         e1.Graphics.DrawString("SAN DIEGO TEXCOCO ESTADO DE MEXICO A " + payment.CreationDate.Value.ToString("dd") + " DE " + months[int.Parse(payment.CreationDate.Value.ToString("MM")) - 1] + " DE " + payment.CreationDate.Value.ToString("yyyy"), f10, brush, 340, 360 + copy);
 
-                        e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
-                        e1.Graphics.DrawString("TESORERO(A): " + payment.Tesorero, f08, brush, 100, 450 + copy);
+                        using (var addNames = new posb.Config())
+                        {
+                            var showNames = addNames.AltaAddNames();
 
-                        e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
-                        e1.Graphics.DrawString("PRESIDENTE(A): " + payment.Presidente, f08, brush, 500, 450 + copy);
+                            if (showNames)
+                            {
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                                e1.Graphics.DrawString("TESORERO(A): " + payment.Tesorero, f08, brush, 100, 450 + copy);
+                                //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                                e1.Graphics.DrawString("PRESIDENTE(A): " + payment.Presidente, f08, brush, 500, 450 + copy);
+                                //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            }
+                            else
+                            {
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 100, 430 + copy);
+                                e1.Graphics.DrawString("TESORERO(A)", f08, brush, 170, 450 + copy);
+                                //e1.Graphics.DrawString("", f08, brush, 163, 470 + copy);
+
+                                e1.Graphics.DrawString("_________________________________", f09, brush, 500, 430 + copy);
+                                e1.Graphics.DrawString("PRESIDENTE(A)", f08, brush, 565, 450 + copy);
+                                //e1.Graphics.DrawString("VO.BO.  DE COMITE", f08, brush, 520, 470 + copy);
+                            }
+                        }
 
                         e1.Graphics.DrawImage(sicap, 403, 430 + copy, 40, 50);
 
@@ -919,7 +1009,7 @@ namespace WindowsFormsApplication1.Base
 
         private void BaseForm_Load(object sender, EventArgs e)
         {
-          
+
         }
 
         private void InitializeComponent()

@@ -42,6 +42,11 @@ namespace PosBusiness
         /// <summary>
         /// 
         /// </summary>
+        public string UserAlias { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Name { get; set; }
 
         /// <summary>
@@ -153,13 +158,14 @@ namespace PosBusiness
             }
             else
             {
-                cookie = "0|0";
+                cookie = "0|0|0";
             }
 
             var parts = cookie.Split('|');
 
             this.UserId = int.Parse(parts[0]);
             this.UserName = parts[1];
+            this.UserAlias = parts[2];
         }
 
         #endregion
