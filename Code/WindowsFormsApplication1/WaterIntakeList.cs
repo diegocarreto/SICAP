@@ -45,6 +45,8 @@ namespace WindowsFormsApplication1
 
         public int? IdHabitant { get; set; }
 
+        public int? Total { get; set; }
+
         #endregion #endregion
 
         #region Builder
@@ -66,9 +68,13 @@ namespace WindowsFormsApplication1
         {
             this.Entity.IdHabitant = this.IdHabitant;
 
+            var list = this.Entity.List(2);
+
             this.gvList.AutoGenerateColumns = false;
             this.gvList.AllowUserToResizeColumns = false;
-            this.gvList.DataSource = this.Entity.List(2);
+            this.gvList.DataSource = list;
+
+            this.Total = list.Count;
         }
 
         private void OpenEdit(int? Id = null)
@@ -94,7 +100,15 @@ namespace WindowsFormsApplication1
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            this.OpenEdit();
+            using (var config = new posb.Config())
+            {
+                var total = config.WaterIntakeHabitants();
+
+                if (total > this.Total)
+                    this.OpenEdit();
+                else
+                    this.Alert("El numero máximo de tomas de agua por habitante son " + total + ".");
+            }
         }
 
         private void WaterIntakeList_Load(object sender, EventArgs e)

@@ -288,9 +288,10 @@ namespace WindowsFormsApplication1.Base
 
                 var picture1 = new posb.Config().GetImage("Voucher", 1);
                 var picture2 = new posb.Config().GetImage("Voucher", 2);
+                var picture3 = new posb.Config().GetImage("Voucher", 3);
                 var imageCom = new Bitmap(new MemoryStream(picture1));
                 var image = new Bitmap(new MemoryStream(picture2));
-                var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.dll");
+                var sicap = new Bitmap(new MemoryStream(picture3));
 
                 using (posb.Payment payment = new posb.Payment
                 {
@@ -476,9 +477,10 @@ namespace WindowsFormsApplication1.Base
 
                 var picture1 = new posb.Config().GetImage("Voucher", 1);
                 var picture2 = new posb.Config().GetImage("Voucher", 2);
+                var picture3 = new posb.Config().GetImage("Voucher", 3);
                 var imageCom = new Bitmap(new MemoryStream(picture1));
                 var image = new Bitmap(new MemoryStream(picture2));
-                var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.dll");
+                var sicap = new Bitmap(new MemoryStream(picture3));
 
                 using (posb.Payment payment = new posb.Payment
                 {
@@ -644,9 +646,10 @@ namespace WindowsFormsApplication1.Base
 
                 var picture1 = new posb.Config().GetImage("Voucher", 1);
                 var picture2 = new posb.Config().GetImage("Voucher", 2);
+                var picture3 = new posb.Config().GetImage("Voucher", 3);
                 var imageCom = new Bitmap(new MemoryStream(picture1));
                 var image = new Bitmap(new MemoryStream(picture2));
-                var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.dll");
+                var sicap = new Bitmap(new MemoryStream(picture3));
 
                 using (posb.Payment payment = new posb.Payment
                 {
@@ -810,9 +813,10 @@ namespace WindowsFormsApplication1.Base
 
                 var picture1 = new posb.Config().GetImage("Voucher", 1);
                 var picture2 = new posb.Config().GetImage("Voucher", 2);
+                var picture3 = new posb.Config().GetImage("Voucher", 3);
                 var imageCom = new Bitmap(new MemoryStream(picture1));
                 var image = new Bitmap(new MemoryStream(picture2));
-                var sicap = new Bitmap(System.AppDomain.CurrentDomain.BaseDirectory + "sicap.dll");
+                var sicap = new Bitmap(new MemoryStream(picture3));
 
                 using (posb.Payment payment = new posb.Payment
                 {

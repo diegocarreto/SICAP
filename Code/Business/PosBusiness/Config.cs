@@ -10,6 +10,8 @@ namespace PosBusiness
     {
         #region Members
 
+        private const string WATERINTAKEHABITANTS = "tomasHabitantes";
+
         private const string ADD_NAMES = "agregarNombres";
 
         private const string COSTH = "altaHabitante";
@@ -87,6 +89,26 @@ namespace PosBusiness
             else
             {
                 this.AccessMsSql.Sicap.Configset.ExeNonQuery(COSTH, Value);
+
+                return 0;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public int WaterIntakeHabitants(string Value = "")
+        {
+            if (string.IsNullOrEmpty(Value))
+            {
+                var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(WATERINTAKEHABITANTS);
+
+                return int.Parse(value);
+            }
+            else
+            {
+                this.AccessMsSql.Sicap.Configset.ExeNonQuery(WATERINTAKEHABITANTS, Value);
 
                 return 0;
             }

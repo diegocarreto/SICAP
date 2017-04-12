@@ -51,6 +51,7 @@ namespace WindowsFormsApplication1
                 this.txtTesorero.Text = e.Tesorero();
                 this.txtAltaH.Text = String.Format("{0:0.00}", e.AltaH());
                 this.cbAddNames.Checked = e.AltaAddNames();
+                this.nudTomas.Value = e.WaterIntakeHabitants();
 
                 var picture1 = e.GetImage("Voucher", 1);
 
@@ -83,6 +84,7 @@ namespace WindowsFormsApplication1
                     e.Tesorero(this.txtTesorero.Text);
                     e.AltaH(this.txtAltaH.Text);
                     e.AltaAddNames(this.cbAddNames.Checked);
+                    e.WaterIntakeHabitants(this.nudTomas.Value.ToString());
                 }
 
                 this.Close();
