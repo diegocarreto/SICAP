@@ -50,9 +50,13 @@
             this.cbPrincipal = new System.Windows.Forms.CheckBox();
             this.txtTotal = new MetroFramework.Controls.MetroTextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtExteriorNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbStreet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbval_txtExteriorNumber
@@ -104,7 +108,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 200);
+            this.label5.Location = new System.Drawing.Point(17, 227);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 25;
@@ -115,7 +119,7 @@
             this.cbActive.AutoSize = true;
             this.cbActive.Checked = true;
             this.cbActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbActive.Location = new System.Drawing.Point(58, 199);
+            this.cbActive.Location = new System.Drawing.Point(58, 226);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(15, 14);
             this.cbActive.TabIndex = 6;
@@ -177,7 +181,7 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(134, 222);
+            this.btnAccept.Location = new System.Drawing.Point(134, 249);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 8;
@@ -190,7 +194,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(215, 222);
+            this.btnExit.Location = new System.Drawing.Point(215, 249);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 9;
@@ -203,7 +207,7 @@
             this.pbval_txtTotal.Cursor = System.Windows.Forms.Cursors.Help;
             this.pbval_txtTotal.Image = ((System.Drawing.Image)(resources.GetObject("pbval_txtTotal.Image")));
             this.pbval_txtTotal.InitialImage = null;
-            this.pbval_txtTotal.Location = new System.Drawing.Point(296, 175);
+            this.pbval_txtTotal.Location = new System.Drawing.Point(296, 202);
             this.pbval_txtTotal.Name = "pbval_txtTotal";
             this.pbval_txtTotal.Size = new System.Drawing.Size(18, 17);
             this.pbval_txtTotal.TabIndex = 31;
@@ -234,7 +238,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(87, 200);
+            this.label8.Location = new System.Drawing.Point(87, 227);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 13);
             this.label8.TabIndex = 38;
@@ -245,7 +249,7 @@
             this.cbPrincipal.AutoSize = true;
             this.cbPrincipal.Checked = true;
             this.cbPrincipal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbPrincipal.Location = new System.Drawing.Point(139, 200);
+            this.cbPrincipal.Location = new System.Drawing.Point(139, 227);
             this.cbPrincipal.Name = "cbPrincipal";
             this.cbPrincipal.Size = new System.Drawing.Size(15, 14);
             this.cbPrincipal.TabIndex = 7;
@@ -268,7 +272,7 @@
             this.txtTotal.DisplayIcon = true;
             this.txtTotal.Icon = ((System.Drawing.Image)(resources.GetObject("txtTotal.Icon")));
             this.txtTotal.Lines = new string[0];
-            this.txtTotal.Location = new System.Drawing.Point(58, 169);
+            this.txtTotal.Location = new System.Drawing.Point(58, 196);
             this.txtTotal.MaxLength = 32767;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
@@ -290,17 +294,57 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 179);
+            this.label9.Location = new System.Drawing.Point(20, 206);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(34, 13);
             this.label9.TabIndex = 124;
             this.label9.Text = "Total:";
             // 
+            // cmbType
+            // 
+            this.cmbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Casa Habitación",
+            "Negocio"});
+            this.cmbType.Location = new System.Drawing.Point(58, 169);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(232, 21);
+            this.cmbType.TabIndex = 125;
+            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 173);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 126;
+            this.label4.Text = "Tipo:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(296, 173);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 17);
+            this.pictureBox1.TabIndex = 127;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "Indique la calle";
+            this.pictureBox1.Visible = false;
+            // 
             // WaterIntake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 256);
+            this.ClientSize = new System.Drawing.Size(322, 280);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbType);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label8);
@@ -331,6 +375,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtExteriorNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_cmbStreet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbval_txtTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +404,8 @@
         private System.Windows.Forms.CheckBox cbPrincipal;
         private MetroFramework.Controls.MetroTextBox txtTotal;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

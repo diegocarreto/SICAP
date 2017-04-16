@@ -419,5 +419,10 @@ namespace WindowsFormsApplication1
             else
                 this.Alert("No se encontraron datos para el AP: " + this.txtAP.Text);
         }
+
+        private void cmbWaterIntake_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

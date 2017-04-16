@@ -172,6 +172,55 @@ namespace PosBusiness
             return this.AccessMsSql.Sicap.Rollist.ExeList<User>();
         }
 
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public bool UpdateRoleMenuDelete(int IdRole)
+        {
+            try
+            {
+                this.AccessMsSql.Sicap.Updaterolemenudelete.ExeNonQuery(IdRole);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.SetError(ex);
+
+                return false;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public bool UpdateRoleMenu(int IdRole, string Menu)
+        {
+            try
+            {
+                this.AccessMsSql.Sicap.Updaterolemenu.ExeNonQuery(IdRole, Menu);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.SetError(ex);
+
+                return false;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public List<User> MenuList(int IdRole)
+        {
+            return this.AccessMsSql.Sicap.Menulist.ExeList<User>(IdRole);
+        }
+
 
         // <summary>
         // 
@@ -182,6 +231,26 @@ namespace PosBusiness
             try
             {
                 this.AccessMsSql.Sicap.Userdelete.ExeNonQuery(this.UserId, this.Id);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.SetError(ex);
+
+                return false;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public bool DeleteRole()
+        {
+            try
+            {
+                this.AccessMsSql.Sicap.Roledelete.ExeNonQuery(this.UserId, this.IdRol);
 
                 return true;
             }

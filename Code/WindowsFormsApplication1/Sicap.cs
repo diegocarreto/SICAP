@@ -17,6 +17,8 @@ namespace WindowsFormsApplication1
 
         #region Members
 
+        private RoleList RoleList = null;
+
         private UserList UserList = null;
 
         private User User = null;
@@ -299,6 +301,11 @@ namespace WindowsFormsApplication1
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UserList = ShowOrActiveForm(BackUp, typeof(UserList)) as UserList;
+        }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RoleList = ShowOrActiveForm(BackUp, typeof(RoleList)) as RoleList;
         }
     }
 }

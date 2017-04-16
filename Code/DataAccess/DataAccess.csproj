@@ -91,6 +91,7 @@
     <Compile Include="MsSQL\SICAP\HabitantList.cs" />
     <Compile Include="MsSQL\SICAP\HabitantPrint.cs" />
     <Compile Include="MsSQL\SICAP\HabitantUpdate.cs" />
+    <Compile Include="MsSQL\SICAP\MenuList.cs" />
     <Compile Include="MsSQL\SICAP\PaymentAdd.cs" />
     <Compile Include="MsSQL\SICAP\PaymentDelete.cs" />
     <Compile Include="MsSQL\SICAP\PaymentExist.cs" />
@@ -102,9 +103,12 @@
     <Compile Include="MsSQL\SICAP\ReportConcentrated.cs" />
     <Compile Include="MsSQL\SICAP\ReportPayments1.cs" />
     <Compile Include="MsSQL\SICAP\ReportPaymentYear1.cs" />
+    <Compile Include="MsSQL\SICAP\RoleDelete.cs" />
     <Compile Include="MsSQL\SICAP\RolGet.cs" />
     <Compile Include="MsSQL\SICAP\RolList.cs" />
     <Compile Include="MsSQL\SICAP\SICAP.cs" />
+    <Compile Include="MsSQL\SICAP\UpdateRoleMenu.cs" />
+    <Compile Include="MsSQL\SICAP\UpdateRoleMenuDelete.cs" />
     <Compile Include="MsSQL\SICAP\UserAdd.cs" />
     <Compile Include="MsSQL\SICAP\UserDelete.cs" />
     <Compile Include="MsSQL\SICAP\UserList.cs" />

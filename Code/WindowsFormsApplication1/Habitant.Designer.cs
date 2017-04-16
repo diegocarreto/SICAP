@@ -121,7 +121,7 @@
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(138, 355);
+            this.btnAccept.Location = new System.Drawing.Point(138, 360);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 10;
@@ -134,7 +134,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(219, 355);
+            this.btnExit.Location = new System.Drawing.Point(219, 360);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 11;
@@ -147,7 +147,7 @@
             this.btnWaterIntake.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWaterIntake.Image = ((System.Drawing.Image)(resources.GetObject("btnWaterIntake.Image")));
             this.btnWaterIntake.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWaterIntake.Location = new System.Drawing.Point(57, 355);
+            this.btnWaterIntake.Location = new System.Drawing.Point(57, 360);
             this.btnWaterIntake.Name = "btnWaterIntake";
             this.btnWaterIntake.Size = new System.Drawing.Size(75, 23);
             this.btnWaterIntake.TabIndex = 9;
@@ -450,7 +450,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 390);
+            this.ClientSize = new System.Drawing.Size(323, 394);
             this.Controls.Add(this.txtMotherLastName);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtName);

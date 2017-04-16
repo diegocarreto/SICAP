@@ -45,7 +45,9 @@ namespace WindowsFormsApplication1
             using (var e = new posb.Config())
             {
                 this.txtAlta.Text = String.Format("{0:0.00}", e.Alta());
+                this.txtAltaNegocio.Text = String.Format("{0:0.00}", e.AltaNegocio());
                 this.txtMensualidad.Text = String.Format("{0:0.00}", e.Mensualidad());
+                this.txtMensualidadNegocio.Text = String.Format("{0:0.00}", e.MensualidadNegocio());
                 this.cmbPrinter.Text = e.Printer();
                 this.txtPresidente.Text = e.Presidente();
                 this.txtTesorero.Text = e.Tesorero();
@@ -78,7 +80,9 @@ namespace WindowsFormsApplication1
                 using (var e = new posb.Config())
                 {
                     e.Alta(this.txtAlta.Text);
+                    e.AltaNegocio(this.txtAltaNegocio.Text);
                     e.Mensualidad(this.txtMensualidad.Text);
+                    e.MensualidadNegocio(this.txtMensualidadNegocio.Text);
                     e.Printer(this.cmbPrinter.Text);
                     e.Presidente(this.txtPresidente.Text);
                     e.Tesorero(this.txtTesorero.Text);
@@ -143,6 +147,11 @@ namespace WindowsFormsApplication1
         private void ResultImage2(bool IsCorrect, String ErrorMessage, System.Drawing.Image Img)
         {
             this.pbPhoto2.Image = Img;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

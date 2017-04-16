@@ -73,6 +73,7 @@ namespace WindowsFormsApplication1
                 Active = this.cbActive.Checked,
                 Total = decimal.Parse(this.txtTotal.Text),
                 Principal = this.cbPrincipal.Checked,
+                Type = this.cmbType.Text
             })
             {
                 e.Save();
@@ -110,6 +111,7 @@ namespace WindowsFormsApplication1
                 this.txtTotal.Text = String.Format("{0:0.00}", e.Total);
                 this.cbActive.Checked = e.Active.Value;
                 this.cbPrincipal.Checked = e.Principal.Value;
+                this.cmbType.Text = e.Type;
             }
         }
 
@@ -119,7 +121,10 @@ namespace WindowsFormsApplication1
             {
                 using (var e = new posb.Config())
                 {
-                    this.txtTotal.Text = String.Format("{0:0.00}", e.Alta());
+                    if(this.cmbType.SelectedIndex.Equals(0))
+                        this.txtTotal.Text = String.Format("{0:0.00}", e.Alta());
+                    else
+                        this.txtTotal.Text = String.Format("{0:0.00}", e.AltaNegocio());
                 }
             }
             catch (Exception ex)
@@ -145,6 +150,8 @@ namespace WindowsFormsApplication1
 
         private void WaterIntake_Load(object sender, EventArgs e)
         {
+            this.cmbType.SelectedIndex = 0;
+
             this.FillStreet();
             this.FillHabitant();
 
@@ -156,6 +163,14 @@ namespace WindowsFormsApplication1
             {
                 this.SetCostAlta();
             }
+
+            this.LoadComplete = true;
+        }
+
+        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.LoadComplete)
+                this.SetCostAlta();
         }
     }
 }

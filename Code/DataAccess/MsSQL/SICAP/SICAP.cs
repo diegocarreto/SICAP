@@ -159,6 +159,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Habitantupdate Habitantupdate = new DataAccess.MsSqlCommands.Sicap.Habitantupdate();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Menulist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Menulist Menulist = new DataAccess.MsSqlCommands.Sicap.Menulist();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Paymentadd.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Paymentadd Paymentadd = new DataAccess.MsSqlCommands.Sicap.Paymentadd();
@@ -214,6 +219,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Reportpaymentyear1 Reportpaymentyear1 = new DataAccess.MsSqlCommands.Sicap.Reportpaymentyear1();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Roledelete.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Roledelete Roledelete = new DataAccess.MsSqlCommands.Sicap.Roledelete();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Rolget.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Rolget Rolget = new DataAccess.MsSqlCommands.Sicap.Rolget();
@@ -222,6 +232,16 @@ namespace DataAccess.MSSQL.Sicap
 		/// Controla la ejecucion del procedimiento almacenado Rollist.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Rollist Rollist = new DataAccess.MsSqlCommands.Sicap.Rollist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Updaterolemenu.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Updaterolemenu Updaterolemenu = new DataAccess.MsSqlCommands.Sicap.Updaterolemenu();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Updaterolemenudelete.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Updaterolemenudelete Updaterolemenudelete = new DataAccess.MsSqlCommands.Sicap.Updaterolemenudelete();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Useradd.
@@ -372,6 +392,9 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Habitantupdate != null)
 				this.Habitantupdate.Dispose();
 
+			if (this.Menulist != null)
+				this.Menulist.Dispose();
+
 			if (this.Paymentadd != null)
 				this.Paymentadd.Dispose();
 
@@ -405,11 +428,20 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Reportpaymentyear1 != null)
 				this.Reportpaymentyear1.Dispose();
 
+			if (this.Roledelete != null)
+				this.Roledelete.Dispose();
+
 			if (this.Rolget != null)
 				this.Rolget.Dispose();
 
 			if (this.Rollist != null)
 				this.Rollist.Dispose();
+
+			if (this.Updaterolemenu != null)
+				this.Updaterolemenu.Dispose();
+
+			if (this.Updaterolemenudelete != null)
+				this.Updaterolemenudelete.Dispose();
 
 			if (this.Useradd != null)
 				this.Useradd.Dispose();

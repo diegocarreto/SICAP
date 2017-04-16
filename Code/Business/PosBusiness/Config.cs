@@ -18,7 +18,11 @@ namespace PosBusiness
 
         private const string COST = "alta";
 
+        private const string COSTNEG = "altaNegocio";
+
         private const string MENSUALIDAD = "mensualidad";
+
+        private const string MENSUALIDADNEGOCIO = "mensualidadNegocio";
 
         private const string PRINTER = "printer";
 
@@ -139,6 +143,27 @@ namespace PosBusiness
         // 
         // </summary>
         // <returns></returns>
+        public decimal AltaNegocio(string Value = "")
+        {
+            if (string.IsNullOrEmpty(Value))
+            {
+
+                var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(COSTNEG);
+
+                return decimal.Parse(value);
+            }
+            else
+            {
+                this.AccessMsSql.Sicap.Configset.ExeNonQuery(COSTNEG, Value);
+
+                return 0;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
         public string KeyDate()
         {
             var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(KEY);
@@ -173,6 +198,27 @@ namespace PosBusiness
             else
             {
                 this.AccessMsSql.Sicap.Configset.ExeNonQuery(MENSUALIDAD, Value);
+
+                return 0;
+            }
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public decimal MensualidadNegocio(string Value = "")
+        {
+            if (string.IsNullOrEmpty(Value))
+            {
+
+                var value = this.AccessMsSql.Sicap.Configget.ExeScalar<string>(MENSUALIDADNEGOCIO);
+
+                return decimal.Parse(value);
+            }
+            else
+            {
+                this.AccessMsSql.Sicap.Configset.ExeNonQuery(MENSUALIDADNEGOCIO, Value);
 
                 return 0;
             }

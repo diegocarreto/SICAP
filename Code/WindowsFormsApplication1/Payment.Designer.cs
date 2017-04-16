@@ -136,6 +136,7 @@
             this.cmbWaterIntake.Name = "cmbWaterIntake";
             this.cmbWaterIntake.Size = new System.Drawing.Size(359, 21);
             this.cmbWaterIntake.TabIndex = 3;
+            this.cmbWaterIntake.SelectedIndexChanged += new System.EventHandler(this.cmbWaterIntake_SelectedIndexChanged);
             // 
             // label2
             // 
