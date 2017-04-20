@@ -17,6 +17,8 @@ namespace WindowsFormsApplication1
 
         #region Members
 
+        private Connection Connection = null;
+
         private RoleList RoleList = null;
 
         private UserList UserList = null;
@@ -125,6 +127,8 @@ namespace WindowsFormsApplication1
                     this.usuarioToolStripMenuItem1.Visible = e.menu_Usuarios.Value;
                     this.cambiarContraseñaToolStripMenuItem.Visible = e.menu_Contrasena.Value;
                     this.usuariosToolStripMenuItem.Visible = e.menu_UsuariosEdit.Value;
+                    this.conexionToolStripMenuItem.Visible = e.menu_Conexion.Value;
+                    this.pagosToolStripMenuItem1.Visible = e.menu_Reporte_Pagos.Value;
 
                     if (e.Menu_Pagos.Value)
                         PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
@@ -306,6 +310,11 @@ namespace WindowsFormsApplication1
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RoleList = ShowOrActiveForm(BackUp, typeof(RoleList)) as RoleList;
+        }
+
+        private void conexionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Connection =  ShowOrActiveForm(Connection, typeof(Connection)) as Connection;
         }
     }
 }

@@ -335,6 +335,37 @@ namespace PosBusiness
             }
         }
 
+        public bool CheckConnection(out string ErrorMessage, out int ErrorNumber, string Server = "", string User = "", string Password = "", int? Port = null, string DataBase = "")
+        {
+            try
+            {
+                var msSql = new AccessMsSQL();
+
+                return msSql.CheckConnection(out ErrorMessage, out ErrorNumber, Server, User, Password, Port, DataBase);
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+                ErrorNumber = 0;
+
+                return false;
+            }
+        }
+
+        public void GetConnectionParameters(out string Server, out int Port, out string DataBase, out string User, out string Password)
+        {
+            var msSql = new AccessMsSQL();
+
+            msSql.GetConnectionParameters(out  Server, out  Port, out  DataBase, out  User, out  Password);
+        }
+
+        public bool Save(string Server, int Port, string DataBase, string User, string Password)
+        {
+            var msSql = new AccessMsSQL();
+
+            return msSql.Save(Server, Port, DataBase, User, Password);
+        }
+
         /// <summary>
         /// 
         /// </summary>

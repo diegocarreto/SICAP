@@ -48,6 +48,10 @@ namespace PosBusiness
 
         public bool? menu_UsuariosEdit { get; set; }
 
+        public bool? menu_Conexion { get; set; }
+
+        public bool? menu_Reporte_Pagos { get; set; }
+
         #endregion
 
         #region Builder
@@ -101,6 +105,8 @@ namespace PosBusiness
             this.menu_Usuarios = e.menu_Usuarios;
             this.menu_Contrasena = e.menu_Contrasena;
             this.menu_UsuariosEdit = e.menu_UsuariosEdit;
+            this.menu_Conexion = e.menu_Conexion;
+            this.menu_Reporte_Pagos = e.menu_Reporte_Pagos;
         }
 
         // <summary>
@@ -289,6 +295,33 @@ namespace PosBusiness
             }
         }
 
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public bool SaveRole()
+        {
+            try
+            {
+                if (!this.Id.HasValue)
+                {
+                    this.Id = this.AccessMsSql.Sicap.Roleadd.ExeScalar<int>(this.UserId, this.Name);
+                }
+                else
+                {
+                    this.AccessMsSql.Sicap.Roleupdate.ExeNonQuery(this.UserId, this.Id, this.Name);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.SetError(ex);
+
+                return false;
+            }
+
         #endregion
+        }
     }
 }

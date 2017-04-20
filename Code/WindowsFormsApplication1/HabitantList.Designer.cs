@@ -30,13 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HabitantList));
             this.gvList = new System.Windows.Forms.DataGridView();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtFind = new MetroFramework.Controls.MetroTextBox();
-            this.pageList = new WindowsFormsApplication1.Pager();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +41,13 @@
             this.Aux = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aux2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Printbtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFind = new MetroFramework.Controls.MetroTextBox();
+            this.pageList = new WindowsFormsApplication1.Pager();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,91 @@
             this.gvList.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvList_CellMouseLeave);
             this.gvList.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_CellMouseMove);
             this.gvList.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvList_ColumnHeaderMouseClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 50;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "name";
+            this.Name.HeaderText = "Nombre";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Paterno
+            // 
+            this.Paterno.DataPropertyName = "paterno";
+            this.Paterno.HeaderText = "Paterno";
+            this.Paterno.Name = "Paterno";
+            this.Paterno.ReadOnly = true;
+            // 
+            // Materno
+            // 
+            this.Materno.DataPropertyName = "materno";
+            this.Materno.HeaderText = "Materno";
+            this.Materno.Name = "Materno";
+            this.Materno.ReadOnly = true;
+            // 
+            // Observations
+            // 
+            this.Observations.DataPropertyName = "observations";
+            this.Observations.HeaderText = "Observaciones";
+            this.Observations.Name = "Observations";
+            this.Observations.ReadOnly = true;
+            this.Observations.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Observations.Width = 200;
+            // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "year";
+            this.Year.HeaderText = "Año";
+            this.Year.Name = "Year";
+            this.Year.ReadOnly = true;
+            this.Year.Width = 60;
+            // 
+            // MonthName
+            // 
+            this.MonthName.DataPropertyName = "MonthName";
+            this.MonthName.HeaderText = "Mes";
+            this.MonthName.Name = "MonthName";
+            this.MonthName.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "total";
+            this.Total.HeaderText = "Monto";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 80;
+            // 
+            // Aux
+            // 
+            this.Aux.DataPropertyName = "aux";
+            this.Aux.HeaderText = "Activo";
+            this.Aux.Name = "Aux";
+            this.Aux.ReadOnly = true;
+            this.Aux.Width = 45;
+            // 
+            // Aux2
+            // 
+            this.Aux2.DataPropertyName = "aux2";
+            this.Aux2.HeaderText = "Alta";
+            this.Aux2.Name = "Aux2";
+            this.Aux2.ReadOnly = true;
+            this.Aux2.Width = 120;
+            // 
+            // Printbtn
+            // 
+            this.Printbtn.DataPropertyName = "Printbtn";
+            this.Printbtn.HeaderText = "Imprimir";
+            this.Printbtn.Name = "Printbtn";
+            this.Printbtn.ReadOnly = true;
+            this.Printbtn.Width = 70;
             // 
             // btnNew
             // 
@@ -174,6 +259,8 @@
             this.txtFind.WaterMark = "Introduzca su búsqueda";
             this.txtFind.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFind.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFind.Click += new System.EventHandler(this.txtFind_Click);
+            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp_1);
             // 
             // pageList
             // 
@@ -181,91 +268,6 @@
             this.pageList.Name = "pageList";
             this.pageList.Size = new System.Drawing.Size(396, 30);
             this.pageList.TabIndex = 112;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 50;
-            // 
-            // Name
-            // 
-            this.Name.DataPropertyName = "name";
-            this.Name.HeaderText = "Nombre";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            // 
-            // Paterno
-            // 
-            this.Paterno.DataPropertyName = "paterno";
-            this.Paterno.HeaderText = "Paterno";
-            this.Paterno.Name = "Paterno";
-            this.Paterno.ReadOnly = true;
-            // 
-            // Materno
-            // 
-            this.Materno.DataPropertyName = "materno";
-            this.Materno.HeaderText = "Materno";
-            this.Materno.Name = "Materno";
-            this.Materno.ReadOnly = true;
-            // 
-            // Observations
-            // 
-            this.Observations.DataPropertyName = "observations";
-            this.Observations.HeaderText = "Observaciones";
-            this.Observations.Name = "Observations";
-            this.Observations.ReadOnly = true;
-            this.Observations.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Observations.Width = 200;
-            // 
-            // Year
-            // 
-            this.Year.DataPropertyName = "year";
-            this.Year.HeaderText = "Año";
-            this.Year.Name = "Year";
-            this.Year.ReadOnly = true;
-            this.Year.Width = 60;
-            // 
-            // MonthName
-            // 
-            this.MonthName.DataPropertyName = "MonthName";
-            this.MonthName.HeaderText = "Mes";
-            this.MonthName.Name = "MonthName";
-            this.MonthName.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "total";
-            this.Total.HeaderText = "Monto";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 80;
-            // 
-            // Aux
-            // 
-            this.Aux.DataPropertyName = "aux";
-            this.Aux.HeaderText = "Activo";
-            this.Aux.Name = "Aux";
-            this.Aux.ReadOnly = true;
-            this.Aux.Width = 45;
-            // 
-            // Aux2
-            // 
-            this.Aux2.DataPropertyName = "aux2";
-            this.Aux2.HeaderText = "Alta";
-            this.Aux2.Name = "Aux2";
-            this.Aux2.ReadOnly = true;
-            this.Aux2.Width = 120;
-            // 
-            // Printbtn
-            // 
-            this.Printbtn.DataPropertyName = "Printbtn";
-            this.Printbtn.HeaderText = "Imprimir";
-            this.Printbtn.Name = "Printbtn";
-            this.Printbtn.ReadOnly = true;
-            this.Printbtn.Width = 70;
             // 
             // HabitantList
             // 

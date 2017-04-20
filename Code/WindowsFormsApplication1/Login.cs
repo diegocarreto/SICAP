@@ -100,20 +100,48 @@ namespace WindowsFormsApplication1
 
         private void Login_Load(object sender, EventArgs e)
         {
+            string errorMessage = string.Empty;
+            int errorNumber = 0;
+
             this.ConfigureDialogs();
 
             using (var config = new PosBusiness.Config())
             {
-                var result = config.ExistDataBase("SICAP");
+                var resultConnection = config.CheckConnection(out errorMessage, out errorNumber);
 
-                if (!result)
+                if (resultConnection)
                 {
-                    if (this.Confirm("La base de datos SICAP no se encuentra instalada, ¿Desea instalarla?"))
+                    var result = config.ExistDataBase("SICAP");
+
+                    if (!result)
                     {
-                        if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        if (this.Confirm("La base de datos SICAP no se encuentra instalada, ¿Desea instalarla ahora?"))
                         {
-                            config.Restore(ofd.FileName);
+                            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            {
+                                if (!config.Restore(ofd.FileName))
+                                {
+                                    this.Alert(config.ErrorMessage);
+
+                                    Application.Exit();
+                                }
+                            }
                         }
+                        else
+                            Application.Exit();
+                    }
+                }
+                else
+                {
+                    this.Alert("Ocurrió un error al intentar conectarse a la base de datos SICAP.\r\n\r\nNumero: " + errorNumber + "\r\nDescripción: " + errorMessage);
+
+                    if (this.Confirm("Los parámetros de conexión a la base de datos SICAP son incorrectos, ¿Desea configurarlos ahora?"))
+                    {
+                        var connection = new Connection();
+
+                        connection.ShowDialog();
+
+                        this.Close();
                     }
                     else
                         Application.Exit();

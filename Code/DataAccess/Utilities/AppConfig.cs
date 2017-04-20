@@ -56,12 +56,10 @@ namespace DataAccess
         /// <returns></returns>
         private Configuration  GetConfiguration()
         {
-            string assemblyPath = new Uri(Assembly.GetExecutingAssembly().CodeBase).AbsolutePath.Replace("%20"," ").Replace("/", "\\");
+            var assemblyPath = new Uri(Assembly.GetExecutingAssembly().CodeBase).AbsolutePath.Replace("%20"," ").Replace("/", "\\");
 
             ExeConfigurationFileMap configMap = new ExeConfigurationFileMap();
             configMap.ExeConfigFilename = assemblyPath + ".config";
-
-            Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);
 
             return ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None); 
         }

@@ -167,11 +167,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void txtFind_KeyUp(object sender, KeyEventArgs e)
-        {
-            this.FillGridView();
-        }
-
         private void gvList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (gvList.Columns[e.ColumnIndex].SortMode != DataGridViewColumnSortMode.NotSortable)
@@ -185,6 +180,16 @@ namespace WindowsFormsApplication1
 
                 this.FillGridView();
             }
+        }
+
+        private void txtFind_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFind_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            this.FillGridView();
         }
     }
 }

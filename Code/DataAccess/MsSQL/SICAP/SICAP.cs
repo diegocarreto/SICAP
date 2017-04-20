@@ -219,9 +219,19 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Reportpaymentyear1 Reportpaymentyear1 = new DataAccess.MsSqlCommands.Sicap.Reportpaymentyear1();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Roleadd.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Roleadd Roleadd = new DataAccess.MsSqlCommands.Sicap.Roleadd();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Roledelete.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Roledelete Roledelete = new DataAccess.MsSqlCommands.Sicap.Roledelete();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Roleupdate.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Roleupdate Roleupdate = new DataAccess.MsSqlCommands.Sicap.Roleupdate();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Rolget.
@@ -428,8 +438,14 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Reportpaymentyear1 != null)
 				this.Reportpaymentyear1.Dispose();
 
+			if (this.Roleadd != null)
+				this.Roleadd.Dispose();
+
 			if (this.Roledelete != null)
 				this.Roledelete.Dispose();
+
+			if (this.Roleupdate != null)
+				this.Roleupdate.Dispose();
 
 			if (this.Rolget != null)
 				this.Rolget.Dispose();

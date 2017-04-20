@@ -347,6 +347,15 @@ namespace DataAccess.MSSQL
             }
         }
 
+        public void GetConnectionParameters(out string server, out int port, out string dataBase, out string user, out string password)
+        {
+            server = ConfigurationManager.AppSettings["DataSource"];
+            user = ConfigurationManager.AppSettings["UserId"];
+            password = ConfigurationManager.AppSettings["Password"];
+            port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+            dataBase = ConfigurationManager.AppSettings["InitialCatalog"];
+        }
+
         public bool RestoreDataBase(string Name)
         {
             try
@@ -367,6 +376,93 @@ namespace DataAccess.MSSQL
                         return true;
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool CheckConnection(out string ErrorMessage, out int ErrorNumber, string Server = "", string User = "", string Password = "", int? Port = null, string DataBase = "")
+        {
+            Server = string.IsNullOrEmpty(Server) ? ConfigurationManager.AppSettings["DataSource"] : Server;
+            User = string.IsNullOrEmpty(User) ? ConfigurationManager.AppSettings["UserId"] : User;
+            Password = string.IsNullOrEmpty(Password) ? ConfigurationManager.AppSettings["Password"] : Password;
+            Port = !Port.HasValue ? int.Parse(ConfigurationManager.AppSettings["Port"]) : Port;
+            DataBase = string.IsNullOrEmpty(DataBase) ? ConfigurationManager.AppSettings["InitialCatalog"] : DataBase;
+
+            using (var con = new SqlConnection("Data Source=" + Server + "," + Port + ";Initial Catalog=" + DataBase + ";User ID=" + User + ";Password=" + Password))
+            {
+                try
+                {
+                    con.Open();
+
+                    ErrorNumber = 0;
+                    ErrorMessage = string.Empty;
+
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    ErrorMessage = ex.Message;
+                    ErrorNumber = ex.Number;
+
+                    switch (ErrorNumber)
+                    {
+                        case 1225:
+                        case 10061:
+
+                            ErrorMessage = "El puerto indicado [" + Port + "] no está disponible";
+
+                            break;
+
+                        case 4060:
+
+                            ErrorMessage = "La base de datos indicada [" + DataBase + "] no se encuentra ";
+
+                            break;
+
+                        case 11001:
+
+                            ErrorMessage = "El servidor indicado [" + Server + "] no se encuentra disponible";
+
+                            break;
+
+                        case 18456:
+
+                            ErrorMessage = "Usuario o contraseña incorrecto(a)";
+
+                            break;
+                    }
+
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    ErrorNumber = 0;
+                    ErrorMessage = "No identificado";
+
+                    return false;
+                }
+            }
+        }
+
+        public bool Save(string Server, int Port, string DataBase, string User, string Password)
+        {
+            try
+            {
+                var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                config.AppSettings.Settings["DataSource"].Value = Server;
+                config.AppSettings.Settings["Port"].Value = Port.ToString();
+                config.AppSettings.Settings["InitialCatalog"].Value = DataBase;
+                config.AppSettings.Settings["UserId"].Value = User;
+                config.AppSettings.Settings["Password"].Value = Password;
+
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection(config.AppSettings.SectionInformation.Name);
+
+                return true;
             }
             catch (Exception ex)
             {

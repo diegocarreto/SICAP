@@ -103,7 +103,9 @@
     <Compile Include="MsSQL\SICAP\ReportConcentrated.cs" />
     <Compile Include="MsSQL\SICAP\ReportPayments1.cs" />
     <Compile Include="MsSQL\SICAP\ReportPaymentYear1.cs" />
+    <Compile Include="MsSQL\SICAP\RoleAdd.cs" />
     <Compile Include="MsSQL\SICAP\RoleDelete.cs" />
+    <Compile Include="MsSQL\SICAP\RoleUpdate.cs" />
     <Compile Include="MsSQL\SICAP\RolGet.cs" />
     <Compile Include="MsSQL\SICAP\RolList.cs" />
     <Compile Include="MsSQL\SICAP\SICAP.cs" />

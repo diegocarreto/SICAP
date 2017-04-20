@@ -179,9 +179,9 @@
             this.cmbHabitant.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbHabitant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHabitant.FormattingEnabled = true;
-            this.cmbHabitant.Location = new System.Drawing.Point(86, 89);
+            this.cmbHabitant.Location = new System.Drawing.Point(88, 89);
             this.cmbHabitant.Name = "cmbHabitant";
-            this.cmbHabitant.Size = new System.Drawing.Size(362, 21);
+            this.cmbHabitant.Size = new System.Drawing.Size(359, 21);
             this.cmbHabitant.TabIndex = 2;
             this.cmbHabitant.SelectedIndexChanged += new System.EventHandler(this.cmbHabitant_SelectedIndexChanged);
             // 
@@ -326,7 +326,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(56, 66);
+            this.label10.Location = new System.Drawing.Point(59, 65);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(24, 13);
             this.label10.TabIndex = 116;
@@ -351,7 +351,7 @@
             // 
             // 
             this.txtAP.CustomButton.Image = null;
-            this.txtAP.CustomButton.Location = new System.Drawing.Point(244, 1);
+            this.txtAP.CustomButton.Location = new System.Drawing.Point(242, 1);
             this.txtAP.CustomButton.Name = "";
             this.txtAP.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtAP.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -362,7 +362,7 @@
             this.txtAP.DisplayIcon = true;
             this.txtAP.Icon = ((System.Drawing.Image)(resources.GetObject("txtAP.Icon")));
             this.txtAP.Lines = new string[0];
-            this.txtAP.Location = new System.Drawing.Point(86, 60);
+            this.txtAP.Location = new System.Drawing.Point(88, 60);
             this.txtAP.MaxLength = 32767;
             this.txtAP.Name = "txtAP";
             this.txtAP.PasswordChar = '\0';
@@ -373,7 +373,7 @@
             this.txtAP.SelectionStart = 0;
             this.txtAP.ShortcutsEnabled = true;
             this.txtAP.ShowClearButton = true;
-            this.txtAP.Size = new System.Drawing.Size(266, 23);
+            this.txtAP.Size = new System.Drawing.Size(264, 23);
             this.txtAP.TabIndex = 0;
             this.txtAP.UseSelectable = true;
             this.txtAP.WaterMark = "Introduzca el AP del habitante";
