@@ -118,6 +118,12 @@
     <Compile Include="Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
     </Compile>
+    <Compile Include="BinnacleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BinnacleList.Designer.cs">
+      <DependentUpon>BinnacleList.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoleEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BinnacleList.resx">
+      <DependentUpon>BinnacleList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoleEdit.resx">
       <DependentUpon>RoleEdit.cs</DependentUpon>

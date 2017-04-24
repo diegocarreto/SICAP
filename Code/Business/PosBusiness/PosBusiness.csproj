@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Catalogs.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Binnacle.cs" />
     <Compile Include="PaymentPerYearReports.cs" />
     <Compile Include="Reports.cs" />
     <Compile Include="Payment.cs" />

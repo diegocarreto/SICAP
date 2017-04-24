@@ -17,6 +17,8 @@ namespace WindowsFormsApplication1
 
         #region Members
 
+        private BinnacleList BinnacleList = null;
+
         private Connection Connection = null;
 
         private RoleList RoleList = null;
@@ -129,6 +131,9 @@ namespace WindowsFormsApplication1
                     this.usuariosToolStripMenuItem.Visible = e.menu_UsuariosEdit.Value;
                     this.conexionToolStripMenuItem.Visible = e.menu_Conexion.Value;
                     this.pagosToolStripMenuItem1.Visible = e.menu_Reporte_Pagos.Value;
+
+                    this.bitácoraToolStripMenuItem.Visible = e.menu_Reporte_Binnacle.Value;
+
 
                     if (e.Menu_Pagos.Value)
                         PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
@@ -315,6 +320,11 @@ namespace WindowsFormsApplication1
         private void conexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Connection =  ShowOrActiveForm(Connection, typeof(Connection)) as Connection;
+        }
+
+        private void bitácoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BinnacleList = ShowOrActiveForm(BinnacleList, typeof(BinnacleList)) as BinnacleList;
         }
     }
 }

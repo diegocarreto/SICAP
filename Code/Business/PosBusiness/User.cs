@@ -52,6 +52,8 @@ namespace PosBusiness
 
         public bool? menu_Reporte_Pagos { get; set; }
 
+        public bool? menu_Reporte_Binnacle { get; set; }
+
         #endregion
 
         #region Builder
@@ -107,6 +109,7 @@ namespace PosBusiness
             this.menu_UsuariosEdit = e.menu_UsuariosEdit;
             this.menu_Conexion = e.menu_Conexion;
             this.menu_Reporte_Pagos = e.menu_Reporte_Pagos;
+            this.menu_Reporte_Binnacle = e.menu_Reporte_Binnacle;
         }
 
         // <summary>

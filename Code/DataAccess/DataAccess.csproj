@@ -63,6 +63,7 @@
     <Compile Include="MsSQL\SICAP\AddImage.cs" />
     <Compile Include="MsSQL\SICAP\backupdb.cs" />
     <Compile Include="MsSQL\SICAP\BinnacleAdd.cs" />
+    <Compile Include="MsSQL\SICAP\binnacleList.cs" />
     <Compile Include="MsSQL\SICAP\CatalogAdd.cs" />
     <Compile Include="MsSQL\SICAP\CatalogDelete.cs" />
     <Compile Include="MsSQL\SICAP\CatalogList.cs" />

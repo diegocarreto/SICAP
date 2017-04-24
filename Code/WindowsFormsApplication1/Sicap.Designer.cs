@@ -49,7 +49,9 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitácoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.respaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +59,6 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.conexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +82,7 @@
             // 
             this.bloquearToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("bloquearToolStripMenuItem.Image")));
             this.bloquearToolStripMenuItem.Name = "bloquearToolStripMenuItem";
-            this.bloquearToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.bloquearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bloquearToolStripMenuItem.Text = "Bloquear...";
             this.bloquearToolStripMenuItem.Click += new System.EventHandler(this.bloquearToolStripMenuItem_Click);
             // 
@@ -201,6 +202,7 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bitácoraToolStripMenuItem,
             this.toolStripMenuItem2,
             this.pagosToolStripMenuItem1});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
@@ -223,6 +225,14 @@
             this.pagosToolStripMenuItem1.Text = "Pagos...";
             this.pagosToolStripMenuItem1.Click += new System.EventHandler(this.pagosToolStripMenuItem1_Click);
             // 
+            // bitácoraToolStripMenuItem
+            // 
+            this.bitácoraToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("bitácoraToolStripMenuItem.Image")));
+            this.bitácoraToolStripMenuItem.Name = "bitácoraToolStripMenuItem";
+            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bitácoraToolStripMenuItem.Text = "Bitácora...";
+            this.bitácoraToolStripMenuItem.Click += new System.EventHandler(this.bitácoraToolStripMenuItem_Click);
+            // 
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -232,6 +242,14 @@
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
+            // 
+            // conexionToolStripMenuItem
+            // 
+            this.conexionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("conexionToolStripMenuItem.Image")));
+            this.conexionToolStripMenuItem.Name = "conexionToolStripMenuItem";
+            this.conexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.conexionToolStripMenuItem.Text = "Conexion...";
+            this.conexionToolStripMenuItem.Click += new System.EventHandler(this.conexionToolStripMenuItem_Click);
             // 
             // opcionesToolStripMenuItem
             // 
@@ -256,8 +274,8 @@
             this.usuariosToolStripMenuItem,
             this.rolesToolStripMenuItem});
             this.usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
-            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
-            this.usuarioToolStripMenuItem1.Text = "Usuario";
+            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(81, 20);
+            this.usuarioToolStripMenuItem1.Text = "Administrar";
             // 
             // cambiarContraseñaToolStripMenuItem
             // 
@@ -282,14 +300,6 @@
             this.rolesToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.rolesToolStripMenuItem.Text = "Roles...";
             this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
-            // 
-            // conexionToolStripMenuItem
-            // 
-            this.conexionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("conexionToolStripMenuItem.Image")));
-            this.conexionToolStripMenuItem.Name = "conexionToolStripMenuItem";
-            this.conexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.conexionToolStripMenuItem.Text = "Conexion...";
-            this.conexionToolStripMenuItem.Click += new System.EventHandler(this.conexionToolStripMenuItem_Click);
             // 
             // Sicap
             // 
@@ -343,5 +353,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conexionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitácoraToolStripMenuItem;
     }
 }

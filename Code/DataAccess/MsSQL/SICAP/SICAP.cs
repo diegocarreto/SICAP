@@ -29,6 +29,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Binnacleadd Binnacleadd = new DataAccess.MsSqlCommands.Sicap.Binnacleadd();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Binnaclelist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Binnaclelist Binnaclelist = new DataAccess.MsSqlCommands.Sicap.Binnaclelist();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Catalogadd.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Catalogadd Catalogadd = new DataAccess.MsSqlCommands.Sicap.Catalogadd();
@@ -323,6 +328,9 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Binnacleadd != null)
 				this.Binnacleadd.Dispose();
+
+			if (this.Binnaclelist != null)
+				this.Binnaclelist.Dispose();
 
 			if (this.Catalogadd != null)
 				this.Catalogadd.Dispose();
