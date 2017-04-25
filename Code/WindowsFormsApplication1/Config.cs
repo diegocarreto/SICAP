@@ -123,7 +123,7 @@ namespace WindowsFormsApplication1
 
         private void pbPhoto_Click(object sender, EventArgs e)
         {
-            var image = new Image(1);
+            var image = new Image(1, "Voucher");
 
             image.Result += new Image.Communication(ResultImage1);
 

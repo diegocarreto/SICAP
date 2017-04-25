@@ -124,6 +124,12 @@
     <Compile Include="BinnacleList.Designer.cs">
       <DependentUpon>BinnacleList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewImage.Designer.cs">
+      <DependentUpon>ViewImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoleEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BinnacleList.resx">
       <DependentUpon>BinnacleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewImage.resx">
+      <DependentUpon>ViewImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoleEdit.resx">
       <DependentUpon>RoleEdit.cs</DependentUpon>
