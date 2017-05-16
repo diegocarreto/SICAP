@@ -4,48 +4,23 @@ using Utilities;
 using Utilities.Extensions;
 using posb = PosBusiness;
 using UtilitiesForm.Extensions;
+using System.Resources;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace WindowsFormsApplication1
 {
     public partial class Sicap : Form
     {
+        #region Members
+
         public BackUp BackUp;
 
         public string UserName;
 
         public Login Login;
 
-        #region Members
-
-        private BinnacleList BinnacleList = null;
-
-        private Connection Connection = null;
-
-        private RoleList RoleList = null;
-
-        private UserList UserList = null;
-
-        private User User = null;
-
-        private CalleList CalleList = null;
-
-        private Pagos Pagos = null;
-
-        private PaymentYear PaymentYear = null;
-
-        private Concentrado Concentrado = null;
-
-        private HabitantFaenasList HabitantFaenasList = null;
-
-        private FaenasList FaenasList = null;
-
-        private InputOutputsList InputOutputsList = null;
-
-        private Config Config = null;
-
-        private HabitantList HabitantList = null;
-
-        private PaymentList PaymentList = null;
+        private Dictionary<string, Form> Forms;
 
         #endregion
 
@@ -53,6 +28,8 @@ namespace WindowsFormsApplication1
 
         public Sicap()
         {
+            this.Forms = new Dictionary<string, Form>();
+
             InitializeComponent();
         }
 
@@ -62,23 +39,28 @@ namespace WindowsFormsApplication1
 
         private void MaxShop_Load(object sender, EventArgs e)
         {
-            this.ConfigureRol();
+            this.AddMenu();
             this.AddStatusBar();
         }
 
-        private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bloquearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Config = ShowOrActiveForm(Config, typeof(Config)) as Config;
+            this.Hide();
+
+            this.Login.Show();
         }
 
-        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Sicap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
+            if (this.Login != null)
+                this.Login.Close();
         }
 
-        private void habitantesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HabitantList = ShowOrActiveForm(HabitantList, typeof(HabitantList)) as HabitantList;
+            var About = new About();
+
+            About.ShowDialog();
         }
 
         private void mnArchivoReiniciar_Click(object sender, EventArgs e)
@@ -91,26 +73,11 @@ namespace WindowsFormsApplication1
             Application.Exit();
         }
 
-        private void mnVentanasCascada_Click(object sender, EventArgs e)
-        {
-            this.LayoutMdi(System.Windows.Forms.MdiLayout.Cascade);
-        }
-
-        private void mnVentanasHorizontal_Click(object sender, EventArgs e)
-        {
-            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileHorizontal);
-        }
-
-        private void mnVentanasVertical_Click(object sender, EventArgs e)
-        {
-            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileVertical);
-        }
-
         #endregion
 
         #region Methods
 
-        private void ConfigureRol()
+        private void AddMenu()
         {
             try
             {
@@ -118,25 +85,24 @@ namespace WindowsFormsApplication1
                 {
                     e.Rol();
 
-                    this.pagosToolStripMenuItem.Visible = e.Menu_Pagos.Value;
-                    this.habitantesToolStripMenuItem.Visible = e.Menu_Habitantes.Value;
-                    this.herramientasToolStripMenuItem.Visible = e.Menu_Opciones.Value;
-                    this.entradasYSalidasToolStripMenuItem.Visible = e.Menu_IngresosEgresos.Value;
-                    this.toolStripMenuItem2.Visible = e.Menu_Concentrado.Value;
-                    this.faenasToolStripMenuItem.Visible = e.Menu_Cooperaciones.Value;
-                    this.cooperacionesToolStripMenuItem.Visible = e.Menu_PagosCooperaciones.Value;
-                    this.callesToolStripMenuItem.Visible = e.Menu_Calles.Value;
-                    this.usuarioToolStripMenuItem1.Visible = e.menu_Usuarios.Value;
-                    this.cambiarContraseñaToolStripMenuItem.Visible = e.menu_Contrasena.Value;
-                    this.usuariosToolStripMenuItem.Visible = e.menu_UsuariosEdit.Value;
-                    this.conexionToolStripMenuItem.Visible = e.menu_Conexion.Value;
-                    this.pagosToolStripMenuItem1.Visible = e.menu_Reporte_Pagos.Value;
+                    var principal = e.MenuPrincipalList();
 
-                    this.bitácoraToolStripMenuItem.Visible = e.menu_Reporte_Binnacle.Value;
+                    foreach (var p in principal)
+                    {
+                        var mnu = (ToolStripMenuItem)menuStrip1.Items.Add(p.Name);
+                        var secondary = e.MenuSecondaryByUserList(p.Id.Value);
+                        var index = 0;
 
+                        foreach (var s in secondary)
+                        {
+                            System.Drawing.Image img = System.Drawing.Image.FromFile(this.GetPath() + "\\Menu\\" + s.Image, true);
 
-                    if (e.Menu_Pagos.Value)
-                        PaymentList = ShowOrActiveForm(PaymentList, typeof(PaymentList)) as PaymentList;
+                            mnu.DropDownItems.Add(s.Name, img, MenuClicked);
+                            mnu.DropDownItems[index].Tag = s.FormName + "|" + s.Modal;
+
+                            index++;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -144,59 +110,47 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private Form ShowOrActiveForm(Form form, Type t, bool Dialog = false)
+        private void MenuClicked(object sender, EventArgs e)
         {
-            if (form == null)
-            {
-                form = (Form)Activator.CreateInstance(t);
-                form.StartPosition = FormStartPosition.CenterScreen;
+            var nameSpace = "WindowsFormsApplication1.";
+            var menu = (ToolStripMenuItem)sender;
+            var parts = menu.Tag.ToString().Split('|');
 
-                if (!Dialog)
-                {
-                    form.MdiParent = this;
-                    form.Show();
-                }
-                else
-                {
-                    form.MdiParent = null;
-                    form.ShowDialog();
-                }
+            var frmName = parts[0];
+            var frm = new Form();
+
+            bool modal = false;
+            bool.TryParse(parts[1], out modal);
+
+            if (!this.Forms.ContainsKey(frmName))
+            {
+                frm = Activator.CreateInstance(Type.GetType(nameSpace + frmName)) as Form;
+                this.Forms.Add(frmName, frm);
+            }
+            else if (modal)
+            {
+                frm = Activator.CreateInstance(Type.GetType(nameSpace + frmName)) as Form;
             }
             else
             {
-                form.StartPosition = FormStartPosition.CenterScreen;
+                frm = this.Forms[frmName];
 
-                if (form.IsDisposed)
-                {
-                    form = (Form)Activator.CreateInstance(t);
-                    form.MdiParent = this;
-
-                    if (!Dialog)
-                    {
-                        form.MdiParent = this;
-                        form.Show();
-                    }
-                    else
-                    {
-                        form.MdiParent = null;
-                        form.ShowDialog();
-                    }
-                }
-                else
-                {
-                    if (!Dialog)
-                    {
-                        form.Activate();
-                    }
-                    else
-                    {
-                        form.MdiParent = null;
-                        form.ShowDialog();
-                    }
-
-                }
+                if (frm.IsDisposed)
+                    frm = Activator.CreateInstance(Type.GetType(nameSpace + frmName)) as Form;
             }
-            return form;
+
+
+            if (modal)
+                frm.ShowDialog();
+            else
+            {
+                frm.StartPosition = FormStartPosition.CenterScreen;
+
+                frm.MdiParent = this;
+
+                frm.Show();
+                frm.Activate();
+            }
         }
 
         private void AddStatusBar()
@@ -236,95 +190,5 @@ namespace WindowsFormsApplication1
         }
 
         #endregion
-
-        private void entradasYSalidasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InputOutputsList = ShowOrActiveForm(InputOutputsList, typeof(InputOutputsList)) as InputOutputsList;
-        }
-
-        private void faenasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FaenasList = ShowOrActiveForm(FaenasList, typeof(FaenasList)) as FaenasList;
-        }
-
-        private void bloquearToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            this.Login.Show();
-        }
-
-        private void Sicap_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (this.Login != null)
-                this.Login.Close();
-        }
-
-        private void cooperacionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            HabitantFaenasList = ShowOrActiveForm(HabitantFaenasList, typeof(HabitantFaenasList)) as HabitantFaenasList;
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            Concentrado = ShowOrActiveForm(Concentrado, typeof(Concentrado)) as Concentrado;
-        }
-
-        private void pagoPorAñoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PaymentYear = ShowOrActiveForm(PaymentYear, typeof(PaymentYear)) as PaymentYear;
-        }
-
-        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var About = new About();
-
-            About.ShowDialog();
-        }
-
-        private void pagosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Pagos = ShowOrActiveForm(Pagos, typeof(Pagos)) as Pagos;
-        }
-
-        private void callesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CalleList = ShowOrActiveForm(CalleList, typeof(CalleList)) as CalleList;
-        }
-
-        private void respaldoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            BackUp = ShowOrActiveForm(BackUp, typeof(BackUp)) as BackUp;
-        }
-
-        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            User = ShowOrActiveForm(BackUp, typeof(User)) as User;
-        }
-
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UserList = ShowOrActiveForm(BackUp, typeof(UserList)) as UserList;
-        }
-
-        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RoleList = ShowOrActiveForm(BackUp, typeof(RoleList)) as RoleList;
-        }
-
-        private void conexionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Connection =  ShowOrActiveForm(Connection, typeof(Connection)) as Connection;
-        }
-
-        private void bitácoraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            BinnacleList = ShowOrActiveForm(BinnacleList, typeof(BinnacleList)) as BinnacleList;
-        }
     }
 }

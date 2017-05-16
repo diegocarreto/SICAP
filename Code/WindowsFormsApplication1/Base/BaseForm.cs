@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using UtilitiesForm.Extensions;
-using Utilities.Extensions;
-using PosBusiness;
 using System.Drawing.Printing;
 using posb = PosBusiness;
-using Utilities;
 using MetroFramework.Controls;
 using System.IO;
+using UtilitiesForm.Extensions;
+using Utilities;
 
 namespace WindowsFormsApplication1.Base
 {
@@ -335,7 +331,7 @@ namespace WindowsFormsApplication1.Base
                         e1.Graphics.DrawString(line, f14, brush, 17, 230 + copy);
 
                         e1.Graphics.DrawString("TOMA DE AGUA", f14, brush, 30, 260 + copy);
-                        e1.Graphics.DrawString(payment.Direccion, f14, brush, 250, 260 + copy);
+                        e1.Graphics.DrawString(payment.Direccion + "  [" + payment.Type + "]", f14, brush, 250, 260 + copy);
 
                         e1.Graphics.FillRectangle(brushTwo, new Rectangle(20, 299 + copy, 795, 27));
                         e1.Graphics.DrawRectangle(pen, new Rectangle(20, 299 + copy, 795, 27));
@@ -524,7 +520,7 @@ namespace WindowsFormsApplication1.Base
                         e1.Graphics.DrawString(line, f14, brush, 17, 230 + copy);
 
                         e1.Graphics.DrawString("TOMA DE AGUA", f14, brush, 30, 260 + copy);
-                        e1.Graphics.DrawString(payment.Direccion, f14, brush, 250, 260 + copy);
+                        e1.Graphics.DrawString(payment.Direccion + "  [" + payment.Type + "]", f14, brush, 250, 260 + copy);
 
                         e1.Graphics.FillRectangle(brushTwo, new Rectangle(20, 299 + copy, 795, 27));
                         e1.Graphics.DrawRectangle(pen, new Rectangle(20, 299 + copy, 795, 27));
@@ -692,7 +688,7 @@ namespace WindowsFormsApplication1.Base
                         e1.Graphics.DrawString(line, f14, brush, 17, 230 + copy);
 
                         e1.Graphics.DrawString("DIRECCIÓN", f14, brush, 30, 260 + copy);
-                        e1.Graphics.DrawString(payment.Direccion, f14, brush, 250, 260 + copy);
+                        e1.Graphics.DrawString(payment.Direccion + "  [" + payment.Type + "]", f14, brush, 250, 260 + copy);
 
                         e1.Graphics.FillRectangle(brushTwo, new Rectangle(20, 299 + copy, 795, 27));
                         e1.Graphics.DrawRectangle(pen, new Rectangle(20, 299 + copy, 795, 27));
@@ -859,7 +855,7 @@ namespace WindowsFormsApplication1.Base
                         e1.Graphics.DrawString(line, f14, brush, 17, 230 + copy);
 
                         e1.Graphics.DrawString("DIRECCIÓN", f14, brush, 30, 260 + copy);
-                        e1.Graphics.DrawString(payment.Direccion, f14, brush, 250, 260 + copy);
+                        e1.Graphics.DrawString(payment.Direccion + "  [" + payment.Type + "]", f14, brush, 250, 260 + copy);
 
                         e1.Graphics.FillRectangle(brushTwo, new Rectangle(20, 299 + copy, 795, 27));
                         e1.Graphics.DrawRectangle(pen, new Rectangle(20, 299 + copy, 795, 27));
@@ -928,6 +924,33 @@ namespace WindowsFormsApplication1.Base
 
             return;
 
+        }
+
+        protected void ConfigureButtons()
+        {
+            var formName = this.Name;
+
+            var buttons = new posb.User().GetButtonsRol(formName);
+
+            if (buttons.Any())
+            {
+                foreach (var button in buttons)
+                {
+                    if (button.IsButton.Value)
+                    {
+                        var ctrl = this.Controls[button.Name];
+
+                        if (ctrl != null)
+                        {
+                            ctrl.Enabled = button.Active.Value;
+                        }
+                    }
+                    else
+                    {
+                        this.UpdateButton = button.Active.Value;
+                    }
+                }
+            }
         }
 
         #endregion
@@ -1009,33 +1032,10 @@ namespace WindowsFormsApplication1.Base
             this.ConfigureToolTip();
 
             base.OnLoad(e);
+
+            this.ConfigureButtons();
         }
 
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
-            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.SuspendLayout();
-            // 
-            // ToolTip
-            // 
-            this.ToolTip.IsBalloon = true;
-            this.ToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
-            this.ToolTip.ToolTipTitle = "Error";
-            // 
-            // BaseForm
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Name = "BaseForm";
-            this.Load += new System.EventHandler(this.BaseForm_Load_1);
-            this.ResumeLayout(false);
-
-        }
 
         private void BaseForm_Load_1(object sender, EventArgs e)
         {

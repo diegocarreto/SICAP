@@ -62,13 +62,16 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="tessnet2_64">
-      <HintPath>..\..\..\..\Desktop\New folder (2)\C#\OCRTest\bin\Debug\tessnet2_64.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalleList.Designer.cs">
+      <DependentUpon>CalleList.cs</DependentUpon>
     </Compile>
     <Compile Include="Config.cs">
       <SubType>Form</SubType>
@@ -94,18 +97,6 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="CalleList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CalleList.Designer.cs">
-      <DependentUpon>CalleList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Calle.Designer.cs">
-      <DependentUpon>Calle.cs</DependentUpon>
-    </Compile>
     <Compile Include="BackUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +114,12 @@
     </Compile>
     <Compile Include="BinnacleList.Designer.cs">
       <DependentUpon>BinnacleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restore.Designer.cs">
+      <DependentUpon>Restore.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewImage.cs">
       <SubType>Form</SubType>
@@ -280,6 +277,9 @@
     <EmbeddedResource Include="Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CalleList.resx">
+      <DependentUpon>CalleList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,12 +292,6 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalleList.resx">
-      <DependentUpon>CalleList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Calle.resx">
-      <DependentUpon>Calle.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BackUp.resx">
       <DependentUpon>BackUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BinnacleList.resx">
       <DependentUpon>BinnacleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restore.resx">
+      <DependentUpon>Restore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewImage.resx">
       <DependentUpon>ViewImage.cs</DependentUpon>
@@ -392,13 +389,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sicap.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Business\PosBusiness\PosBusiness.csproj">
       <Project>{7169f933-db77-4ea9-b0af-bb64d19f0936}</Project>
       <Name>PosBusiness</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PosUtilities\PosUtilities.csproj">
-      <Project>{c79bbba5-a7dd-4b70-ae6c-63ba1c93560b}</Project>
-      <Name>PosUtilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\UtilitiesForm\UtilitiesForm.csproj">
       <Project>{904327fd-014d-4f13-aa69-2b3caf6b2643}</Project>
@@ -408,9 +404,6 @@
       <Project>{175fb569-1c14-4ecd-b19f-b47eb588bd0c}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="sicap.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
