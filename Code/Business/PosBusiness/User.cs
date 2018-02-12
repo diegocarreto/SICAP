@@ -14,6 +14,12 @@ namespace PosBusiness
 
         public string Alias { get; set; }
 
+        public string Modal { get; set; }
+
+        public string Image { get; set; }
+
+        public string FormName { get; set; }
+
         public string RolName { get; set; }
 
         public string Password { get; set; }
@@ -53,6 +59,8 @@ namespace PosBusiness
         public bool? menu_Reporte_Pagos { get; set; }
 
         public bool? menu_Reporte_Binnacle { get; set; }
+
+        public bool? IsButton { get; set; }
 
         #endregion
 
@@ -169,7 +177,7 @@ namespace PosBusiness
         // <returns></returns>
         public List<User> List(int Type = 2)
         {
-            return this.AccessMsSql.Sicap.Userlist.ExeList<User>(Type, this.Id, this.Find, this.Page, this.Rows, this.SortName, this.Order);
+            return this.AccessMsSql.Sicap.Userlist.ExeList<User>(Type, this.Id, this.Find, this.Page, this.Rows, this.SortName, this.Order, this.UserId);
         }
 
         // <summary>
@@ -205,11 +213,11 @@ namespace PosBusiness
         // 
         // </summary>
         // <returns></returns>
-        public bool UpdateRoleMenu(int IdRole, string Menu)
+        public bool UpdateRoleMenu(int IdRole, int IdMenu)
         {
             try
             {
-                this.AccessMsSql.Sicap.Updaterolemenu.ExeNonQuery(IdRole, Menu);
+                this.AccessMsSql.Sicap.Updaterolemenu.ExeNonQuery(IdRole, IdMenu);
 
                 return true;
             }
@@ -225,11 +233,46 @@ namespace PosBusiness
         // 
         // </summary>
         // <returns></returns>
+        public List<User> GetButtonsRol(string FormName)
+        {
+            return this.AccessMsSql.Sicap.Getbuttonsrol.ExeList<User>(this.UserId, FormName);
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
         public List<User> MenuList(int IdRole)
         {
             return this.AccessMsSql.Sicap.Menulist.ExeList<User>(IdRole);
         }
 
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public List<User> MenuPrincipalList()
+        {
+            return this.AccessMsSql.Sicap.Menuprincipallist.ExeList<User>();
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public List<User> MenuSecondaryList(int Id, int IdRole)
+        {
+            return this.AccessMsSql.Sicap.Menusecondaryllist.ExeList<User>(IdRole, Id);
+        }
+
+        // <summary>
+        // 
+        // </summary>
+        // <returns></returns>
+        public List<User> MenuSecondaryByUserList(int IdParent)
+        {
+            return this.AccessMsSql.Sicap.Menusecondarybyuserlist.ExeList<User>(this.UserId, IdParent);
+        }
 
         // <summary>
         // 
@@ -324,7 +367,28 @@ namespace PosBusiness
                 return false;
             }
 
-        #endregion
+
         }
+
+        public bool CheckRestoreUser()
+        {
+            return this.AccessMsSql.Sicap.Checkrrestoreuser.ExeScalar<bool>(this.UserId);
+        }
+
+        public bool RestoreUser()
+        {
+            try
+            {
+                this.AccessMsSql.Sicap.Userrestore.ExeNonQuery(this.Id);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        #endregion
     }
 }

@@ -242,7 +242,7 @@ namespace WindowsFormsApplication1
 
         private void gvList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex.Equals(9))
+            if (e.ColumnIndex.Equals(9) && this.UpdateButton)
                 this.gvList.Cursor = Cursors.Hand;
             else
                 this.gvList.Cursor = Cursors.Default;

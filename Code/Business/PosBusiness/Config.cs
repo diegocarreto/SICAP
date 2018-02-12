@@ -303,13 +303,19 @@ namespace PosBusiness
             }
         }
 
-        public bool Restore(string Path)
+        public bool Restore(string Path, bool Restore = false)
         {
             try
             {
                 var msSql = new AccessMsSQL();
 
-                return msSql.RestoreDataBase(Path);
+                var errorMessage = string.Empty;
+
+                var result = msSql.RestoreDataBase(Path, out errorMessage, Restore);
+
+                this.ErrorMessage = errorMessage;
+
+                return result;
             }
             catch (Exception ex)
             {

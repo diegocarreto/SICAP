@@ -399,25 +399,32 @@ namespace WindowsFormsApplication1
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            var p = new posb.Payment 
+            if (!string.IsNullOrEmpty(this.txtAP.Text))
             {
-                Id = int.Parse(this.txtAP.Text)
-            };
+                var p = new posb.Payment
+                {
+                    Id = int.Parse(this.txtAP.Text)
+                };
 
-            p.FindByAP();
+                p.FindByAP();
 
-            if (p.IdWaterIntake.HasValue && p.IdHabitantOrRent.HasValue)
-            {
-                this.ChangeHabitant = false;
+                if (p.IdWaterIntake.HasValue && p.IdHabitantOrRent.HasValue)
+                {
+                    this.ChangeHabitant = false;
 
-                this.idWaterIntake = p.IdWaterIntake;
-                this.cmbHabitant.SelectedValue = p.IdHabitantOrRent;
-                this.FillWaterIntake(p.IdHabitantOrRent.Value);
+                    this.idWaterIntake = p.IdWaterIntake;
+                    this.cmbHabitant.SelectedValue = p.IdHabitantOrRent;
+                    this.FillWaterIntake(p.IdHabitantOrRent.Value);
 
-                this.ChangeHabitant = true;
+                    this.ChangeHabitant = true;
+                }
+                else
+                    this.Alert("No se encontraron datos para el AP: " + this.txtAP.Text);
             }
             else
-                this.Alert("No se encontraron datos para el AP: " + this.txtAP.Text);
+            {
+                this.Alert("Introduzca un AP para realizar la búsqueda");
+            }
         }
 
         private void cmbWaterIntake_SelectedIndexChanged(object sender, EventArgs e)

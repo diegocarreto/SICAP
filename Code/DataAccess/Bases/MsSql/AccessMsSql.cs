@@ -356,7 +356,7 @@ namespace DataAccess.MSSQL
             dataBase = ConfigurationManager.AppSettings["InitialCatalog"];
         }
 
-        public bool RestoreDataBase(string Name)
+        public bool RestoreDataBase(string Name, out string ErrorMessage, bool Restore = false)
         {
             try
             {
@@ -367,11 +367,24 @@ namespace DataAccess.MSSQL
 
                 using (var con = new SqlConnection(connection))
                 {
-                    using (var cmd = new SqlCommand(@"restore database SICAP from disk = '" + Name + "'", con))
+                    using (var cmd = new SqlCommand())
                     {
+                        cmd.Connection = con;
+
                         con.Open();
 
+                        if(Restore)
+                        {
+                            cmd.CommandText = "ALTER DATABASE SICAP SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE [SICAP];";
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        cmd.CommandText = @"restore database SICAP from disk = '" + Name + "'";
+
                         cmd.ExecuteNonQuery();
+
+                        ErrorMessage = string.Empty;
 
                         return true;
                     }
@@ -379,6 +392,8 @@ namespace DataAccess.MSSQL
             }
             catch (Exception ex)
             {
+                ErrorMessage = ex.Message;
+
                 return false;
             }
         }
@@ -389,7 +404,8 @@ namespace DataAccess.MSSQL
             User = string.IsNullOrEmpty(User) ? ConfigurationManager.AppSettings["UserId"] : User;
             Password = string.IsNullOrEmpty(Password) ? ConfigurationManager.AppSettings["Password"] : Password;
             Port = !Port.HasValue ? int.Parse(ConfigurationManager.AppSettings["Port"]) : Port;
-            DataBase = string.IsNullOrEmpty(DataBase) ? ConfigurationManager.AppSettings["InitialCatalog"] : DataBase;
+            DataBase = string.IsNullOrEmpty(DataBase) ? "master" : DataBase;
+
 
             using (var con = new SqlConnection("Data Source=" + Server + "," + Port + ";Initial Catalog=" + DataBase + ";User ID=" + User + ";Password=" + Password))
             {

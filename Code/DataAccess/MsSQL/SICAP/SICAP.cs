@@ -59,6 +59,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Changepassword Changepassword = new DataAccess.MsSqlCommands.Sicap.Changepassword();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Checkrrestoreuser.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Checkrrestoreuser Checkrrestoreuser = new DataAccess.MsSqlCommands.Sicap.Checkrrestoreuser();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Configget.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Configget Configget = new DataAccess.MsSqlCommands.Sicap.Configget();
@@ -114,6 +119,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Faenaupdate Faenaupdate = new DataAccess.MsSqlCommands.Sicap.Faenaupdate();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Getbuttonsrol.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Getbuttonsrol Getbuttonsrol = new DataAccess.MsSqlCommands.Sicap.Getbuttonsrol();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Getimage.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Getimage Getimage = new DataAccess.MsSqlCommands.Sicap.Getimage();
@@ -167,6 +177,21 @@ namespace DataAccess.MSSQL.Sicap
 		/// Controla la ejecucion del procedimiento almacenado Menulist.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Menulist Menulist = new DataAccess.MsSqlCommands.Sicap.Menulist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Menuprincipallist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Menuprincipallist Menuprincipallist = new DataAccess.MsSqlCommands.Sicap.Menuprincipallist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Menusecondarybyuserlist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Menusecondarybyuserlist Menusecondarybyuserlist = new DataAccess.MsSqlCommands.Sicap.Menusecondarybyuserlist();
+
+		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Menusecondaryllist.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Menusecondaryllist Menusecondaryllist = new DataAccess.MsSqlCommands.Sicap.Menusecondaryllist();
 
 		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Paymentadd.
@@ -279,6 +304,11 @@ namespace DataAccess.MSSQL.Sicap
 		public DataAccess.MsSqlCommands.Sicap.Userlogin Userlogin = new DataAccess.MsSqlCommands.Sicap.Userlogin();
 
 		/// <summary>
+		/// Controla la ejecucion del procedimiento almacenado Userrestore.
+		///</summary>
+		public DataAccess.MsSqlCommands.Sicap.Userrestore Userrestore = new DataAccess.MsSqlCommands.Sicap.Userrestore();
+
+		/// <summary>
 		/// Controla la ejecucion del procedimiento almacenado Userupdate.
 		///</summary>
 		public DataAccess.MsSqlCommands.Sicap.Userupdate Userupdate = new DataAccess.MsSqlCommands.Sicap.Userupdate();
@@ -347,6 +377,9 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Changepassword != null)
 				this.Changepassword.Dispose();
 
+			if (this.Checkrrestoreuser != null)
+				this.Checkrrestoreuser.Dispose();
+
 			if (this.Configget != null)
 				this.Configget.Dispose();
 
@@ -380,6 +413,9 @@ namespace DataAccess.MSSQL.Sicap
 			if (this.Faenaupdate != null)
 				this.Faenaupdate.Dispose();
 
+			if (this.Getbuttonsrol != null)
+				this.Getbuttonsrol.Dispose();
+
 			if (this.Getimage != null)
 				this.Getimage.Dispose();
 
@@ -412,6 +448,15 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Menulist != null)
 				this.Menulist.Dispose();
+
+			if (this.Menuprincipallist != null)
+				this.Menuprincipallist.Dispose();
+
+			if (this.Menusecondarybyuserlist != null)
+				this.Menusecondarybyuserlist.Dispose();
+
+			if (this.Menusecondaryllist != null)
+				this.Menusecondaryllist.Dispose();
 
 			if (this.Paymentadd != null)
 				this.Paymentadd.Dispose();
@@ -478,6 +523,9 @@ namespace DataAccess.MSSQL.Sicap
 
 			if (this.Userlogin != null)
 				this.Userlogin.Dispose();
+
+			if (this.Userrestore != null)
+				this.Userrestore.Dispose();
 
 			if (this.Userupdate != null)
 				this.Userupdate.Dispose();

@@ -926,11 +926,16 @@ namespace WindowsFormsApplication1.Base
 
         }
 
-        protected void ConfigureButtons()
+        public void ConfigureButtons()
         {
             var formName = this.Name;
-
             var buttons = new posb.User().GetButtonsRol(formName);
+
+            if (!buttons.Any() && this.Tag != null)
+            {
+                formName = this.Tag.ToString();
+                buttons = new posb.User().GetButtonsRol(formName);
+            }
 
             if (buttons.Any())
             {
@@ -1011,8 +1016,6 @@ namespace WindowsFormsApplication1.Base
 
         protected override void OnLoad(EventArgs e)
         {
-            //this.BackColor = ColorTranslator.FromHtml("#BEDAFE");
-
             this.StartPosition = FormStartPosition.CenterScreen;
 
             foreach (var gv in this.Controls.OfType<DataGridView>())
@@ -1031,15 +1034,10 @@ namespace WindowsFormsApplication1.Base
 
             this.ConfigureToolTip();
 
-            base.OnLoad(e);
-
             this.ConfigureButtons();
+
+            base.OnLoad(e);
         }
 
-
-        private void BaseForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

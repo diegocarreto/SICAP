@@ -170,6 +170,7 @@ namespace WindowsFormsApplication1
         private void gvList_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             this.gvList.Cursor = Cursors.Default;
+
         }
 
         private void gvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

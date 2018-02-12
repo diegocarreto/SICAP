@@ -148,14 +148,16 @@ namespace WindowsFormsApplication1
                                     this.tvRole.Nodes[index].Nodes[index2].Nodes[index3].Checked = true;
                                     countChecked++;
                                 }
+
+                                index3++;
                             }
 
                             index2++;
+
+                            //if (countChecked.Equals(SecondaryList.Count + buttonList.Count))
+                            //    this.tvRole.Nodes[index].Checked = true;
                         }
-
-                        if (countChecked.Equals(SecondaryList.Count + buttonList.Count))
-                            this.tvRole.Nodes[index].Checked = true;
-
+              
                         index++;
                     }
 

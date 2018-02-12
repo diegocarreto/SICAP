@@ -27,6 +27,15 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private string Active
+        {
+            get
+            {
+                return gvList[4, this.SelectRowIndex].Value.ToString();
+            }
+        }
+
+
         private int SelectRowIndex
         {
             get
@@ -105,6 +114,8 @@ namespace WindowsFormsApplication1
             };
 
             this.FillGridView();
+
+            this.CheckRestoreUser();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -183,6 +194,35 @@ namespace WindowsFormsApplication1
         private void txtFind_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void CheckRestoreUser()
+        {
+            this.btnActivar.Visible = this.Entity.CheckRestoreUser();
+        }
+
+        private void btnActivar_Click_1(object sender, EventArgs e)
+        {
+            if (this.Confirm("¿Realmente deseas activar al usuario [" + this.EntityName + "]?"))
+            {
+                if (this.Active.Equals("No", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    this.Entity.Id = this.EntityId;
+
+                    if (this.Entity.RestoreUser())
+                    {
+                        this.Entity.Id = null;
+
+                        this.FillGridView();
+                    }
+                    else
+                        this.Alert("Ocurrió un error al intentar activar al usuario [" + this.EntityName + "]", eForm.TypeError.Error);
+                }
+                else 
+                {
+                    this.Alert("El usuario [" + this.EntityName + "] ya se encuentra activo", eForm.TypeError.Exclamation);
+                }
+            }
         }
     }
 }

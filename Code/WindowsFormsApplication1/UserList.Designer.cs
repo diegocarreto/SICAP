@@ -42,6 +42,7 @@
             this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aux = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnActivar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,11 +212,26 @@
             this.Aux.ReadOnly = true;
             this.Aux.Width = 45;
             // 
+            // btnActivar
+            // 
+            this.btnActivar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActivar.Image = ((System.Drawing.Image)(resources.GetObject("btnActivar.Image")));
+            this.btnActivar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActivar.Location = new System.Drawing.Point(563, 470);
+            this.btnActivar.Name = "btnActivar";
+            this.btnActivar.Size = new System.Drawing.Size(75, 23);
+            this.btnActivar.TabIndex = 113;
+            this.btnActivar.Text = "    Activar";
+            this.btnActivar.UseVisualStyleBackColor = true;
+            this.btnActivar.Visible = false;
+            this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click_1);
+            // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 500);
+            this.Controls.Add(this.btnActivar);
             this.Controls.Add(this.pageList);
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.label5);
@@ -226,6 +242,7 @@
             this.Controls.Add(this.btnExit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.Tag = "UserList";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.HabitantList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
@@ -249,5 +266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Alias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Aux;
+        private System.Windows.Forms.Button btnActivar;
     }
 }

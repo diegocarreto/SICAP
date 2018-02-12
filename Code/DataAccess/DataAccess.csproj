@@ -69,6 +69,7 @@
     <Compile Include="MsSQL\SICAP\CatalogList.cs" />
     <Compile Include="MsSQL\SICAP\CatalogUpdate.cs" />
     <Compile Include="MsSQL\SICAP\ChangePassword.cs" />
+    <Compile Include="MsSQL\SICAP\CheckrRestoreUser.cs" />
     <Compile Include="MsSQL\SICAP\ConfigGet.cs" />
     <Compile Include="MsSQL\SICAP\ConfigSet.cs" />
     <Compile Include="MsSQL\SICAP\ExpenseAdd.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="MsSQL\SICAP\FaenasAdd.cs" />
     <Compile Include="MsSQL\SICAP\FaenasUpdate.cs" />
     <Compile Include="MsSQL\SICAP\FaenaUpdate.cs" />
+    <Compile Include="MsSQL\SICAP\GetButtonsRol.cs" />
     <Compile Include="MsSQL\SICAP\GetImage.cs" />
     <Compile Include="MsSQL\SICAP\HabitantAdd.cs" />
     <Compile Include="MsSQL\SICAP\HabitantDelete.cs" />
@@ -93,6 +95,9 @@
     <Compile Include="MsSQL\SICAP\HabitantPrint.cs" />
     <Compile Include="MsSQL\SICAP\HabitantUpdate.cs" />
     <Compile Include="MsSQL\SICAP\MenuList.cs" />
+    <Compile Include="MsSQL\SICAP\MenuPrincipalList.cs" />
+    <Compile Include="MsSQL\SICAP\MenuSecondaryByUserList.cs" />
+    <Compile Include="MsSQL\SICAP\MenuSecondarylList.cs" />
     <Compile Include="MsSQL\SICAP\PaymentAdd.cs" />
     <Compile Include="MsSQL\SICAP\PaymentDelete.cs" />
     <Compile Include="MsSQL\SICAP\PaymentExist.cs" />
@@ -116,6 +121,7 @@
     <Compile Include="MsSQL\SICAP\UserDelete.cs" />
     <Compile Include="MsSQL\SICAP\UserList.cs" />
     <Compile Include="MsSQL\SICAP\UserLogin.cs" />
+    <Compile Include="MsSQL\SICAP\UserRestore.cs" />
     <Compile Include="MsSQL\SICAP\UserUpdate.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeAdd.cs" />
     <Compile Include="MsSQL\SICAP\WaterIntakeDelete.cs" />

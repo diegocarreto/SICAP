@@ -67,6 +67,12 @@
     <Compile Include="Base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Calle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calle.Designer.cs">
+      <DependentUpon>Calle.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalleList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </Compile>
     <EmbeddedResource Include="Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calle.resx">
+      <DependentUpon>Calle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CalleList.resx">
       <DependentUpon>CalleList.cs</DependentUpon>

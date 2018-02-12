@@ -195,6 +195,8 @@
             this.Controls.Add(this.btnExit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            
+            this.Tag = "CalleList";
             this.Text = "Calles";
             this.Load += new System.EventHandler(this.HabitantList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
